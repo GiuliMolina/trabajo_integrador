@@ -6,8 +6,14 @@ body {
 * {
     box-sizing: border-box;
 }
-.section {
+.article1 {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
+    margin-bottom: 70px;
+    margin-top: 30px;
+}
+.section1 {
+    display: flex;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    justify-content: space-between;
 }
