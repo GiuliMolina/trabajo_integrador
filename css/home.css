@@ -1,10 +1,17 @@
-body {
+* {
+    box-sizing: border-box;
+}
+.body {
     background-color: black;
     font-family: 'Courier New', Courier, monospace;
     color: white
 }
-* {
-    box-sizing: border-box;
+.header form {
+    text-align: end;
+    margin-right: 20px;
+}
+.section {
+    margin: 20px;
 }
 .article1 {
     display: flex;
@@ -14,6 +21,22 @@ body {
 .section1 {
     display: flex;
     margin-bottom: 50px;
-    margin-top: 30px;
+    margin-top: 20px;
     justify-content: space-between;
+}
+h1 {
+    font-family: 'Caladea', serif;
+    font-size: 70px;
+}
+h3 {
+    font-family: 'Caladea', serif;
+    font-size: x-large;
+}
+h5 {
+    font-family: 'Caladea', serif;
+    font-size:medium;
+}
+p {
+    font-family: 'Caladea', serif;
+    font-size: small;
 }
