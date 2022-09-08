@@ -40,3 +40,15 @@ p {
     font-family: 'Caladea', serif;
     font-size: small;
 }
+nav.navegacion {
+    font-family: 'Caladea', serif;
+    font-size: small;
+
+    padding: 14px 16px;
+}
+
+a.links {
+    color: white;
+    padding: 14px 16px;
+
+}
