@@ -6,7 +6,7 @@ nav {
     font-size: small;
     padding: 14px 16px;
 }
-a {
+a.links {
     color: white;
     padding: 14px 16px 0px 16px;
 
@@ -28,6 +28,13 @@ h2 {
     font-family: 'Caladea', serif;
     font-size: x-large;
 
+}
+a.favoritos {
+    color: black;
+background-color: white;
+padding: 8px;
+font-family: 'Caladea', serif;
+font-size: small;
 }
 
 section.detalle {
