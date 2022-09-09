@@ -10,9 +10,13 @@ body {
 a.generos {
     font-family: 'Courier New', Courier, monospace;
     color: white;
-    display: block;
     font-size: 22px;
-    width: 160px;
+}
+
+.generos1{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 

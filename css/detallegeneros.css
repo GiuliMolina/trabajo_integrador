@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;  
+}
+.info{
+    display: flex;
+}
+
+p {
+    font-family: 'Caladea', serif;
+    font-size: small;
+}
