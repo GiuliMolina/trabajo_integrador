@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+nav {
+    font-family: 'Caladea', serif;
+    font-size: small;
+    padding: 14px 16px;
+}
+a {
+    color: white;
+    padding: 14px 16px 0px 16px;
+
+}
+.body {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white
+}
+form {
+    text-align: end;
+    margin-right: 20px;
+}
+h1 {
+    font-family: 'Caladea', serif;
+    font-size: 70px;
+}
+h2 {
+    font-family: 'Caladea', serif;
+    font-size: x-large;
+
+}
+
+section.detalle {
+    display:flex
+}
+
+p{
+
+    font-family: 'Caladea', serif;
+    font-size: small;
+}
+
+img {
+    height: 300px;
+    width: 200px;
+    margin: 10px;
+}
