@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+a.generos {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    display: block;
+    font-size: 22px;
+    width: 160px;
+}
+
+
