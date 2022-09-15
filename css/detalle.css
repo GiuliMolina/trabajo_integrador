@@ -12,7 +12,7 @@ a.links {
 
 }
 .body {
-    background-color: black;
+    background-image: url(../img/background/TaranTado.jpg);
     font-family: 'Courier New', Courier, monospace;
     color: white
 }
