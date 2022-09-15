@@ -37,8 +37,12 @@ font-family: 'Caladea', serif;
 font-size: small;
 }
 
-section.detalle {
-    display:flex
+section.detalle{
+
+    background-image: url(../img/detalle/peaky.jpg);
+    background-size:auto;
+    background-repeat: no-repeat;
+
 }
 
 p{
@@ -47,7 +51,7 @@ p{
     font-size: small;
 }
 
-img {
+/**img {
     height: 300px;
     width: 200px;
     margin: 10px;
