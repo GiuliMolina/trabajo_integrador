@@ -1,55 +1,67 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 .body {
-    background-image: url(../img/background/TaranTado.jpg);
-    font-family: 'Courier New', Courier, monospace;
-    color: white
+  background-image: url(../img/background/TaranTado.jpg);
+  font-family: 'Courier New', Courier, monospace;
+  color: white
 }
 .header form {
-    text-align: end;
-    margin-right: 20px;
+  text-align: end;
+  margin-right: 20px;
 }
 .section {
-    margin: 20px;
+  margin: 20px;
 }
 .article1 {
-    display: flex;
-    margin-bottom: 70px;
-    margin-top: 50px;
+  display: flex;
+  margin-bottom: 70px;
+  margin-top: 50px;
 }
 .section1 {
-    display: flex;
-    margin-bottom: 50px;
-    margin-top: 20px;
-    justify-content: space-between;
+  display: flex;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  justify-content: space-between;
 }
 h1 {
-    font-family: 'Caladea', serif;
-    font-size: 70px;
+  font-family: 'Caladea', serif;
+  font-size: 70px;
 }
 h3 {
-    font-family: 'Caladea', serif;
-    font-size: x-large;
+  font-family: 'Caladea', serif;
+  font-size: x-large;
 }
 h5 {
-    font-family: 'Caladea', serif;
-    font-size:medium;
+  font-family: 'Caladea', serif;
+  font-size:medium;
 }
 p {
-    font-family: 'Caladea', serif;
-    font-size: small;
+  font-family: 'Caladea', serif;
+  font-size: small;
 }
 nav.navegacion {
-    font-family: 'Caladea', serif;
-    font-size: small;
-    padding: 14px 16px;
-    margin: 40px;
+  font-family: 'Caladea', serif;
+  font-size: small;  
+  width: 30px; 
+  padding: 14px 16px;
+  margin: 40px;
 }
-
+.navseries {
+  background-image: url(../img/background/TaranTado.jpg) ;
+  padding: 8px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+.vermás {
+  color: white;
+  font-family: 'Caladea', serif;
+  font-size: small;
+}
 a.links {
-    color: white;
-    padding: 14px 16px 0px 16px;
+  color: white;
+  padding: 14px 16px 0px 16px;
 }
 
 .mySlides {display: none;}

@@ -29,30 +29,26 @@ h2 {
     font-size: x-large;
 
 }
+.detalle {
+    display: flex;
+    margin-bottom: 70px;
+    margin-top: 50px;
+}
 a.favoritos {
-    color: black;
-background-color: white;
-padding: 8px;
-font-family: 'Caladea', serif;
-font-size: small;
-}
-
-section.detalle{
-
-    background-image: url(../img/detalle/peaky.jpg);
-    background-size:auto;
-    background-repeat: no-repeat;
-
-}
-
-p{
-
+    color: white;
+    background-image: url(../img/background/TaranTado.jpg) ;
+    padding: 8px;
     font-family: 'Caladea', serif;
-    font-size: small;
+    font-size: medium;
+    margin: 20px;
+    width: 70px;
+    border-radius: 20px;
 }
-
-/**img {
-    height: 300px;
-    width: 200px;
-    margin: 10px;
+p{
+    font-family: 'Caladea', serif;
+    font-size: medium;
+    margin: 20px;
+}
+.video {
+    order: -1
 }
