@@ -36,12 +36,11 @@ h2 {
 }
 a.favoritos {
     color: white;
-    background-image: url(../img/background/TaranTado.jpg) ;
+    background-image: url(../img/background/TaranTado.jpg);
     padding: 8px;
     font-family: 'Caladea', serif;
     font-size: medium;
     margin: 20px;
-    width: 70px;
     border-radius: 20px;
 }
 p{

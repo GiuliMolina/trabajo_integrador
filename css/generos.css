@@ -18,5 +18,9 @@ a.generos {
     flex-direction: column;
     align-items: flex-start;
 }
+h1 {
+    font-family: 'Caladea', serif;
+    font-size: 70px;
+}
 
 
