@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../img/background/TaranTado.jpg);
+    font-family: 'Courier New', Courier, monospace;
+    color: white; 
+    margin: 20px; 
+    margin-bottom: 0;
+}
+.header form {
+    text-align: end;
+    margin-right: 20px;
+}
+.navegacion {
+    display: flex;
+    font-family: 'Caladea', serif;
+    font-size: medium;
+    text-align: left;  
+    width: 30px; 
+    margin: 20px;
+    justify-content: space-between;
+}
+a.links {
+    color: white;
+    padding: 14px 16px 0px 16px;
+  }
+.info{
+    display: flex;
+}
+h1 {
+    font-family: 'Caladea', serif;
+    font-size: 70px;
+}
+h3 {
+    font-family: 'Caladea', serif;
+    font-size: x-large;
+}
+img {
+    border-radius: 10px;
+    margin: 20px;
+}
+.article2 {
+    font-family: 'Caladea', serif;
+    font-size: small;
+    margin: 140px 20px;
+    text-align: justify;
+}
+footer {
+    background-color: #23074d;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 80px;
+    margin-top: 30px;
+  }
+  .integrantes {
+    text-align: center;
+    font-family: 'Caladea', serif;
+    font-size:medium;
+    padding: 30px;
+  }
+  
+.section1 {
+    display: flex;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+
+.vermás {
+    color: white;
+    font-family: 'Caladea', serif;
+    font-size: small;
+  }
