@@ -4,11 +4,25 @@
 .body {
   background-image: url(../img/background/TaranTado.jpg);
   font-family: 'Courier New', Courier, monospace;
-  color: white
+  color: white;
+  margin: 20px;
+  margin-bottom: 0;
 }
 .header form {
   text-align: end;
   margin-right: 20px;
+}
+.navegacion {
+  display: flex;
+  font-family: 'Caladea', serif;
+  font-size: medium;
+  text-align: left;  
+  width: 30px; 
+  margin: 20px;
+}
+a.links {
+  color: white;
+  padding: 14px 16px 0px 16px;
 }
 .section {
   margin: 20px;
@@ -40,13 +54,7 @@ p {
   font-family: 'Caladea', serif;
   font-size: small;
 }
-nav.navegacion {
-  font-family: 'Caladea', serif;
-  font-size: small;  
-  width: 30px; 
-  padding: 14px 16px;
-  margin: 40px;
-}
+
 .navseries {
   background-image: url(../img/background/TaranTado.jpg) ;
   padding: 8px;
@@ -59,10 +67,7 @@ nav.navegacion {
   font-family: 'Caladea', serif;
   font-size: small;
 }
-a.links {
-  color: white;
-  padding: 14px 16px 0px 16px;
-}
+
 
 .mySlides {display: none;}
 img {vertical-align: middle;}
@@ -140,3 +145,17 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
+
+footer {
+  background-color: #23074d;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  height: 80px;
+}
+.integrantes {
+  text-align: center;
+  font-family: 'Caladea', serif;
+  font-size:medium;
+  padding: 30px;
+}
+

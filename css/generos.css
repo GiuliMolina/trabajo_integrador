@@ -6,7 +6,22 @@ body {
     font-family: 'Courier New', Courier, monospace;
     color: white;
 }
-
+.header form {
+    text-align: end;
+    margin-right: 20px;
+  }
+.navegacion {
+    display: flex;
+    font-family: 'Caladea', serif;
+    font-size: medium;
+    text-align: left;  
+    width: 30px; 
+    margin: 20px;
+}
+a.links {
+    color: white;
+    padding: 14px 16px 0px 16px;
+  }
 a.generos {
     font-family: 'Courier New', Courier, monospace;
     color: white;
@@ -22,5 +37,17 @@ h1 {
     font-family: 'Caladea', serif;
     font-size: 70px;
 }
-
+footer {
+    background-color: #23074d;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 80px;
+    margin-top: 250px;
+  }
+  .integrantes {
+    text-align: center;
+    font-family: 'Caladea', serif;
+    font-size:medium;
+    padding: 30px;
+  }
 

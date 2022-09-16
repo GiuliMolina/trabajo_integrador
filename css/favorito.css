@@ -11,3 +11,16 @@ h1 {
     font-family: 'Caladea', serif;
     font-size: 70px;
 }
+footer {
+    background-color: #23074d;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 80px;
+    margin-top: 350px;
+  }
+.integrantes {
+    text-align: center;
+    font-family: 'Caladea', serif;
+    font-size:medium;
+    padding: 30px;
+}
