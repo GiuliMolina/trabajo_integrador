@@ -75,4 +75,11 @@ footer {
     cursor: pointer;
     font-size: 20px;
   }
-  
+  .like{
+    background-color: #981212;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+  }
