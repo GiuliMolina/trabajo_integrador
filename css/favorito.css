@@ -1,15 +1,33 @@
 body {
     background-image: url(../img/background/TaranTado.jpg);
     font-family: 'Courier New', Courier, monospace;
-    color: white
+    color: white;
+    margin: 20px;
+    margin-bottom: 0;
 }
 .header form {
     text-align: end;
     margin-right: 20px;
 }
+.navegacion {
+    display: flex;
+    font-family: 'Caladea', serif;
+    font-size: medium;
+    text-align: left;  
+    width: 30px; 
+    margin: 20px;
+}
+a.links {
+    color: white;
+    padding: 14px 16px 0px 16px;
+}
 h1 {
     font-family: 'Caladea', serif;
     font-size: 70px;
+}
+.favoritos {
+    display: flex;
+    justify-content: space-between;
 }
 footer {
     background-color: #23074d;
