@@ -54,3 +54,16 @@ p {
 .video {
     order: -1
 }
+footer {
+    background-color: #23074d;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 80px;
+  }
+  .integrantes {
+    text-align: center;
+    font-family: 'Caladea', serif;
+    font-size:medium;
+    padding: 30px;
+  }
+  
