@@ -1,0 +1,107 @@
+*{
+  box-sizing: border-box;
+}
+.body {
+  background-image: url(../img/background/TaranTado.jpg);
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  margin: 20px;
+  margin-bottom: 0;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.logo {
+  border-radius: 20px;
+}
+.form {
+  order:2;
+}
+.navegacion {
+  display: flex;
+  font-family: 'Caladea', serif;  
+  width: 30px; 
+  margin-left: 20px;
+}
+.links {
+  color: white;
+  padding: 14px 16px 0px 16px;
+  font-size: 20px;
+}
+
+h1 {
+  font-family: 'Caladea', serif;
+  font-size: 70px;
+}
+h2 {
+  font-family: 'Caladea', serif;
+  font-size: 40px;
+}
+h3 {
+  font-family: 'Caladea', serif;
+  font-size: x-large;
+  text-decoration: underline;
+}
+.detalle {
+  display: flex;
+  margin-bottom: 70px;
+  margin-top: 50px;
+}
+.detalle1 {
+  margin-left: 80px;
+}
+.detalle2 {
+  margin-left: 100px;
+}
+
+a.favoritos {
+  color: white;
+  background: linear-gradient(to right, #cc5333, #23074d); 
+  padding: 18px;
+  font-family: 'Caladea', serif;
+  font-size: medium;
+  margin: 20px;
+  border-radius: 20px;
+}
+p {
+  font-family: 'Caladea', serif;
+  font-size: medium;
+  margin: 20px;
+}
+.video {
+  order: -1
+}
+footer {
+  background-color: #23074d;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  height: 80px;
+  margin-top: 100px;
+}
+.integrantes {
+  text-align: center;
+  font-family: 'Caladea', serif;
+  font-size:medium;
+  padding: 30px;
+}
+.btn {
+  background: linear-gradient(to right, #cc5333, #23074d); 
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 20px;
+}
+.like{
+  background: linear-gradient(to right, #cc5333, #23074d); 
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 20px;
+}
