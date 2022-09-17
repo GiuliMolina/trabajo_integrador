@@ -32,34 +32,37 @@
   font-size: 20px;
 }
 
-h1 {
+h3 {
   font-family: 'Caladea', serif;
-  font-size: 70px;
+  font-size: 30px;
 }
 h2 {
   font-family: 'Caladea', serif;
   font-size: 40px;
 }
-h3 {
+h5 {
   font-family: 'Caladea', serif;
-  font-size: x-large;
   text-decoration: underline;
+}
+.article1{
+  display: flex;
+  align-items: center;
+}
+
+.section1{
+padding: 0 px 30px;
 }
 .detalle {
   display: flex;
   margin-bottom: 70px;
   margin-top: 50px;
-}
-.detalle1 {
-  margin-left: 80px;
-}
-.detalle2 {
-  margin-left: 100px;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 a.favoritos {
   color: white;
-  background: linear-gradient(to right, #cc5333, #23074d); 
+  background:  #23074d; 
   padding: 18px;
   font-family: 'Caladea', serif;
   font-size: medium;
@@ -69,7 +72,8 @@ a.favoritos {
 p {
   font-family: 'Caladea', serif;
   font-size: medium;
-  margin: 20px;
+  padding-left: 5px;
+  display: flex;
 }
 .video {
   order: -1
@@ -88,7 +92,7 @@ footer {
   padding: 30px;
 }
 .btn {
-  background: linear-gradient(to right, #cc5333, #23074d); 
+  background: #23074d; 
   border: none;
   color: white;
   padding: 12px 30px;
@@ -97,7 +101,7 @@ footer {
   border-radius: 20px;
 }
 .like{
-  background: linear-gradient(to right, #cc5333, #23074d); 
+  background: #981212; 
   border: none;
   color: white;
   padding: 12px 30px;
