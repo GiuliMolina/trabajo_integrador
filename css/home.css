@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .body {
-  background-image: url(../img/background/TaranTado.jpg);
+  background: linear-gradient(to left, #cc5333, #23074d); 
   font-family: 'Courier New', Courier, monospace;
   color: white;
   margin: 20px;
@@ -13,18 +13,32 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.logo {
+img.logo {
+  width: 100px;
   border-radius: 20px;
 }
-.form {
-  order:2;
+.formulario {
+  width: 20%;
+  order: 2;
+}
+.busquedor {
+  width: 70%;
+  border-color: white;
+  background:linear-gradient(to left, #cc5333, #23074d); 
+}
+.buscar {
+  width: 20%;
+  color: white;
+  border-color: white;
+  background:linear-gradient(to left, #cc5333, #23074d); 
 }
 .navegacion {
   display: flex;
   font-family: 'Caladea', serif;  
-  width: 30px; 
-  margin-left: 20px;
+  text-align: center;
 }
 .links {
   color: white;
@@ -33,11 +47,6 @@
 }
 .section {
   margin: 20px;
-}
-.article1 {
-  display: flex;
-  margin-bottom: 70px;
-  margin-top: 50px;
 }
 .section1 {
   display: flex;
@@ -84,7 +93,10 @@ p {
 
 
 .mySlides {display: none;}
-img {vertical-align: middle;}
+img {
+  vertical-align: middle;
+  width: 100%;
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -171,6 +183,35 @@ footer {
   font-family: 'Caladea', serif;
   font-size:medium;
   padding: 30px;
+}
+
+
+@media (max-width: 420px){
+  .body {
+    margin:10px;
+  }
+  img.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    order: -1;
+  }
+  img {
+    width: 100%;
+  }
+  .formulario {
+    width: 70%;
+    margin: 10px;
+    order: -1;
+  }
+  .navegacion {
+    width: 60%;
+  }
+  .links {
+    font-size: 10px;
+    display: flex;
+    margin-left: 8px;
+  }
 }
 
 
