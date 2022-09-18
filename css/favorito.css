@@ -87,3 +87,55 @@ footer {
   font-family: 'Caladea', serif;
   font-size: small;
 }
+@media (max-width:1024px){
+  .header {
+    width: 95%;
+  }
+  .busquedor {
+    width: 62%;
+  }
+  .buscar {
+    width: 28%;
+  }
+  .favoritos {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width:760px){
+  .header {
+    width: 90%;
+  }
+  img.logo {
+    width: 80px;
+    height: 10%;
+  }
+  .formulario {
+    order: 0;
+    width: 70%;
+  }
+  .links {
+    font-size: 15px;
+  }
+  .navegacion {
+    margin-left: 20%;
+  }
+}
+@media (max-width:420px){
+  .links {
+    font-size: 10px;
+  }
+  img.logo {
+    width: 60px;
+    border-radius: 5px;
+  }
+  h3 {
+    font-size: medium;
+    margin-bottom: 3%;
+  }
+  .favoritos {
+    justify-content: center;
+  }
+  .integrantes {
+    font-size: 68%;
+   }
+}

@@ -180,6 +180,9 @@ footer {
   .harry {
     font-size: 130%;
   }
+  .navegacion {
+    margin-left: 20%;
+  }
 }
 @media (max-width: 420px){
   .links {
