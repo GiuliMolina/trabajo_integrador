@@ -97,9 +97,17 @@ p {
   display: flex;
 }
 .video {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.video1 {
+  display: flex;
+  align-items: center;
   padding: 5px;
-  margin-left: 440px;
-  margin-top: 27px;
+  margin-top: 20px;
 }
 footer {
   background-color: #23074d;
