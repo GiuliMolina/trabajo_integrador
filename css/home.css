@@ -58,6 +58,11 @@ h5 {
   font-size:medium;
   text-align: center;
 }
+.imagen{
+  height: 300px;
+  width: 240px;
+  border-radius: 10px;
+}
 p {
   font-family: 'Caladea', serif;
   font-size: small;
