@@ -74,12 +74,6 @@ h4{
   color: white;
 
 }
-
-.imagen{
-  height: 300px;
-  width: 240px;
-  border-radius: 10px;
-}
 p {
   font-family: 'Caladea', serif;
   font-size: small;
@@ -110,9 +104,38 @@ footer {
   font-size:medium;
   padding: 30px;
 }
-
+.fotohome{
+  background-image: url(../img/home/harrypotterhorizontal2.jpeg);
+  background-size: 1430px;
+  margin: 20px;
+  display: block;
+  height: 580px;
+  background-repeat: no-repeat;
+}
+.recomendacion{
+  display: flex;
+  align-self: flex-start;
+  text-align: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+}
+.h3carrusel {
+  font-size: 200%;
+}
+.harry{
+  padding: 0px 5px;
+  font-family: 'Caladea', serif;
+  font-size:175%;
+  text-align: center;
+  color: white;
+}
 
 @media (max-width: 420px){
+  *{
+    box-sizing: border-box;
+  }
   .body {
     margin:10px;
   }
@@ -121,9 +144,12 @@ footer {
     height: 50px;
     border-radius: 10px;
     order: -1;
+    margin-left: 0%;
   }
   img {
-    width: 100%;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
   }
   .formulario {
     width: 70%;
@@ -138,28 +164,26 @@ footer {
     display: flex;
     margin-left: 8px;
   }
-}
-
-.fotohome{
-  background-image: url(../img/home/harrypotterhorizontal2.jpeg);
-  display: block;
-  height: 580px;
-  background-repeat: no-repeat;
-}
-.recomendacion{
-  display: flex;
-  align-self: flex-start;
-  text-align: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  padding: 5px;
-}
-.harry{
-  padding: 0px 5px;
-  font-family: 'Caladea', serif;
-  font-size:medium;
-  text-align: center;
-  color: white;
+  .fotohome {
+    background-size: 102%;
+    height: 165px;
+  }
+  .h3carrusel {
+    font-size: 90%;
+    margin-top: 0;
+  }
+  .harry {
+    font-size: 70%;
+    margin-top: 0;
+  }
+  h3 {
+    font-size: 100%;
+  }
+  .section1 {
+    display:none;
+  }
+  .integrantes {
+    font-size: 70%;
+  }
 }
 
