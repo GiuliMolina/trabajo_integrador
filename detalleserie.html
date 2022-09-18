@@ -10,25 +10,27 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body class="body">
-        <section class="header">
+        <header class="header">
             <img src="./img/Logo.PNG" alt="Logo" width="100px" height="100px" class="logo">
-            <form class="form" method="post" target="_blank" action="search-result.html">
-                <input type="search" name="busquedor" placeholder="Buscar">
-                <input type="submit" value="Buscar">
-            </form>
-            <nav class="navegación"> 
+            <nav class="formulario"> 
+                <form method="get" target="_blank" action="search-result.html">
+                    <input class="busquedor" type="text" name="busquedor" placeholder="Buscador">
+                    <button class="buscar" type="submit"> Buscar </button>
+                </form>
+            </nav>
+            <nav class="navegacion"> 
                 <a class="links" href="./index.html">HOME</a>
                 <a class="links" href="./favorito.html">FAVORITOS</a>
                 <a class="links" href="./generos.html">GENEROS</a>
-                <a class="links" href=""> PELÍCULAS</a>
-                <a class="links" href=""> SERIES</a>
+                <a class="links" href="./detallepelis.html"> PELÍCULAS</a>
+                <a class="links" href="detalleserie.html"> SERIES</a>
              </nav>
-        </section>
+    </header>
         <section>
-            <h2> DETALLES</h2>
+            <h3> DETALLES </h3>
         </section>
         <section >
-            <h3> Peaky Blinders</h3>
+            <h2> Peaky Blinders</h2>
         </section>
         <section class="detalle">
             <section class="section1">
@@ -48,11 +50,6 @@
                 <h5> GÉNEROS:</h5>
                 <p> Drama y Crimen</p>
             </article>
-            <article class="article1">
-                <h5> SINOPSIS: </h5>
-                <p> Gran Bretaña vive la posguerra. Los soldados regresan, se acuñan nuevas revoluciones y nacen bandas criminales en una nación agitada. En Birmingham, una pandilla de gánsters callejeros asciende hasta convertirse en los reyes de la clase obrera.</p>
-                </article>
-                <article>
                 
                     <a class="favoritos" href="./favorito.html" target="_blank">Añadir a favoritos</a>
                     <button class="btn"><i class="fa fa-download"></i> Download</button>
@@ -62,8 +59,13 @@
             <article class="video">
                 <iframe width="600px" height="315" src="./videos/peakyblinders.mp4"></iframe>
             </article>
-
             </section>
+            <section class="detalle"> 
+                <article >
+                <p> Gran Bretaña vive la posguerra. Los soldados regresan, se acuñan nuevas revoluciones y nacen bandas criminales en una nación agitada. En Birmingham, una pandilla de gánsters callejeros asciende hasta convertirse en los reyes de la clase obrera.</p>
+                </article>
+                <article>
+                </section>
         <footer>
             <article class="integrantes"> Integrantes: María Guadalupe Ruiz, Giuliana Molina, Christian Helmich</article>
         </footer>

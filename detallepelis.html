@@ -16,22 +16,22 @@
         <title> Detalle de Películas </title>
     </head>
     <body class="body">
-        <header>
-            <section class="header">
-                <img src="./img/Logo.PNG" alt="Logo" width="100px" height="100px" class="logo">
-                <form class="form" method="post" target="_blank" action="search-result.html">
-                    <input type="search" name="busquedor" placeholder="Buscar">
-                    <input type="submit" value="Buscar">
+        <header class="header">
+            <img src="./img/Logo.PNG" alt="Logo" width="100px" height="100px" class="logo">
+            <nav class="formulario"> 
+                <form method="get" target="_blank" action="search-result.html">
+                    <input class="busquedor" type="text" name="busquedor" placeholder="Buscador">
+                    <button class="buscar" type="submit"> Buscar </button>
                 </form>
-                <nav class="navegación"> 
-                    <a class="links" href="./index.html">HOME</a>
-                    <a class="links" href="./favorito.html">FAVORITOS</a>
-                    <a class="links" href="./generos.html">GENEROS</a>
-                    <a class="links" href=""> PELÍCULAS</a>
-                    <a class="links" href=""> SERIES</a>
-                 </nav>
-            </section>
-        </header>
+            </nav>
+            <nav class="navegacion"> 
+                <a class="links" href="./index.html">HOME</a>
+                <a class="links" href="./favorito.html">FAVORITOS</a>
+                <a class="links" href="./generos.html">GENEROS</a>
+                <a class="links" href="./detallepelis.html"> PELÍCULAS</a>
+                <a class="links" href="detalleserie.html"> SERIES</a>
+             </nav>
+    </header>
     </body>
     <section>
         <h1> DETALLE</h1>
@@ -44,7 +44,7 @@
             <iframe width="600px" height="315" src="./videos/lapropuesta.mp4"></iframe>
         </article>
         <article>
-            <h3> RATING</h3> 
+            <h5> RATING</h5> 
             <p></p>
             <br>
             <h3> FECHA DE ESTRENO</h3>

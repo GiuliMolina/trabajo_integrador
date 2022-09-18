@@ -17,20 +17,22 @@
         <title> FAVORITOS </title>
     </head>
     <body>
-        <section class="header">
+        <header class="header">
             <img src="./img/Logo.PNG" alt="Logo" width="100px" height="100px" class="logo">
-            <form class="form" method="post" target="_blank" action="search-result.html">
-                <input type="search" name="busquedor" placeholder="Buscar">
-                <input type="submit" value="Buscar">
-            </form>
-            <nav class="navegación"> 
+            <nav class="formulario"> 
+                <form method="get" target="_blank" action="search-result.html">
+                    <input class="busquedor" type="text" name="busquedor" placeholder="Buscador">
+                    <button class="buscar" type="submit"> Buscar </button>
+                </form>
+            </nav>
+            <nav class="navegacion"> 
                 <a class="links" href="./index.html">HOME</a>
                 <a class="links" href="./favorito.html">FAVORITOS</a>
                 <a class="links" href="./generos.html">GENEROS</a>
-                <a class="links" href=""> PELÍCULAS</a>
-                <a class="links" href=""> SERIES</a>
+                <a class="links" href="./detallepelis.html"> PELÍCULAS</a>
+                <a class="links" href="detalleserie.html"> SERIES</a>
              </nav>
-        </section>
+    </header>
         <section>
             <h1> FAVORITOS</h1>
         </section>
@@ -39,31 +41,52 @@
             <h3> Tus películas y series favoritas</h3>
         </section>
         <section class="favoritos">
+            <section class="section2">
             <article class="favs">
-                <img src="./img/home/sandmand.jpg" alt="Sandman" height="300px" width="200px">
+                <img src="./img/home/sandmand.jpg" alt="Sandman"class="imagenes">
                 <h5>Sandman </h5>
+                <nav class="navseries">
+                    <a class="vermás" href="./detalleserie.html" > VER MÁS </a>
+                </nav>
             </article>
             <article class="favs">
-                <img src="img/home/HP.jpg" alt="Harry Potter" height="300px" width="200px">
+                <img src="img/home/HP.jpg" alt="Harry Potter" class="imagenes">
                 <h5>Harry Potter </h5>
+                <nav class="navseries">
+                    <a class="vermás" href="./detallepelis.html" > VER MÁS </a>
+                </nav>
             </article>
             <article class="favs">
-                <img src="./img/home/st.jpg" alt="Stranger Things" height="300px" width="200px">
+                <img src="./img/home/st.jpg" alt="Stranger Things" class="imagenes">
                 <h5>Starnger Things</h5>
+                <nav class="navseries">
+                    <a class="vermás" href="./detalleserie.html" > VER MÁS </a>
+                </nav>
             </article>
             <article class="favs">
-                <img src="./img/home/friends.jpg" alt="Friends" height="300px" width="200px">
+                <img src="./img/home/friends.jpg" alt="Friends" class="imagenes">
                 <h5>Friends</h5>
+                <nav class="navseries">
+                    <a class="vermás" href="./detalleserie.html" > VER MÁS </a>
+                </nav>
             </article>
             <article class="favs">
-                <img src="./img/home/got.jpg" alt="Games of Trones" height="300px" width="200px">
+                <img src="./img/home/got.jpg" alt="Games of Trones" class="imagenes">
                 <h5>Games of Trones</h5>
-            </article>
+                <nav class="navseries">
+                    <a class="vermás" href="./detalleserie.html" > VER MÁS </a>
+                </nav>
+                </article>
+        </section>
             <article class="favs">
                 <img src="img/home/La propuesta.jpg" alt="La Propuesta" height="300px" width="200px">
                 <h5>La Propuesta</h5>
+                <nav class="navseries">
+                    <a class="vermás" href="./detallepelis.html" > VER MÁS </a>
+                </nav>
             </article>
         </section>
+    </section>
         <footer>
             <article class="integrantes"> Integrantes: María Guadalupe Ruiz, Giuliana Molina, Christian Helmich </article> 
         </footer>

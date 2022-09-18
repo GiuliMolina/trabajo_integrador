@@ -16,20 +16,22 @@
         <title> Resultado de busqueda </title>
     </head>
     <body class="body">
-        <section class="header">
+        <header class="header">
             <img src="./img/Logo.PNG" alt="Logo" width="100px" height="100px" class="logo">
-            <form class="form" method="post" target="_blank" action="search-result.html">
-                <input type="search" name="busquedor" placeholder="Buscar">
-                <input type="submit" value="Buscar">
-            </form>
-            <nav class="navegación"> 
+            <nav class="formulario"> 
+                <form method="get" target="_blank" action="search-result.html">
+                    <input class="busquedor" type="text" name="busquedor" placeholder="Buscador">
+                    <button class="buscar" type="submit"> Buscar </button>
+                </form>
+            </nav>
+            <nav class="navegacion"> 
                 <a class="links" href="./index.html">HOME</a>
                 <a class="links" href="./favorito.html">FAVORITOS</a>
                 <a class="links" href="./generos.html">GENEROS</a>
-                <a class="links" href=""> PELÍCULAS</a>
-                <a class="links" href=""> SERIES</a>
+                <a class="links" href="./detallepelis.html"> PELÍCULAS</a>
+                <a class="links" href="detalleserie.html"> SERIES</a>
              </nav>
-        </section>
+    </header>
         <section>
             <article>
         <h3> Resultado de tu busqueda: Harry Potter </h3>
@@ -40,28 +42,28 @@
                 <h5> Harry Potter y la Piedra Filosofal</h5>
                 <img src="./img/home/HP.jpg" alt="Harry Potter 1">
                 <nav class="navseries">
-                    <a class="vermás" href="./detalle.html" target="_blank"> VER MÁS </a>
+                    <a class="vermás" href="./detallepelis.html" > VER MÁS </a>
                 </nav>
             </article>
             <article>
                 <h5>Harry Potter y la Camara Secreta</h5>
                 <img src="./img/search/camarasecreta.jpg" alt="Harry Potter y la Cámara Secreta">
                 <nav class="navseries">
-                    <a class="vermás" href="./detalle.html"target="_blank"> VER MÁS </a>
+                    <a class="vermás" href="./detallepelis.html"> VER MÁS </a>
                 </nav>
             </article>
             <article>
                 <h5>Harry Potter y el Prisioner de Askaban</h5>
                 <img src="./img/search/prisionero.jpg" alt="Harry Potter y el Prisionero de Askaban">
                 <nav class="navseries">
-                    <a class="vermás" href="./detalle.html"target="_blank"> VER MÁS </a>
+                    <a class="vermás" href="./detallepelis.html"> VER MÁS </a>
                 </nav>
             </article>
             <article>
                 <h5>Harry Potter y el Caliz de Fuego</h5>
                 <img src="./img/search/calizdefuego.jpg" alt="Harry Potter y el Cáliz de Fuego">
                 <nav class="navseries">
-                    <a class="vermás" href="./detalle.html"target="_blank"> VER MÁS </a>
+                    <a class="vermás" href="./detallepelis.html""> VER MÁS </a>
                 </nav>
             </article>
         </section>
@@ -70,29 +72,32 @@
                 <h5>Harry Potter y la Orden del Fenix</h5>
                 <img src="./img/search/ordendelfenix.jpg" alt="Harry Poter y la Orden del Fenix">
                 <nav class="navseries">
-                    <a class="vermás" href="./detalle.html"target="_blank"> VER MÁS </a>
+                    <a class="vermás" href="./detallepelis.html"> VER MÁS </a>
                 </nav>
             </article>
             <article>
                 <h5>Harry Potter y el Misterio del Principe</h5>
                 <img src="./img/search/misteriodelprincipe.jpg" alt="Harry Potter y el Misterio del Príncipe">
                 <nav class="navseries">
-                    <a class="vermás" href="./detalle.html" target="_blank"> VER MÁS </a>
+                    <a class="vermás" href="./detallepelis.html" > VER MÁS </a>
                 </nav>
             </article>
             <article>
                 <h5>Harry Potter y las Reliquias de la Muerte parte 1</h5>
                 <img src="./img/search/reliquias1.jpg" alt="Harry Potter y las Reliquias de la Muerte">
                 <nav class="navseries">
-                    <a class="vermás" href="./detalle.html" target="_blank"> VER MÁS </a>
+                    <a class="vermás" href="./detallepelis.html" > VER MÁS </a>
                 </nav>
             </article>
             <article>
                 <h5>Harry Potter y las Reliquias de la Muerte parte 2</h5>
                 <img src="./img/search/reliquias2.webp" alt="Harry Potter y las Reliquias de la Muerte 2">
                 <nav class="navseries">
-                    <a class="vermás" href="./detalle.html" target="_blank"> VER MÁS </a>
+                    <a class="vermás" href="./detallepelis.html"> VER MÁS </a>
                 </nav>
             </article>
         </section>
+        <footer>
+            <article class="integrantes"> Integrantes: María Guadalupe Ruiz, Giuliana Molina, Cristian Helmich </article> 
+        </footer>    
         </body>

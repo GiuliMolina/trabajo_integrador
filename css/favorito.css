@@ -1,27 +1,41 @@
 body {
-    background-image: url(../img/background/TaranTado.jpg);
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    margin: 20px;
-    margin-bottom: 0;
+  background-image: url(../img/background/TaranTado.jpg);
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  margin: 20px;
+  margin-bottom: 0;
 }
 .header {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-  }
-.logo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+img.logo {
+  width: 100px;
   border-radius: 20px;
 }
-.form {
-  order:2;
+.formulario {
+  width: 20%;
+  order: 2;
+}
+.busquedor {
+  width: 70%;
+  border-color: white;
+  background:linear-gradient(to left, #cc5333, #23074d); 
+}
+.buscar {
+  width: 20%;
+  color: white;
+  border-color: white;
+  background:linear-gradient(to left, #cc5333, #23074d); 
 }
 .navegacion {
   display: flex;
   font-family: 'Caladea', serif;  
-  width: 30px; 
-  margin-left: 20px;
+  text-align: center;
 }
 .links {
   color: white;
@@ -37,35 +51,66 @@ h3 {
   font-size: x-large;
   margin-bottom: 40px;
 }
-h5 {
+h4 {
   font-family: 'Caladea', serif;
-  font-size:medium;
-  text-align: center;
+color: white;
 }
+
 .corazón {
   display: flex;
 }
 i {
   width: 50px;
 }
+.section2{
+  display: flex;
+}
 .favoritos {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
 }
 .favs {
-  background-color: #23074d;
-  padding: 10px;
+  padding: 30px;
+  flex-direction: row;
+justify-content: space-between;
+flex-wrap: wrap;
 }
 footer {
   background-color: #23074d;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   height: 80px;
-  margin-top: 350px;
+
 }
 .integrantes {
   text-align: center;
   font-family: 'Caladea', serif;
   font-size:medium;
   padding: 30px;
+}
+
+.navseries {
+  background-image: url(../img/background/TaranTado.jpg) ;
+  padding: 8px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+.vermás {
+  color: white;
+  font-family: 'Caladea', serif;
+  font-size: small;
+}
+.section1{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imagenes{
+  height: 300px ;
+  width: 200px;
+  padding: 0px, 20px;
 }
