@@ -156,3 +156,58 @@ footer {
     flex-wrap: wrap;
   }
 }
+@media (max-width:760px){
+  .header {
+    width: 90%;
+  }
+  img.logo {
+    width: 80px;
+    height: 10%;
+  }
+  .formulario {
+    order: 0;
+    width: 70%;
+  }
+  .links {
+    font-size: 15px;
+  }
+  .fotohome {
+    height: 320px;
+  }
+  .h3carrusel {
+    font-size: 135%;
+  }
+  .harry {
+    font-size: 130%;
+  }
+}
+@media (max-width: 420px){
+  .links {
+    font-size: 10px;
+  }
+  img.logo {
+    width: 60px;
+    border-radius: 5px;
+  }
+  h3 {
+    font-size: medium;
+  }
+  .h3carrusel {
+    font-size: 75%;
+    margin: 2px;
+  }
+  .harry {
+    font-size: 60%;
+  }
+  .fotohome {
+    height: 160px;
+  }
+  img {
+    height: 140px;
+ }
+ .integrantes {
+  font-size: 68%;
+ }
+}
+
+
