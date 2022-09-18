@@ -1,108 +1,125 @@
-* {
-    box-sizing: border-box;
-  }
+*{
+  box-sizing: border-box;
+}
 .body {
-    background-image: url(../img/background/TaranTado.jpg);
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    margin: 20px;
-    margin-bottom: 0;
+  background-image: url(../img/background/TaranTado.jpg);
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  margin: 20px;
+  margin-bottom: 0;
 }
 .header {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  img.logo {
-    width: 100px;
-    border-radius: 20px;
-  }
-  .formulario {
-    width: 20%;
-    order: 2;
-  }
-  .busquedor {
-    width: 70%;
-    border-color: white;
-    background:linear-gradient(to left, #cc5333, #23074d); 
-  }
-  .buscar {
-    width: 20%;
-    color: white;
-    border-color: white;
-    background:linear-gradient(to left, #cc5333, #23074d); 
-  }
-  .navegacion {
-    display: flex;
-    font-family: 'Caladea', serif;  
-    text-align: center;
-  }
-  .links {
-    color: white;
-    padding: 14px 16px 0px 16px;
-    font-size: 20px;
-  }
-h1 {
-    font-family: 'Caladea', serif;
-    font-size: 70px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+img.logo {
+  width: 100px;
+  border-radius: 20px;
+}
+.formulario {
+  width: 20%;
+  order: 2;
+}
+.busquedor {
+  width: 70%;
+  border-color: white;
+  background:linear-gradient(to left, #cc5333, #23074d); 
+}
+.buscar {
+  width: 20%;
+  color: white;
+  border-color: white;
+  background:linear-gradient(to left, #cc5333, #23074d); 
+}
+.navegacion {
+  display: flex;
+  font-family: 'Caladea', serif;  
+  text-align: center;
+}
+.links {
+  color: white;
+  padding: 14px 16px 0px 16px;
+  font-size: 20px;
 }
 h2 {
-    font-family: 'Caladea', serif;
-    font-size: 40px;
+  font-family: 'Caladea', serif;
+font-size: 40px;
 }
 h3 {
-    font-family: 'Caladea', serif;
-    font-size: x-large;
-    text-decoration: underline;
+  font-family: 'Caladea', serif;
+font-size: 22px;
+}
+h4 {
+  font-family: 'Caladea', serif;
+  font-size: large;
+}
+
+.article1{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.article2{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  justify-content: center;
+  background-color: #23074d;
+  border-radius: 5px;
+}
+.section1{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 
 a.favoritos {
-    color: white;
-    background: #23074d; 
-    padding: 18px;
-    font-family: 'Caladea', serif;
-    font-size: medium;
-    margin: 20px;
-    border-radius: 20px;
+  color: white;
+  background-color: #cc5333; 
+  padding: 18px;
+  font-family: 'Caladea', serif;
+  font-size: medium;
+  margin: 20px;
+  border-radius: 20px;
 }
 p {
-    font-family: 'Caladea', serif;
-    font-size: medium;
-    margin: 20px;
+  font-family: 'Caladea', serif;
+  font-size: medium;
+  padding-left: 5px;
+  display: flex;
 }
-
+.video {
+  padding: 5px;
+  margin-left: 370px;
+  margin-top: 27px;
+}
 footer {
-    background-color: #23074d;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    height: 80px;
-    margin-top: 100px;
+  background-color: #23074d;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  height: 80px;
+  margin-top: 100px;
 }
 .integrantes {
-    text-align: center;
-    font-family: 'Caladea', serif;
-    font-size:medium;
-    padding: 30px;
+  text-align: center;
+  font-family: 'Caladea', serif;
+  font-size:medium;
+  padding: 30px;
 }
 .btn {
-    background: #23074d; 
-    border: none;
-    color: white;
-    padding: 12px 30px;
-    cursor: pointer;
-    font-size: 20px;
-    border-radius: 20px;
-}
-.like{
-    background: #981212; 
-    border: none;
-    color: white;
-    padding: 12px 30px;
-    cursor: pointer;
-    font-size: 20px;
-    border-radius: 20px;
+  background: #cc5333; 
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 20px;
 }
