@@ -51,8 +51,6 @@ a.generos {
 
 .generos1{
     display:flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 h1 {
     font-family: 'Caladea', serif;
@@ -72,3 +70,39 @@ footer {
     padding: 30px;
   }
 
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .container img {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+  }
+  
+  .container .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #23074d;
+    color: white;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+  }
+  
+  .container .btn:hover {
+    background-color: black;
+  }
