@@ -51,6 +51,7 @@ a.generos {
 
 .generos1{
     display:flex;
+    justify-content: space-around;
 }
 h1 {
     font-family: 'Caladea', serif;
@@ -83,6 +84,7 @@ footer {
     width: 100%;
     height: auto;
     flex-wrap: wrap;
+    
   }
   
   .container .btn {
@@ -98,7 +100,6 @@ footer {
     padding: 12px 24px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
     text-align: center;
     display: flex;
   }

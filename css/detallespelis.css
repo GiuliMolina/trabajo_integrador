@@ -62,7 +62,7 @@ h3 {
 
 a.favoritos {
     color: white;
-    background: linear-gradient(to right, #cc5333, #23074d); 
+    background: #23074d; 
     padding: 18px;
     font-family: 'Caladea', serif;
     font-size: medium;
@@ -89,7 +89,7 @@ footer {
     padding: 30px;
 }
 .btn {
-    background: linear-gradient(to right, #cc5333, #23074d); 
+    background: #23074d; 
     border: none;
     color: white;
     padding: 12px 30px;
@@ -98,7 +98,7 @@ footer {
     border-radius: 20px;
 }
 .like{
-    background: linear-gradient(to right, #cc5333, #23074d); 
+    background: #981212; 
     border: none;
     color: white;
     padding: 12px 30px;
