@@ -132,6 +132,9 @@ footer {
   color: white;
 }
 
+@media (max-width:1025px){
+
+}
 @media (max-width: 420px){
   *{
     box-sizing: border-box;

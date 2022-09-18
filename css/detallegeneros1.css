@@ -13,18 +13,32 @@ body{
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.logo {
+img.logo {
+  width: 100px;
   border-radius: 20px;
 }
-.form {
-  order:2;
+.formulario {
+  width: 20%;
+  order: 2;
+}
+.busquedor {
+  width: 70%;
+  border-color: white;
+  background:linear-gradient(to left, #cc5333, #23074d); 
+}
+.buscar {
+  width: 20%;
+  color: white;
+  border-color: white;
+  background:linear-gradient(to left, #cc5333, #23074d); 
 }
 .navegacion {
   display: flex;
   font-family: 'Caladea', serif;  
-  width: 30px; 
-  margin-left: 20px;
+  text-align: center;
 }
 .links {
   color: white;

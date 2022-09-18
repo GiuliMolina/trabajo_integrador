@@ -17,20 +17,22 @@
     <title>GENEROS</title>
 </head>
 <body>
-    <section class="header">
+    <header class="header">
         <img src="./img/Logo.PNG" alt="Logo" width="100px" height="100px" class="logo">
-        <form class="form" method="post" target="_blank" action="search-result.html">
-            <input type="search" name="busquedor" placeholder="Buscar">
-            <input type="submit" value="Buscar">
-        </form>
-        <nav class="navegación"> 
+        <nav class="formulario"> 
+            <form method="get" target="_blank" action="search-result.html">
+                <input class="busquedor" type="text" name="busquedor" placeholder="Buscador">
+                <button class="buscar" type="submit"> Buscar </button>
+            </form>
+        </nav>
+        <nav class="navegacion"> 
             <a class="links" href="./index.html">HOME</a>
             <a class="links" href="./favorito.html">FAVORITOS</a>
             <a class="links" href="./generos.html">GENEROS</a>
-            <a class="links" href=""> PELÍCULAS</a>
-            <a class="links" href=""> SERIES</a>
+            <a class="links" href="./detallepelis.html"> PELÍCULAS</a>
+            <a class="links" href="detalleserie.html"> SERIES</a>
          </nav>
-    </section>
+</header>
     <h1>Generos</h1>
     <nav class="generos1">
         <a href="" class="generos">Crimen</a>

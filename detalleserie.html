@@ -10,20 +10,22 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body class="body">
-        <section class="header">
+        <header class="header">
             <img src="./img/Logo.PNG" alt="Logo" width="100px" height="100px" class="logo">
-            <form class="form" method="post" target="_blank" action="search-result.html">
-                <input type="search" name="busquedor" placeholder="Buscar">
-                <input type="submit" value="Buscar">
-            </form>
-            <nav class="navegación"> 
+            <nav class="formulario"> 
+                <form method="get" target="_blank" action="search-result.html">
+                    <input class="busquedor" type="text" name="busquedor" placeholder="Buscador">
+                    <button class="buscar" type="submit"> Buscar </button>
+                </form>
+            </nav>
+            <nav class="navegacion"> 
                 <a class="links" href="./index.html">HOME</a>
                 <a class="links" href="./favorito.html">FAVORITOS</a>
                 <a class="links" href="./generos.html">GENEROS</a>
-                <a class="links" href=""> PELÍCULAS</a>
-                <a class="links" href=""> SERIES</a>
+                <a class="links" href="./detallepelis.html"> PELÍCULAS</a>
+                <a class="links" href="detalleserie.html"> SERIES</a>
              </nav>
-        </section>
+    </header>
         <section>
             <h3> DETALLES </h3>
         </section>
