@@ -45,7 +45,11 @@ img.logo {
 }
 h1 {
   font-family: 'Caladea', serif;
-
+}
+h5 {
+  font-family: 'Caladea', serif;
+  color: white;
+  font-size: medium;
 }
 footer {
   background-color: #23074d;
@@ -71,13 +75,15 @@ footer {
 }
 .generos2 {
   display: flex;
-  margin-left: 25%;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-content: space-between;
 }
 .container {
   text-align: center;
+  flex-wrap: wrap;
 }
 .container img {
-  flex-wrap: wrap;
   border-radius: 20px;
   border-style: solid;
   border-width: 2px;
