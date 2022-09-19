@@ -130,3 +130,88 @@ footer {
   font-size: 20px;
   border-radius: 20px;
 }
+
+@media(max-width:1024px){
+  .header {
+    width: 95%;
+  }
+  .busquedor {
+    width: 62%;
+  }
+  .buscar {
+    width: 32%;
+  }
+}
+@media(max-width:760px){
+  .header {
+    width: 90%;
+  }
+  img.logo {
+    width: 80px;
+    height: 10%;
+  }
+  .formulario {
+    order: 0;
+    width: 70%;
+  }
+  .links {
+    font-size: 15px;
+  }
+  .navegacion{
+    margin-left: 20%;
+  }
+  h2{
+    font-size: 150%;
+  }
+  h4{
+    font-size: 114%;
+  }
+  img{
+    height: 20%;
+  }
+  p{
+    font-size: 93%;
+  }
+  a.favoritos{
+    font-size: 100%;
+  }
+  .btn{
+    font-size: 120%;
+  }
+
+}
+@media (max-width: 420px){
+  .links {
+    font-size: 50%;
+  }
+  img.logo {
+    width: 60px;
+    border-radius: 5px;
+  }
+  h2 {
+    font-size: 110%;
+  }
+  h3{
+    font-size: 100%;
+  }
+  h4{
+    font-size: 70%;
+  }
+  p{
+    font-size: 62%;
+  }
+  .video1 {
+    height: 100%;
+  }
+  a.favoritos {
+    font-size: 66%;
+    padding: 2%;
+  }
+  .btn {
+    font-size: 66%;
+    padding: 2%;
+  }
+  .integrantes {
+    font-size: 68%;
+   }
+} 

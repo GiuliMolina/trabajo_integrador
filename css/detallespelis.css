@@ -182,19 +182,36 @@ footer {
 }
 @media (max-width: 420px){
   .links {
-    font-size: 10px;
+    font-size: 50%;
   }
   img.logo {
     width: 60px;
     border-radius: 5px;
   }
+  h2 {
+    font-size: 110%;
+  }
   h3{
-    font-size: 20px;
+    font-size: 100%;
   }
   h4{
-    font: 100%;
+    font-size: 70%;
   }
   p{
-    font-size: 86%;
+    font-size: 62%;
   }
+  .video1 {
+    height: 100%;
+  }
+  a.favoritos {
+    font-size: 66%;
+    padding: 2%;
+  }
+  .btn {
+    font-size: 66%;
+    padding: 2%;
+  }
+  .integrantes {
+    font-size: 68%;
+   }
 } 
