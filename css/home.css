@@ -208,6 +208,9 @@ footer {
   img {
     height: 140px;
  }
+ .navegacion {
+  margin-left: 8%;
+}
  .integrantes {
   font-size: 68%;
  }

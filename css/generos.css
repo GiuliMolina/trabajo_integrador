@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body {
-  background-image: url(../img/background/TaranTado.jpg);
+  background: linear-gradient(to left, #cc5333, #23074d);
   font-family: 'Courier New', Courier, monospace;
   color: white;
 }
@@ -140,13 +140,16 @@ footer {
   img {
     height: 245px;
     width: 385px;
-}
-.generos1{
+ }
+ .generos1{
+   justify-content: center;
+ }
+ .generos2{
   justify-content: center;
-}
-.generos2{
-  justify-content: center;
-}
+ }
+ .navegacion {
+  margin-left: 20%;
+ }
   footer{
   margin-top: 80px;
   }
@@ -162,6 +165,9 @@ footer {
   }
   h3 {
     font-size: medium;
+  }
+  .navegacion {
+    margin-left: 8%;
   }
   .integrantes {
     font-size: 68%;
