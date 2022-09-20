@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .body {
-  background-image: url(../img/background/TaranTado.jpg);
+  background: linear-gradient(to left, #cc5333, #23074d);
   font-family: 'Courier New', Courier, monospace;
   color: white;
   margin: 20px;
