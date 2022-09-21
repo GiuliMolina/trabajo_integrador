@@ -84,6 +84,7 @@ footer {
   justify-content: space-between;
 }
 .container {
+  width: 100%;
   text-align: center;
   flex-wrap: wrap;
 }

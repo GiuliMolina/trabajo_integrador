@@ -53,6 +53,10 @@ img.logo {
   margin-top: 20px;
   justify-content: space-between;
 }
+article {
+  width: 100%;
+  text-align: center;
+}
 h1 {
   font-family: 'Caladea', serif;
   font-size: 70px;
@@ -63,6 +67,7 @@ h3 {
   color: white;
   text-decoration: none;
   margin: 20px;
+  text-align: left;
 }
 h5 {
   font-family: 'Caladea', serif;
@@ -131,6 +136,7 @@ footer {
   text-align: center;
   color: white;
 }
+
 
 @media (max-width: 1024px) {
   .header {

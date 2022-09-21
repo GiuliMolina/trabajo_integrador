@@ -62,8 +62,10 @@ h5 {
   flex-direction: row;
 }
 .favs {
+  width: 100%;
   padding: 20px;
   flex-direction: row;
+  text-align: center;
 }
 footer {
   background-color: #23074d;
