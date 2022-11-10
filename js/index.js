@@ -28,14 +28,26 @@
 
 let keyApi = '0c5fb97f0c55576b638b49d73fa8d73e'
 let populares = 'https://api.themoviedb.org/3/movie/popular?api_key=0c5fb97f0c55576b638b49d73fa8d73e&language=en-US&page=1'
-
+let query = location.search
+let objQuery = new URLSearchParams(query)
+let id = objQuery.get("id")
+let contenedor = document.querySelector(".prueba")
+let info = ''
 fetch(populares)
 .then(function(response){
     return response.json();
 })
 .then(function(data){
     console.log(data)
-    for(i==0; i<5; i++){}
+    for(let i=0; i<length.data; i++){
+      info+=`
+      <li>
+      <a href="./detallepelis.html?id=${data[i].id}">${data[i].title} </a>
+      <img class=img src"${data[i].image}">
+      </li>
+      `
+    }
+    contenedor.innerHTML = info
 })
 .catch(function(error){
     console.log(`El error es ${error}`)

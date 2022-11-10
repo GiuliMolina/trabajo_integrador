@@ -84,7 +84,9 @@ p {
   font-size: small;
   text-align: center;
 }
-
+.img{
+  height: 300px;
+}
 .navseries {
   background-image: url(../img/background/TaranTado.jpg) ;
   padding: 8px;
