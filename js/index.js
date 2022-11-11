@@ -74,6 +74,9 @@ fetch(recomendados + keyApi)
           <h5> ${data.results[i].original_title}</h5>
           <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" height="300px">
           <p>${data.results[i].release_date}</p>
+          <nav class="navseries">
+            <a class="vermás" href="./detalleserie.html" > VER MÁS </a>
+          </nav>
         </article>
       </section>
       `
@@ -101,6 +104,9 @@ fetch(nuevas + keyApi)
           <h5> ${data.results[i].original_title}</h5>
           <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" height="300px">
           <p>${data.results[i].release_date}</p>
+          <nav class="navseries">
+            <a class="vermás" href="./detalleserie.html" > VER MÁS </a>
+          </nav>
         </article>
       </section>
       `
