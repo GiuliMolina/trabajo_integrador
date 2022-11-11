@@ -57,7 +57,7 @@ fetch(populares+ keyApi)
     console.log(`El error es ${error}`)
 })
 
-let recomendados = 'https://api.themoviedb.org/3/movie/top_rated?api_key=';
+let recomendados = 'https://api.themoviedb.org/3/tv/popular?api_key=';
 let contenedor2 = document.querySelector('.section2');
 let info2 = '';
 
