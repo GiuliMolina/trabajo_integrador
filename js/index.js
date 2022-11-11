@@ -1,7 +1,5 @@
 //buscador 
-
-
-
+let formulario = document.querySelector('.form')
 
 
 let keyApi = '0c5fb97f0c55576b638b49d73fa8d73e';
@@ -53,7 +51,7 @@ fetch(recomendados + keyApi)
           <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" height="300px">
           <p>${data.results[i].release_date}</p>
           <nav class="navseries">
-            <a class="vermás" href="./detallepelis.html?id=${data.results[i].id}" > VER MÁS </a>
+            <a class="vermás" href="./detalleserie.html" > VER MÁS </a>
           </nav>
         </article>
       </section>
