@@ -36,7 +36,10 @@ fetch(populares)
 .then(function(data){
     console.log(data)
     for(i==0; i<5; i++){}
+
 })
 .catch(function(error){
     console.log(`El error es ${error}`)
 })
+
+let hola = 'hola'

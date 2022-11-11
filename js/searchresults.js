@@ -1,4 +1,4 @@
-//Putno 2
+
 let buscador = 'https://api.themoviedb.org/3/movie/popular?api_key=0c5fb97f0c55576b638b49d73fa8d73e&language=en-US&page=1'
 let form = document.querySelector('.busquedor')
 
