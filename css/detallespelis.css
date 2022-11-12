@@ -47,27 +47,38 @@ img.logo {
 }
 h2 {
   font-family: 'Caladea', serif;
-font-size: 40px;
+  font-size: 33px;
+  margin: 10px
 }
 h3 {
   font-family: 'Caladea', serif;
-font-size: 22px;
+  font-size: 22px;
 }
 h4 {
   font-family: 'Caladea', serif;
   font-size: large;
+  margin: 5px
 }
 
 .article1{
   display: flex;
   align-items: center;
-  padding: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
 }
 .article2{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-
+  justify-content: center;
+  background-color: #23074d;
+  border-radius: 5px;
+  padding: 5px
+}
+.title{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   background-color: #23074d;
   border-radius: 5px;
@@ -80,11 +91,12 @@ h4 {
   justify-content: center;
 }
 .imagen{
-  height: 500px;
   text-align: center;
   padding: 10px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  
 }
 
 a.favoritos {

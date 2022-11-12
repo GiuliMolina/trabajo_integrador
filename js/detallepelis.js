@@ -14,14 +14,11 @@ fetch(detallepelis+apiKey)
   })
   .then(function(data){
         console.log(data)
-        info+=`
+        info+=` <section class="title">
                 <h2>${data.original_title}</h2>
-            <section class="article2">
-                <h4> RATING:</h4> 
-                <p> rating¿? </p>
-            </section>
+                </section>
             <section class="imagen">
-                <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}">
+                <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" height="500px" width="300px">
             </section>
             <section class="section1">
                 <article class="article1">
@@ -44,6 +41,14 @@ fetch(detallepelis+apiKey)
                 `)
                 }
                 info+=`
+                <article class="article1">
+                <h4> RATING: </h5>
+                <p> rating¿? </p>
+                </article>
+                <article class="article1">
+                <h4> VER EN: </h5>
+                <p> donde¿? </p>
+            </article>
                 <article class="article2">
                     <p>${data.overview}</p>
                 </article>
