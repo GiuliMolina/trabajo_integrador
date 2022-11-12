@@ -79,7 +79,13 @@ h4 {
   align-items: center;
   justify-content: center;
 }
-
+.imagen{
+  height: 500px;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
 
 a.favoritos {
   color: white;
@@ -91,6 +97,13 @@ a.favoritos {
   border-radius: 20px;
 }
 p {
+  font-family: 'Caladea', serif;
+  font-size: medium;
+  padding-left: 5px;
+  display: flex;
+}
+a.generos {
+  color: white;
   font-family: 'Caladea', serif;
   font-size: medium;
   padding-left: 5px;
