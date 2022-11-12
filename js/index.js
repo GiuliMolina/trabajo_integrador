@@ -2,6 +2,7 @@
 let formulario = document.querySelector('.form')
 
 
+
 let keyApi = '0c5fb97f0c55576b638b49d73fa8d73e';
 let populares = 'https://api.themoviedb.org/3/movie/popular?api_key=';
 let contenedor = document.querySelector('.section1')
@@ -17,21 +18,24 @@ fetch(populares+ keyApi)
       info +=`
       <section class='section1'>
         <article>
-          <h5> ${data.results[i].original_title}</h5>
+          <h5><a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"> ${data.results[i].original_title} </a></h5>
           <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" height="300px">
-          <p>${data.results[i].release_date}</p>
+          <p><a class = 'textopeli' href="./detallepelis.html?id=${data.results[i].id}">${data.results[i].release_date}</a></p>
           <nav class="navseries">
-            <a class="vermás" href="./detallepelis.html?id=${data.results[i].id}" > VER MÁS </a>
-          </nav>
+            <a class="vermás" href="./detallepelis.html?id=${data.results[i].id}" > VER MÁS </a> 
+          </nav> 
         </article>
       </section>
-      `
+      `//ESTE VER MÁS PUEDE TENER OTRA FUNCIONALIDAD//
     }
     contenedor.innerHTML = info
+  
 })
 .catch(function(error){
     console.log(`El error es ${error}`)
 })
+
+
 
 let recomendados = 'https://api.themoviedb.org/3/tv/popular?api_key=';
 let contenedor2 = document.querySelector('.section2');
@@ -47,17 +51,18 @@ fetch(recomendados + keyApi)
       info2 +=`
       <section class='section2'>
         <article>
-          <h5> ${data.results[i].original_title}</h5>
+          <h5> <a class='tituloseries' href="./detallepelis.html?id=${data.results[i].id}"> ${data.results[i].name} </a></h5>
           <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" height="300px">
-          <p>${data.results[i].release_date}</p>
+          <p> <a class='textoseries' href="./detallepelis.html?id=${data.results[i].id}" >${data.results[i].first_air_date}</a> </p>
           <nav class="navseries">
-            <a class="vermás" href="./detalleserie.html" > VER MÁS </a>
+            <a class="vermás" href="./detallepelis.html?id=${data.results[i].id}" > VER MÁS </a>
           </nav>
         </article>
       </section>
       `
     }
     contenedor2.innerHTML = info2
+    
 })
 .catch(function(error){
     console.log(`El error es ${error}`)
@@ -77,11 +82,11 @@ fetch(nuevas + keyApi)
       info3 +=`
       <section class='section3'>
         <article>
-          <h5> ${data.results[i].original_title}</h5>
+          <h5><a class="titulopeli" href="./detalleserie.htmll?id=${data.results[i].id}" > ${data.results[i].original_title} </a></h5>
           <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" height="300px">
-          <p>${data.results[i].release_date}</p>
+          <p> <a class="textopeli" href="./detalleserie.htmll?id=${data.results[i].id}" >${data.results[i].release_date}</a></p>
           <nav class="navseries">
-            <a class="vermás" href="./detalleserie.html" > VER MÁS </a>
+            <a class="vermás" href="./detalleserie.htmll?id=${data.results[i].id}" > VER MÁS </a>
           </nav>
         </article>
       </section>
