@@ -1,3 +1,17 @@
+let formulario = document.querySelector('.form')
+let buscador = document.querySelector('.buscador')
+
+formulario.addEventListener('submit', function(event){
+  event.preventDefault();
+  if(buscador.value == ''){
+    alert('La búsqueda está vacía')
+  }else if(buscador.value.length<3){
+    alert('La búsqueda requiere más de 3 caracteres')
+  }else{
+    this.submit()
+  }
+})
+
 let generos = "https://api.themoviedb.org/3/genre/movie/list?api_key="
 let keyApi = '0c5fb97f0c55576b638b49d73fa8d73e'
 let contenedor = document.querySelector('.generos1')
