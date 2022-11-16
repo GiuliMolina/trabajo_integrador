@@ -97,7 +97,7 @@ fetch(nuevas + keyApi)
           <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" height="300px">
           <p> <a class="textopeli" href="./detalleserie.htmll?id=${data.results[i].id}" >${data.results[i].release_date}</a></p>
           <nav class="navseries">
-            <a class="vermás" href="./detalleserie.htmll?id=${data.results[i].id}" > VER MÁS </a>
+            <a class="vermás" href="./detallepelis.htmll?id=${data.results[i].id}" > VER MÁS </a>
           </nav>
         </article>
       </section>

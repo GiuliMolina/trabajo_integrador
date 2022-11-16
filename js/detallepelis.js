@@ -33,9 +33,12 @@ fetch(detallepelis+apiKey)
   })
   .then(function(data){
         console.log(data)
-        info+=` <article class="title">
-                <h2>${data.original_title}</h2>
-                <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" height="500px" width="300px">
+        info+=`   <article class="title">
+                    <h2>${data.original_title}</h2>
+                    </article>
+                  <article class="imagen">
+                    <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" height="500px" width="300px">
+                  </article>
                 <section class="section1">
                   <article class="article1">
                     <h4> ESTRENO: </h4>
