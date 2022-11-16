@@ -28,22 +28,19 @@ fetch(detallepelis+apiKey)
   })
   .then(function(data){
         console.log(data)
-        info+=` <section class="title">
+        info+=` <article class="title">
                 <h2>${data.original_title}</h2>
-                </section>
-            <section class="imagen">
                 <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" height="500px" width="300px">
-            </section>
-            <section class="section1">
-                <article class="article1">
+                <section class="section1">
+                  <article class="article1">
                     <h4> ESTRENO: </h4>
                     <p> ${data.release_date}</p>
-                </article>
-                <article class="article1">
+                  </article>
+                  <article class="article1">
                     <h4> DURACIÓN: </h5>
                     <p>${data.runtime} minutos </p>
-                </article>
-                <article class="article1">
+                  </article>
+                  <article class="article1">
                     <h4> GÉNEROS:</h5>
                     `
                     for (let i=0; i<data.genres.length; i++){
