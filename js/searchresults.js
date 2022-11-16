@@ -15,11 +15,11 @@ let api = 'https://api.themoviedb.org/3/movie/popular?api_key=0c5fb97f0c55576b63
 
 let multi = location.search;
 let objMulti = new URLSearchParams(multi);
-let keyWord = document.querySelector('pelicula')
+let keyWord = document.querySelector('.id')
 
 fetch(`${api}&query=${keyWord}`)
 .then(function(resp){
-    return resp.jason()
+    return resp.json()
 })
 .then(function(data){
     console.log(data)

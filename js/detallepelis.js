@@ -62,6 +62,7 @@ fetch(detallepelis+apiKey)
                 <article class="article1">
                 <h4> VER EN: </h5>
                 <p> donde¿? </p>
+                <botton 
             </article>
                 <article class="article2">
                     <p>${data.overview}</p>
@@ -75,3 +76,72 @@ fetch(detallepelis+apiKey)
   .catch(function(error){
       console.log(`El error es ${error}`)
   })
+
+
+  ////BOTON DE FAVORITOS/////
+
+let url = 'https://api.themoviedb.org/3/movie/popular?api_key=0c5fb97f0c55576b638b49d73fa8d73e&language=en-US&page=14'
+let query = location.search
+let objQuery = new URLSearchParams(query)
+let idFav = objQuery.get('id')
+
+
+fetch(url)
+.then(function(resp){
+  return resp.json()
+})
+.then(function(data){
+  let favoritos = obtenerfav()
+  let elementoFav = favoritos.includes(data.idFav)
+  let text = ''
+  if (elementoFav){
+    text = 'Eliminar de favoritos'
+  }else{
+    text = 'Agregar a favoritos'
+  }
+  favoritos.innerHTML = `
+  <article>
+    <h5> ${data.title}</h5>
+    <img src=${data.poster_path}
+    <button class='favoritos'> ${text} </button>
+  </article>`
+  
+  let botonfavs = document.querySelector('.favoritos')
+
+  botonfavs.addEventListener('click', function(e){
+    let favoritos = obtenerfav()
+    let elementoFav = favoritos.includes(data.idFav)
+    if(elementoFav){
+      eliminar(data.idFav, favoritos)
+      e.target.innerText = 'Agregar a favoritos'
+    }else {
+      agregar(data.idFav, favoritos)
+      e.target.innerText = 'Eliminar de favoritos'
+    }
+  })
+})
+.catch(function(error){
+  console.log(error)
+})
+
+function obtenerfav(){
+  let obtener = localStorage.getItem('favoritos')
+  if(obtener != null && obtener != undefined){
+    return JSON.parse(obtener)
+  }else{
+    return []
+  }
+}
+
+function agregar(idFav, obtener){
+  obtener.push(idFav)
+  let string = JSON.stringify(obtener)
+  localStorage.getItem('favoritos', string)
+}
+
+function eliminar(idFav, obtener){
+  let position = obtener.indexOf(idFav)
+  obtener.splice(position, 1)
+  let string2 = JSON.stringify(obtener)
+  localStorage.getItem('favoritos', string2)
+}
