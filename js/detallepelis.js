@@ -31,15 +31,16 @@ fetch(detallepelis+apiKey)
 .then(function(response){
     return response.json();
   })
-  .then(function(data){
-        console.log(data)
-        info+=`   <article class="title">
-                    <h2>${data.original_title}</h2>
-                    </article>
+.then(function(data){
+    console.log(data)
+
+        info+=` <section class="title">
+                  <h2>${data.original_title}</h2>
                   <article class="imagen">
                     <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" height="500px" width="300px">
                   </article>
-                <section class="section1">
+                  </section>
+                  <section class="section1">
                   <article class="article1">
                     <h4> ESTRENO: </h4>
                     <p> ${data.release_date}</p>
@@ -60,19 +61,19 @@ fetch(detallepelis+apiKey)
                 `)
                 }
                 info+=`
-                <article class="article1">
-                <h4> RATING: </h5>
-                <p> rating¿? </p>
-                </article>
-                <article class="article1">
-                <h4> VER EN: </h5>
-                <p> donde¿? </p>
-                <botton 
-              </article>
-                <article class="article2">
+                  <article class="article1">
+                    <h4> RATING: </h5>
+                    <p> rating¿? </p>
+                  </article>
+                  <article class="article1">
+                    <h4> VER EN: </h5>
+                    <p> donde¿? </p>
+                    <button class='favoritos'> ${text} </button>  
+                  </article>
+                  <article class="article2">
                     <p>${data.overview}</p>
-                </article>
-
+                  </article>
+              
             </section>
          `
   ///BOTON FAVORITOS///
@@ -85,12 +86,12 @@ fetch(detallepelis+apiKey)
   }else{
     text = 'Agregar a favoritos'
   }
-  contenedor.innerHTML = `
+  /*contenedor.innerHTML = `
   <article>
     <h5> ${data.title}</h5>
     <img src=${data.poster_path}
     <button class='favoritos'> ${text} </button>
-  </article>`
+  </article>`*/
   
   let botonfavs = document.querySelector('.favoritos')
   console.log(botonfavs)
@@ -109,9 +110,9 @@ fetch(detallepelis+apiKey)
 
     contenedor.innerHTML= info
   })
-  .catch(function(error){
-      console.log(`El error es ${error}`)
-  })
+.catch(function(error){
+    console.log(`El error es ${error}`)
+})
 
 
   ////BOTON DE FAVORITOS/////
