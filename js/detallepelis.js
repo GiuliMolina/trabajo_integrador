@@ -21,10 +21,10 @@ let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
 let button = document.querySelector('.button')
 let info =''
-let url = 'https://api.themoviedb.org/3/movie/popular?api_key=0c5fb97f0c55576b638b49d73fa8d73e&language=en-US&page=14'
-let query = location.search
-let objQuery = new URLSearchParams(query)
-let idFav = objQuery.get('id')
+//let url = 'https://api.themoviedb.org/3/movie/popular?api_key=0c5fb97f0c55576b638b49d73fa8d73e&language=en-US&page=14'
+//let query = location.search
+//let objQuery = new URLSearchParams(query)
+//let idFav = objQuery.get('id')
 
 
 fetch(detallepelis+apiKey)
@@ -130,14 +130,14 @@ function obtenerfav(){
   }
 }
 
-function agregar(idFav, obtener){
-  obtener.push(idFav)
+function agregar(id, obtener){
+  obtener.push(id)
   let string = JSON.stringify(obtener)
   localStorage.getItem('favoritos', string)
 }
 
 function eliminar(idFav, obtener){
-  let position = obtener.indexOf(idFav)
+  let position = obtener.indexOf(id)
   obtener.splice(position, 1)
   let string2 = JSON.stringify(obtener)
   localStorage.getItem('favoritos', string2)
