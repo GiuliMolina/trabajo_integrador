@@ -35,7 +35,7 @@ fetch(detallepelis+apiKey)
                     <h2>${data.original_title}</h2>
                   </section>
                   <article class="imagen">
-                    <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" height="500px" width="300px">
+                  <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" height="500px" width="300px">
                   </article>
                   <section class="section1">
                   <article class="article1">
@@ -58,12 +58,7 @@ fetch(detallepelis+apiKey)
                   info+=`
                   <article class="article1">
                     <h4> RATING: </h5>
-                    <p> rating¿? </p>
-                  </article>
-                  <article class="article1">
-                    <h4> VER EN: </h5>
-                    <p> donde¿? </p>
-                    
+                    <p> ${data.vote_average}</p>
                   </article>
                   <article class="article2">
                     <p>${data.overview}</p>

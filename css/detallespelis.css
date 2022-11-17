@@ -59,7 +59,6 @@ h4 {
   font-size: large;
   margin: 5px
 }
-
 .article1{
   display: flex;
   align-items: center;
@@ -96,7 +95,6 @@ h4 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  
 }
 
 a.favoritos {
