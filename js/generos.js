@@ -24,7 +24,7 @@ fetch(generos+keyApi)
 .then(function(data){
     let info = data.genres;
     let lista = ``
-    for (let i = 0; i<3; i++){
+    for (let i = 0; i<12; i++){
     lista += `
     <section class = "generos1">
         <a class="container" href="./detallegeneros1.html">
@@ -38,20 +38,6 @@ fetch(generos+keyApi)
     console.log(lista)
     console.log(data)
 
-})
-.then(function(data){
-    let info = data.genres;
-    let lista = ``
-    for (let i = 0; i<3; i++){
-    lista += `
-    <a class="container" href="./detallegeneros1.html">
-          <h5>${info[i].name}</h5>
-          <img src="./img/home/Drama.jpg" alt="Drama" height="300px" width="400px" href="./detallegeneros1.html">
-        </a>`
-    }
-    contenedor.innerHTML = lista
-    console.log(lista)
-   
 })
 .catch(function(error){
     console.log(`El error es ${error}`)
