@@ -18,7 +18,7 @@
   margin: 20px;
   
 }
-img.logo {
+.logo {
   width: 100px;
   border-radius: 20px;
 }
@@ -73,6 +73,10 @@ article {
   width: 100%;
   text-align: center;
 }
+img {
+  width: 105%;
+  height: 70%;
+}
 h1 {
   font-family: 'Caladea', serif;
   font-size: 70px;
@@ -99,9 +103,6 @@ p {
   font-family: 'Caladea', serif;
   font-size: small;
   text-align: center;
-}
-.img{
-  height: 300px;
 }
 .navseries {
   background-image: url(../img/background/TaranTado.jpg) ;

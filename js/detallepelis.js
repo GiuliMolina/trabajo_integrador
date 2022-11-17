@@ -15,16 +15,13 @@ formulario.addEventListener('submit', function(event){
 let detalle =location.search
 let objDetalle = new URLSearchParams(detalle)
 let id = objDetalle.get("id")
-//console.log("id",id)
+
 let detallepelis= `https://api.themoviedb.org/3/movie/${id}`
 let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
 let button = document.querySelector('.button')
 let info =''
-//let url = 'https://api.themoviedb.org/3/movie/popular?api_key=0c5fb97f0c55576b638b49d73fa8d73e&language=en-US&page=14'
-//let query = location.search
-//let objQuery = new URLSearchParams(query)
-//let idFav = objQuery.get('id')
+
 
 
 fetch(detallepelis+apiKey)
@@ -37,11 +34,9 @@ fetch(detallepelis+apiKey)
         info+=` <section class="title">
                     <h2>${data.original_title}</h2>
                   </section>
-                  
                   <article class="imagen">
                     <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" height="500px" width="300px">
                   </article>
-                
                   <section class="section1">
                   <article class="article1">
                     <h4> ESTRENO: </h4>
@@ -114,13 +109,6 @@ fetch(detallepelis+apiKey)
   console.log(error)
 })
 
-
-  ////BOTON DE FAVORITOS/////
-
-
-
-
-
 function obtenerfav(){
   let obtener = localStorage.getItem('favoritos')
   if(obtener != null && obtener != undefined){
@@ -136,7 +124,7 @@ function agregar(id, obtener){
   localStorage.getItem('favoritos', string)
 }
 
-function eliminar(idFav, obtener){
+function eliminar(id, obtener){
   let position = obtener.indexOf(id)
   obtener.splice(position, 1)
   let string2 = JSON.stringify(obtener)

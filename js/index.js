@@ -30,7 +30,7 @@ fetch(populares+ keyApi)
       <section class='section1'>
         <article>
           <h5><a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"> ${data.results[i].original_title} </a></h5>
-          <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" height="300px">
+          <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
           <p><a class = 'textopeli' href="./detallepelis.html?id=${data.results[i].id}">${data.results[i].release_date}</a></p>
           <nav class="navseries">
             <a class="vermás" href="./detallepelis.html?id=${data.results[i].id}" > VER MÁS </a> 
@@ -62,11 +62,11 @@ fetch(recomendados + keyApi)
       info2 +=`
       <section class='section2'>
         <article>
-          <h5> <a class='tituloseries' href="./detallepelis.html?id=${data.results[i].id}"> ${data.results[i].name} </a></h5>
-          <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" height="300px">
-          <p> <a class='textoseries' href="./detallepelis.html?id=${data.results[i].id}" >${data.results[i].first_air_date}</a> </p>
+          <h5> <a class='tituloseries' href="./detalleserie.html?id=${data.results[i].id}"> ${data.results[i].name} </a></h5>
+          <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+          <p> <a class='textoseries' href="./detalleserie.html?id=${data.results[i].id}" >${data.results[i].first_air_date}</a> </p>
           <nav class="navseries">
-            <a class="vermás" href="./detallepelis.html?id=${data.results[i].id}" > VER MÁS </a>
+            <a class="vermás" href="./detalleserie.html?id=${data.results[i].id}" > VER MÁS </a>
           </nav>
         </article>
       </section>
@@ -93,11 +93,11 @@ fetch(nuevas + keyApi)
       info3 +=`
       <section class='section3'>
         <article>
-          <h5><a class="titulopeli" href="./detalleserie.htmll?id=${data.results[i].id}" > ${data.results[i].original_title} </a></h5>
-          <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" height="300px">
-          <p> <a class="textopeli" href="./detalleserie.htmll?id=${data.results[i].id}" >${data.results[i].release_date}</a></p>
+          <h5><a class="titulopeli" href="./detallepelis.html?id=${data.results[i].id}" > ${data.results[i].original_title} </a></h5>
+          <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" >
+          <p> <a class="textopeli" href="./detallepelis.html?id=${data.results[i].id}" >${data.results[i].release_date}</a></p>
           <nav class="navseries">
-            <a class="vermás" href="./detallepelis.htmll?id=${data.results[i].id}" > VER MÁS </a>
+            <a class="vermás" href="./detallepelis.html?id=${data.results[i].id}" > VER MÁS </a>
           </nav>
         </article>
       </section>
