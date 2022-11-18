@@ -19,10 +19,8 @@ let id = objDetalle.get("id")
 let detallepelis= `https://api.themoviedb.org/3/movie/${id}`
 let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
-let button = document.querySelector('.button')
+//let button = document.querySelector('.button')
 let info =''
-
-
 
 fetch(detallepelis+apiKey)
 .then(function(response){
@@ -31,9 +29,9 @@ fetch(detallepelis+apiKey)
 .then(function(data){
     console.log(data)
 
-        info+=` <section class="title">
+        info+=` <article class="title">
                     <h2>${data.original_title}</h2>
-                  </section>
+                  </article>
                   <article class="imagen">
                   <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" height="500px" width="300px">
                   </article>
@@ -64,39 +62,41 @@ fetch(detallepelis+apiKey)
                     <p>${data.overview}</p>
                   </article>
               
-            </section>
+            
          `
-         contenedor.innerHTML= info  
+//contenedor.innerHTML= info       
   ///BOTON FAVORITOS///
   
-      let favoritos = obtenerfav()
-      let elementoFav = favoritos.includes(data.id)
-      let text = ' '
-      if (elementoFav){
-        text = 'Eliminar de favoritos'
-      }else{
-        text = 'Agregar a favoritos'
-      }
-  button.innerHTML= `
-  <article>
-    <button class='botonfavs'> ${text} </button>
-  </article>`
-  
-    let botonfavs = document.querySelector('.botonfavs')
-    
-
-    botonfavs.addEventListener('click', function(e){
     let favoritos = obtenerfav()
     let elementoFav = favoritos.includes(data.id)
-    if(elementoFav){
-      eliminar(data.id, favoritos)
-      e.target.innerText = 'Agregar a favoritos'
-    }else {
-      agregar(data.id, favoritos)
-      e.target.innerText = 'Eliminar de favoritos'
+    console.log(elementoFav)
+    let text = ''
+    if (elementoFav){
+      text = 'Eliminar de favoritos'
+    }else{
+      text = 'Agregar a favoritos'
+    }
+      //console.log(text)
+      info += `
+                    <article>
+                      <button class='btn'> ${text} </button>
+                    </article> 
+      </section>`
+contenedor.innerHTML= info
+
+    let botonfavs = document.querySelector('.btn')
+    
+    botonfavs.addEventListener('click', function(e){
+      let favoritos = obtenerfav()
+      let elementoFav = favoritos.includes(data.id)
+      if(elementoFav){
+        eliminar(data.id, favoritos)
+        e.target.innerText = 'Agregar a favoritos'
+      }else {
+        agregar(data.id, favoritos)
+        e.target.innerText = 'Eliminar de favoritos'
     }
   })
-
   
 })
 
@@ -106,17 +106,18 @@ fetch(detallepelis+apiKey)
 
 function obtenerfav(){
   let obtener = localStorage.getItem('favoritos')
-  if(obtener != null && obtener != undefined){
+  //console.log(obtener)
+  if(obtener !== null && obtener != undefined){
     return JSON.parse(obtener)
   }else{
     return []
   }
-}
+  }
 
 function agregar(id, obtener){
   obtener.push(id)
   let string = JSON.stringify(obtener)
-  localStorage.getItem('favoritos', string)
+  localStorage.setItem('favoritos', string)
 }
 
 function eliminar(id, obtener){
