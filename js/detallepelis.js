@@ -88,7 +88,6 @@ contenedor.innerHTML= info
     
     botonfavs.addEventListener('click', function(e){
       let favoritos = obtenerfav()
-      console.log(favoritos)
       let elementoFav = favoritos.includes(data.id)
       if(elementoFav){
         eliminar(data.id, favoritos)
@@ -125,7 +124,7 @@ function eliminar(id, obtener){
   let position = obtener.indexOf(id)
   obtener.splice(position, 1)
   let string2 = JSON.stringify(obtener)
-  localStorage.setItem('favoritos', string2)
+  localStorage.getItem('favoritos', string2)
 }
 
 //watch providers

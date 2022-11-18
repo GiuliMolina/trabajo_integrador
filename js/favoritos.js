@@ -12,9 +12,11 @@ formulario.addEventListener('submit', function(event){
   }
 })
 
-let container = document.querySelector(".favoritos")
-let favs = getStorage()
+let container= document.querySelector(".favoritos")
+let favs= getStorage()
+let favs2= getStorage2()
 console.log(favs)
+console.log(favs2)
 if (favs.length==0){
     container.innerHTML= `
     <li>
@@ -22,7 +24,7 @@ if (favs.length==0){
     </li>
     `}
 else{
-  console.log(getFavs(favs))
+  getFavs(favs)
 }
 
 function getStorage(){
@@ -32,16 +34,26 @@ function getStorage(){
   }
   else{
     return []
+  }}
+function getStorage2(){
+  let storage2= localStorage.getItem("favoritos2")
+  if (storage2 != null && storage!== undefined){
+    return JSON.parse(storage2)
+  }
+  else{
+    return []
   }
 }
 function getFavs(arrayFavs){
-  for(let i = 0; i<length.arrayFavs; i++){
+  for(let i = 0; i<arrayFavs.length; i++){
     fetch(`https://api.themoviedb.org/3/movie/${arrayFavs[i]}?api_key=0c5fb97f0c55576b638b49d73fa8d73e`)
     .then(function(resp){
       return resp.json()
     })
     .then(function(data){
-      console.log(data)
+      `
+      <article class="favs" ></article>`
+  
     })
     .catch(function(error){
       console.log(error)

@@ -100,7 +100,7 @@ contenedor.innerHTML= info
 })
 
 function obtenerfav(){
-  let obtener = localStorage.getItem('favoritos')
+  let obtener = localStorage.getItem('favoritos2')
   //console.log(obtener)
   if(obtener !== null && obtener != undefined){
     return JSON.parse(obtener)
@@ -112,14 +112,14 @@ function obtenerfav(){
 function agregar(id, obtener){
   obtener.push(id)
   let string = JSON.stringify(obtener)
-  localStorage.setItem('favoritos', string)
+  localStorage.setItem('favoritos2', string)
 }
 
 function eliminar(id, obtener){
   let position = obtener.indexOf(id)
   obtener.splice(position, 1)
   let string2 = JSON.stringify(obtener)
-  localStorage.getItem('favoritos', string2)
+  localStorage.getItem('favoritos2', string2)
 }
 
 //watch providers

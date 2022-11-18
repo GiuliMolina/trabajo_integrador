@@ -12,7 +12,7 @@ formulario.addEventListener('submit', function(event){
   }
 })
 
-let endpoint = 'https://api.themoviedb.org/3/discover/movie?api_key=0c5fb97f0c55576b638b49d73fa8d73e'
+let endpoint = 'https://api.themoviedb.org/3/discover/movie?api_key=0c5fb97f0c55576b638b49d73fa8d73e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate'
 let detalleGenero = location.search
 let objDetalleGenero = new URLSearchParams(detalleGenero)
 let id = objDetalleGenero.get('id')
@@ -46,6 +46,7 @@ conteiner.innerHTML = genero
   console.log(error)
 })
 
+<<<<<<< HEAD
 let endpointTv = 'https://api.themoviedb.org/3/discover/tv?api_key=0c5fb97f0c55576b638b49d73fa8d73e'
 let detalleGeneroTv = location.search
 let objTv = new URLSearchParams(detalleGeneroTv)
