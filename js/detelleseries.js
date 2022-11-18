@@ -40,7 +40,7 @@ fetch(detalleseries+apiKey)
                     <p> ${data.first_air_date}</p>
                   </article>
                   <article class="article1">
-                    <h4> GÉNEROS:</h5>
+                    <h4> GÉNEROS:</h4>
                     `
                     for (let i=0; i<data.genres.length; i++){
                     let genero= data.genres[i].name
@@ -50,7 +50,7 @@ fetch(detalleseries+apiKey)
                         
                   info+=`
                   <article class="article1">
-                    <h4> RATING: </h5>
+                    <h4> RATING: </h4>
                     <p> ${data.vote_average}</p>
                   </article>
                   <article class="article2">
@@ -121,3 +121,17 @@ function eliminar(id, obtener){
   let string2 = JSON.stringify(obtener)
   localStorage.getItem('favoritos', string2)
 }
+
+//watch providers
+let providers= `https://api.themoviedb.org/3/tv/${id}/watch/providers`
+fetch(providers+apiKey)
+.then(function(response){
+  return response.json();
+})
+.then(function(data){
+  console.log(data.results)
+
+})
+.catch(function(error){
+  console.log(error)
+})
