@@ -22,7 +22,7 @@ if (favs.length==0){
     </li>
     `}
 else{
-  getFavs(favs)
+  console.log(getFavs(favs))
 }
 
 function getStorage(){
@@ -36,7 +36,7 @@ function getStorage(){
 }
 function getFavs(arrayFavs){
   for(let i = 0; i<length.arrayFavs; i++){
-    fetch(`https://api.themoviedb.org/3/movie/${arrayFavs[i].id}?api_key=0c5fb97f0c55576b638b49d73fa8d73e`)
+    fetch(`https://api.themoviedb.org/3/movie/${arrayFavs[i]}?api_key=0c5fb97f0c55576b638b49d73fa8d73e`)
     .then(function(resp){
       return resp.json()
     })
