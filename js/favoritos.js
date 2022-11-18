@@ -12,8 +12,8 @@ formulario.addEventListener('submit', function(event){
   }
 })
 
-let container= document.querySelector(".favoritos")
-let favs= getStorage()
+let container = document.querySelector(".favoritos")
+let favs = getStorage()
 console.log(favs)
 if (favs.length==0){
     container.innerHTML= `

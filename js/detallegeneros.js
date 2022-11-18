@@ -12,15 +12,14 @@ formulario.addEventListener('submit', function(event){
   }
 })
 
-let endpoint = 'https://api.themoviedb.org/3/discover/movie?api_key=0c5fb97f0c55576b638b49d73fa8d73e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate'
+let endpoint = 'https://api.themoviedb.org/3/discover/movie?api_key=0c5fb97f0c55576b638b49d73fa8d73e'
 let detalleGenero = location.search
 let objDetalleGenero = new URLSearchParams(detalleGenero)
-let idGenero = document.querySelector('genres')
-console.log(idGenero)
+let id = objDetalleGenero.get('id')
 let conteiner = document.querySelector('.sectionpelis')
 let genero = ''
 
-fetch(endpint)
+fetch(`${endpoint}&with_genres=${id}`)
 .then(function(resp){
   return resp.json()
 })
@@ -28,7 +27,7 @@ fetch(endpint)
   console.log(data)
 
   genero += `
-  <h3>Películas de ${data.genre}</h3>
+  <h3>Películas de ${data.id}</h3>
 
   `
 conteiner.innerHTML = genero
@@ -37,4 +36,3 @@ conteiner.innerHTML = genero
   console.log(error)
 })
 
-getGenreId()
