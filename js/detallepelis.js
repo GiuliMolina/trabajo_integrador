@@ -141,3 +141,17 @@ fetch(providers+apiKey)
 .catch(function(error){
   console.log(error)
 })
+
+//get recomenadtions
+let recomedations= `https://api.themoviedb.org/3/movie/${id}/recommendations`
+fetch(recomedations+apiKey)
+.then(function(response){
+  return response.json();
+})
+.then(function(data){
+  console.log(data.results)
+
+})
+.catch(function(error){
+  console.log(error)
+})
