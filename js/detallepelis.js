@@ -1,6 +1,7 @@
 let formulario = document.querySelector('.form')
 let buscador = document.querySelector('.buscador')
 
+
 formulario.addEventListener('submit', function(event){
   event.preventDefault();
   if(buscador.value == ''){
@@ -21,6 +22,7 @@ let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
 //let button = document.querySelector('.button')
 let info =''
+let contenedor_recomedations= document.querySelector(".recomendacion")
 
 fetch(detallepelis+apiKey)
 .then(function(response){
@@ -60,9 +62,7 @@ fetch(detallepelis+apiKey)
                   </article>
                   <article class="article2">
                     <p>${data.overview}</p>
-                  </article>
-              
-            
+                  </article> 
          `
 //contenedor.innerHTML= info       
   ///BOTON FAVORITOS///
@@ -80,10 +80,18 @@ fetch(detallepelis+apiKey)
       info += `
                     <article>
                       <button class='btn'> ${text} </button>
-                    </article> 
+                    </article>
+                    <article>
+                    <button class='reco'> Recomendaciones </button>
+                  </article>
       </section>`
 contenedor.innerHTML= info
 
+    let botonreco= document.querySelector(".reco")
+    botonreco.addEventListener("click", function(){
+      console.log(contenedor_recomedations)
+      contenedor_recomedations.style.display= "flex"
+    })
     let botonfavs = document.querySelector('.btn')
     
     botonfavs.addEventListener('click', function(e){
@@ -96,7 +104,7 @@ contenedor.innerHTML= info
         agregar(data.id, favoritos)
         e.target.innerText = 'Eliminar de favoritos'
     }
-  })
+  })  
   
 })
 
@@ -124,27 +132,49 @@ function eliminar(id, obtener){
   let position = obtener.indexOf(id)
   obtener.splice(position, 1)
   let string2 = JSON.stringify(obtener)
-  localStorage.getItem('favoritos', string2)
+  localStorage.setItem('favoritos', string2)
 }
+
+
+//get recomenadtions
+let recomedations= `https://api.themoviedb.org/3/movie/${id}/recommendations`
+fetch(recomedations+apiKey)
+.then(function(response){
+  return response.json();
+})
+.then(function(data){
+  console.log(data)
+  let reco=""
+  for(let i=0; i<5; i++){
+    reco+=`
+    <article>
+      <h5>${data.results[i].original_title}</h5>
+      <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" >
+    </article>
+    `
+  }
+  contenedor_recomedations.innerHTML= reco
+})
+
+.catch(function(error){
+  console.log(error)
+})
+
+
+/*
+section en html para recomendaciones 
+
+insertar las section en el fetch
+
+ocultar con display: none en css
+
+evento click- cambiar el estilo del display none a flex
+*/
 
 //watch providers
 
 let providers= `https://api.themoviedb.org/3/movie/${id}/watch/providers`
 fetch(providers+apiKey)
-.then(function(response){
-  return response.json();
-})
-.then(function(data){
-  console.log(data.results)
-
-})
-.catch(function(error){
-  console.log(error)
-})
-
-//get recomenadtions
-let recomedations= `https://api.themoviedb.org/3/movie/${id}/recommendations`
-fetch(recomedations+apiKey)
 .then(function(response){
   return response.json();
 })

@@ -119,7 +119,7 @@ function eliminar(id, obtener){
   let position = obtener.indexOf(id)
   obtener.splice(position, 1)
   let string2 = JSON.stringify(obtener)
-  localStorage.getItem('favoritos2', string2)
+  localStorage.setItem('favoritos2', string2)
 }
 
 //watch providers
@@ -135,4 +135,6 @@ fetch(providers+apiKey)
 .catch(function(error){
   console.log(error)
 })
+
+//get recomendations
 

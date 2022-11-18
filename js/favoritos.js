@@ -15,6 +15,7 @@ formulario.addEventListener('submit', function(event){
 let container= document.querySelector(".favoritos")
 let favs= getStorage()
 let favs2= getStorage2()
+let info= ""
 console.log(favs)
 console.log(favs2)
 if (favs.length==0){
@@ -24,7 +25,8 @@ if (favs.length==0){
     </li>
     `}
 else{
-  getFavs(favs)
+  getFavspelis(favs)
+  getFavsSeries(favs2)
 }
 
 function getStorage(){
@@ -37,22 +39,52 @@ function getStorage(){
   }}
 function getStorage2(){
   let storage2= localStorage.getItem("favoritos2")
-  if (storage2 != null && storage!== undefined){
+  if (storage2 != null && storage2!== undefined){
     return JSON.parse(storage2)
   }
   else{
     return []
   }
 }
-function getFavs(arrayFavs){
-  for(let i = 0; i<arrayFavs.length; i++){
-    fetch(`https://api.themoviedb.org/3/movie/${arrayFavs[i]}?api_key=0c5fb97f0c55576b638b49d73fa8d73e`)
+function getFavspelis(arrayFavsPeli){
+  for(let i = 0; i<arrayFavsPeli.length; i++){
+    fetch(`https://api.themoviedb.org/3/movie/${arrayFavsPeli[i]}?api_key=0c5fb97f0c55576b638b49d73fa8d73e`)
     .then(function(resp){
       return resp.json()
     })
     .then(function(data){
+      console.log(data)
+      container.innerHTML+=
       `
-      <article class="favs" ></article>`
+      <article class="favs" >
+        <h5> ${data.original_title}" </h5>
+        <img class=imagenes src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" >
+  
+      </article>`
+  
+    })
+    .catch(function(error){
+      console.log(error)
+    })
+    
+  }
+}
+
+function getFavsSeries(arrayFavsserie){
+  for(let i = 0; i<arrayFavsserie.length; i++){
+    fetch(`https://api.themoviedb.org/3/tv/${arrayFavsserie[i]}?api_key=0c5fb97f0c55576b638b49d73fa8d73e`)
+    .then(function(resp){
+      return resp.json()
+    })
+    .then(function(data){
+      console.log(data)
+      container.innerHTML+=
+      `
+      <article class="favs" >
+        <h5> ${data.name}" </h5>
+        <img class= imagenes src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.name}" >
+  
+      </article>`
   
     })
     .catch(function(error){

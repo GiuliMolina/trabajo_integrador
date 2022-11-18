@@ -56,10 +56,15 @@ h5 {
   color: white;
   text-align: center;
 }
+.imagenes{
+  height: 300px;
+  width: "200px";
+}
 .favoritos {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  align-items: center;
 }
 .favs {
   width: 100%;
