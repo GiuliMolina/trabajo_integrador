@@ -185,6 +185,19 @@ footer {
   font-family: 'Caladea', serif;
   font-size: small;
 }
+.providers{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.imgprov{
+  height: 50px;
+  margin-left: 15px;
+  border-radius: 15px;
+}
 @media(max-width:1024px){
   .header {
     width: 95%;

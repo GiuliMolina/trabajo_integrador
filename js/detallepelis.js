@@ -172,15 +172,18 @@ fetch(providers+apiKey)
   return response.json();
 })
 .then(function(data){
-  console.log(data.results)
+  console.log(data.results.US.flatrate)
   prov=""
   prov+=`
   <article class="article1">
-    <h4> DONDE VER: </h4>
-    <p> ${data.results}</p>
-  </article> 
+  <h4> DONDE VER: </h4>
   `
-
+  for(let i=0; i<data.results.US.flatrate.length; i++){
+  prov+=`
+    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" >
+  </article> 
+  `}
+  contenedorProviders.innerHTML= prov
 })
 .catch(function(error){
   console.log(error)

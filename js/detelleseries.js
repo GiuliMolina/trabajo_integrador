@@ -19,6 +19,7 @@ let detalleseries= `https://api.themoviedb.org/3/tv/${id}`
 let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
 let contenedor_recomedations= document.querySelector(".recomendacion")
+let contenedorProviders= document.querySelector(".providers")
 //let button = document.querySelector('.button')
 let info =''
 
@@ -54,10 +55,12 @@ fetch(detalleseries+apiKey)
                     <h4> RATING: </h4>
                     <p> ${data.vote_average}</p>
                   </article>
+                  </section>
+                  <section class="overview">
                   <article class="article2">
                     <p>${data.overview}</p>
                   </article>
-              
+                  </section>
             
          `
 //contenedor.innerHTML= info       
@@ -73,7 +76,7 @@ fetch(detalleseries+apiKey)
       text = 'Agregar a favoritos'
     }
       //console.log(text)
-      info += `
+      info += `     <section class="section1">
                     <article>
                       <button class='btn'> ${text} </button>
                     </article>
@@ -174,8 +177,20 @@ fetch(providers+apiKey)
 })
 .then(function(data){
   console.log(data.results)
-
+  prov=""
+  prov+=`
+  <article class="article1">
+  <h4> DONDE VER: </h4>
+  `
+  for(let i=0; i<data.results.US.flatrate.length; i++){
+  prov+=`
+    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" >
+  </article> 
+  `}
+  contenedorProviders.innerHTML= prov
 })
+
+
 .catch(function(error){
   console.log(error)
 })
