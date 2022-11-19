@@ -54,17 +54,24 @@ img {
   margin: 140px 20px;
   text-align: justify;
 }
+.titulo {
+  
+}
 .sectionpelis {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 50px;
   margin-top: 20px;
-  justify-content: space-between;
+  width: 100%;
 }
 article {
   width: 100%;
   text-align: center;
 }
-
+img {
+  width: 60%;
+  height: 70%;
+}
 .vermás {
   color: white;
   font-family: 'Caladea', serif;
