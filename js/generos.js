@@ -28,7 +28,7 @@ fetch(generos+keyApi)
     for (let i = 0; i<12; i++){
     lista += `
     <section class = "generos1">
-        <a class="container" href="./detallegeneros1.html?id=${data.genres[i].id}&name=${info[i].name}">
+        <a class="container" href="./detallegeneros1.html?id=${data.genres[i].id}&name=${info[i].name}&type=movie">
             <h5>${info[i].name}</h5>
             <img src="./img/home/sobrenatural.jpg" alt="Sobrenatural" height="300px" width="400px">
         </a>
@@ -45,7 +45,29 @@ fetch(generos+keyApi)
     console.log(error)
 })
 
-/*function getGenreId(){
-  let idGenre = `${data.genres[i].id}`
-  return idGenre
-}*/
+let generos2 = 'https://api.themoviedb.org/3/genre/tv/list?api_key=0c5fb97f0c55576b638b49d73fa8d73e&language=en-US'
+let contenedor2 = document.querySelector('.generos2')
+let info2 = ''
+
+fetch(generos2)
+.then(function(resp){
+  return resp.json()
+})
+.then(function(data){
+  console.log(data)
+  let info2 = data.genres;
+  let lista2 = ''
+  for (let i = 0; i<12; i++){
+    lista2 += `<section class = "generos2">
+    <a class="container" href="./detallegeneros1.html?id=${data.genres[i].id}&name=${info2[i].name}&type=tv">
+        <h5>${info2[i].name}</h5>
+        <img src="./img/home/sobrenatural.jpg" alt="Sobrenatural" height="300px" width="400px">
+    </a>
+    </section>`
+  }
+contenedor2.innerHTML = lista2
+
+})
+.catch(function(error){
+  console.log(error)
+})

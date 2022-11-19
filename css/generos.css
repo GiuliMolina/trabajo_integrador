@@ -49,6 +49,7 @@ h3 {
   color: white;
   text-decoration: none;
   margin: 20px;
+  margin-top: 40px;
 }
 h5 {
   font-family: 'Caladea', serif;
@@ -80,9 +81,10 @@ footer {
 }
 .generos2 {
   display: flex;
-  margin-left: 10%;
-  margin-right: 10%;
   justify-content: space-between;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
 }
 .container {
   width: 100%;
