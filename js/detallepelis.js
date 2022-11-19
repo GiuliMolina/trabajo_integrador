@@ -42,10 +42,10 @@ fetch(detallepelis+apiKey)
               <section class="section2">
                 <article class="article2">
                   <h3>Sinopsis: </h3>
-                  <p>${data.overview}</p>
+                  <p class='psinopsis'>${data.overview}</p>
                 </article> 
                 <article class="article1">
-                   <h3>Sobre ${data.original_title}: </h3>
+                   <h3>SOBRE ${data.original_title}: </h3>
                 </article>                 
                 <article class="article1">
                   <h4> ESTRENO: </h4>
@@ -72,6 +72,7 @@ fetch(detallepelis+apiKey)
                   </article>
             
          `
+         
 
 //contenedor.innerHTML= info       
   ///BOTON FAVORITOS///

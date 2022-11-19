@@ -167,6 +167,9 @@ footer {
 a {
   text-decoration: none;
 }
+p.psinopsis {
+  font-size: larger;
+}
 .imagenreco{
   height: 300px;
 }
