@@ -82,7 +82,9 @@ footer {
   font-size:medium;
   padding: 30px;
 }
-
+a {
+  text-decoration: none;
+}
 .navseries {
   background-color: #23074d;
   padding: 8px;

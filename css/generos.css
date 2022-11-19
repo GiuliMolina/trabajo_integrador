@@ -97,6 +97,13 @@ footer {
   border-width: 2px;
   border-color: white;
 }
+a {
+  text-decoration: none;
+}
+.btngeneros {
+  background-color: #cc5333;
+  border-radius: 10px;
+}
 .btn {
   color: white;
   background-color: #23074d;

@@ -154,6 +154,19 @@ footer {
   border-radius: 20px;
   margin-top: 20px;
 }
+.bottonReviews{
+  background: #cc5333; 
+  border: none;
+  color: white;
+  padding: 9px 10px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+a {
+  text-decoration: none;
+}
 .imagenreco{
   height: 300px;
 }

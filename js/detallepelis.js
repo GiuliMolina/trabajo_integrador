@@ -23,6 +23,7 @@ let info =''
 let contenedor_recomedations= document.querySelector(".recomendacion")
 let contenedorProviders= document.querySelector(".providers")
 let contenedorTriller= document.querySelector(".triller")
+let conteinerReviews = document.querySelector('.reviews')
 
 fetch(detallepelis+apiKey)
 .then(function(response){
@@ -69,8 +70,9 @@ fetch(detallepelis+apiKey)
                     <h4> RATING: </h4>
                     <p> ${data.vote_average}</p>
                   </article>
-
+            
          `
+
 //contenedor.innerHTML= info       
   ///BOTON FAVORITOS///
   
@@ -90,11 +92,14 @@ fetch(detallepelis+apiKey)
         <article class="article1">
           <button class='reco'> Recomendaciones </button>
         </article>
+        <article>
+          <button class='bottonReviews'> Get Reviews </button>
+        </article>
       </section>
       </section>
       </section>`
       contenedor.innerHTML= info
-contenedor_recomedations.style.display = "none"
+    contenedor_recomedations.style.display = "none"
     let botonreco= document.querySelector(".reco")
     botonreco.addEventListener("click", function(){
       if (contenedor_recomedations.style.display=== "none"){
@@ -103,6 +108,16 @@ contenedor_recomedations.style.display = "none"
       else{
         contenedor_recomedations.style.display= "none"
       }
+    })
+    let bottonReviews = document.querySelector('.bottonReviews')
+    conteinerReviews.style.display = 'none';
+    bottonReviews.addEventListener('click', function(){
+    
+    if(conteinerReviews.style.display === 'none'){
+      conteinerReviews.style.display = 'flex'
+    }else{
+      conteinerReviews.style.display = 'none'
+    }
     })
     let botonfavs = document.querySelector('.btn')
     botonfavs.addEventListener('click', function(e){
@@ -220,3 +235,33 @@ fetch(video+apiKey)
 .catch(function(error){
   console.log(error)
 })
+
+
+
+let reviews = `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=0c5fb97f0c55576b638b49d73fa8d73e`
+
+fetch(reviews)
+.then(function(resp){
+  return resp.json()
+})
+.then(function(data){
+  console.log(data)
+  let r = ''
+  for(let i=0; i<3; i++){
+  
+   r += `
+   <article>
+   <p> ${data.results[i].author}</p>
+   <p> ${data.results[i].content}</p>
+   </article>
+   `
+  }
+  conteinerReviews.innerHTML = r
+
+  
+})
+.catch(function(error){
+  console.log(error)
+})
+
+

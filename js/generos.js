@@ -59,7 +59,7 @@ fetch(generos2)
   let lista2 = ''
   for (let i = 0; i<12; i++){
     lista2 += `<section class = "generos2">
-    <a class="container" href="./detallegeneros1.html?id=${data.genres[i].id}&name=${info2[i].name}&type=tv">
+    <a class="container" href="./detallegeneros1.html?id=${data.genres[i].id}&name=${info2[i].name}&type=">
         <h5>${info2[i].name}</h5>
         <img src="./img/home/sobrenatural.jpg" alt="Sobrenatural" height="300px" width="400px">
     </a>

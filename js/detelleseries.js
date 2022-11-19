@@ -20,8 +20,10 @@ let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
 let contenedor_recomedations= document.querySelector(".recomendacion")
 let contenedorProviders= document.querySelector(".providers")
+let conteinerReviewsTv = document.querySelector('.reviews')
 //let button = document.querySelector('.button')
 let info =''
+
 
 fetch(detalleseries+apiKey)
 .then(function(response){
@@ -83,6 +85,9 @@ fetch(detalleseries+apiKey)
                     <article>
                     <button class='reco'> Recomendaciones </button>
                     </article>
+                    <article>
+                    <button class='bottonReviews'> Get Reviews </button>
+                    </article>
       </section>`
 contenedor.innerHTML= info
 contenedor_recomedations.style.display = "none"
@@ -95,6 +100,17 @@ contenedor_recomedations.style.display = "none"
         contenedor_recomedations.style.display= "none"
       }
     })
+
+  let bottonReviews = document.querySelector('.bottonReviews')
+  conteinerReviewsTv.style.display = 'none'
+  bottonReviews.addEventListener('click', function(){
+    
+    if(conteinerReviewsTv.style.display === 'none'){
+      conteinerReviewsTv.style.display = 'flex'
+    }else{
+      conteinerReviewsTv.style.display = 'none'
+    }  
+  })
     let botonfavs = document.querySelector('.btn')
     
     botonfavs.addEventListener('click', function(e){
@@ -108,6 +124,8 @@ contenedor_recomedations.style.display = "none"
         e.target.innerText = 'Eliminar de favoritos'
     }
   })
+
+  
   
 })
 
@@ -191,6 +209,34 @@ fetch(providers+apiKey)
 })
 
 
+.catch(function(error){
+  console.log(error)
+})
+
+
+// get reviews//
+let reviews = `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=0c5fb97f0c55576b638b49d73fa8d73e`
+
+fetch(reviews)
+.then(function(resp){
+  return resp.json()
+})
+.then(function(data){
+  console.log(data)
+  /*let rseries = ''
+  for(let i=0; i<3; i++){
+  
+   rseries += `
+   <article>
+   <p> ${data.results[i].author}</p>
+   <p> ${data.results[i].content}</p>
+   </article>
+   `
+  }
+  conteinerReviewsTv.innerHTML = rseries*/
+
+  
+})
 .catch(function(error){
   console.log(error)
 })

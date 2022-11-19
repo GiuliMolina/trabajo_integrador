@@ -17,6 +17,9 @@ body{
   flex-wrap: wrap;
   margin: 20px;
 }
+a {
+  text-decoration: none;
+}
 img.logo {
   width: 100px;
   border-radius: 20px;

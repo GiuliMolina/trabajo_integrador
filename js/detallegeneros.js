@@ -53,8 +53,8 @@ if(type == 'movie'){
     genero2 += `
     <section class='sect'>
     <article class='pelis'>
-    <h5 class='titulopelis'>${data.results[i].title} </h5>
-    <img class='imgpelis' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+    <a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"><h5 class='titulopelis'>${data.results[i].title} </h5>
+    <img class='imgpelis' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}"></a>
     </article>
     </section>
     `
@@ -63,8 +63,8 @@ if(type == 'movie'){
     genero2 += `
     <section class='sect'>
     <article class='pelis'>
-    <h5 class='titulopelis'>${data.results[i].title} </h5>
-    <img class='imgpelis' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+    <a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"><h5 class='titulopelis'>${data.results[i].title} </h5>
+    <img class='imgpelis' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}"></a>
     </article>
     </section>
     `
@@ -73,8 +73,8 @@ if(type == 'movie'){
     genero2 += `
     <section class='sect'>
     <article class='pelis'>
-    <h5 class='titulopelis'>${data.results[i].title} </h5>
-    <img class='imgpelis' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+    <a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"><h5 class='titulopelis'>${data.results[i].title} </h5>
+    <img class='imgpelis' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}"></a>
     </article>
     </section>
     `
@@ -103,8 +103,8 @@ else{
     generoTv2 += `
     <section class='sect'>
     <article class='series'>
-    <h5 class='tituloserie'>${data.results[i].name}</h5>
-    <img class='imgseries' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+    <a class='tituloseries' href="./detalleserie.html?id=${data.results[i].id}"><h5 class='tituloserie'>${data.results[i].name}</h5>
+    <img class='imgseries' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}"></a>
     </article>
     </section>
     `
@@ -113,8 +113,8 @@ else{
       generoTv2 += `
       <section class='sect'>
       <article class='series'>
-      <h5 class='tituloserie'>${data.results[i].name}</h5>
-      <img class='imgseries' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+      <a class='tituloseries' href="./detalleserie.html?id=${data.results[i].id}"><h5 class='tituloserie'>${data.results[i].name}</h5>
+      <img class='imgseries' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}"></a>
       </article>
       </section>
       `
@@ -123,8 +123,8 @@ else{
         generoTv2 += `
         <section class='sect'>
         <article class='series'>
-        <h5 class='tituloserie'>${data.results[i].name}</h5>
-        <img class='imgseries' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+        <a class='tituloseries' href="./detalleserie.html?id=${data.results[i].id}"><h5 class='tituloserie'>${data.results[i].name}</h5>
+        <img class='imgseries' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}"></a>
         </article>
         </section>
         `

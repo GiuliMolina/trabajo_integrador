@@ -130,10 +130,16 @@ p {
 .tituloserie {
   text-align: center;
   max-width: 231px;
+  color: white;
+  
 }
 .titulopelis {
   text-align: center;
   max-width: 231px;
+  color: white;
+}
+a {
+  text-decoration: none;
 }
 footer {
   background-color: #23074d;

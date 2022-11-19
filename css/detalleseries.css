@@ -157,6 +157,16 @@ footer {
   margin-top: 20px;
   margin-left: 30px;
 }
+.bottonReviews{
+  background: #cc5333; 
+  border: none;
+  color: white;
+  padding: 9px 10px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
 .videos {
   background: #cc5333; 
   border: none;
@@ -202,6 +212,9 @@ footer {
   align-items: center;
   justify-content: center;
   margin-top: 30px;
+}
+a {
+  text-decoration: none;
 }
 .imgprov{
   height: 50px;

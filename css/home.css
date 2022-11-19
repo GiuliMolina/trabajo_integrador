@@ -77,6 +77,9 @@ img {
   width: 105%;
   height: 70%;
 }
+a {
+  text-decoration: none;
+}
 h1 {
   font-family: 'Caladea', serif;
   font-size: 70px;
