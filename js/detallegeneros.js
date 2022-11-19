@@ -24,7 +24,19 @@ console.log(type)
 let genero = ''
 let genero2 = ''
 
-if(type){
+let endpointTv = 'https://api.themoviedb.org/3/discover/tv?api_key=0c5fb97f0c55576b638b49d73fa8d73e'
+let detalleGeneroTv = location.search
+let objTv = new URLSearchParams(detalleGeneroTv)
+let id2 = objTv.get('id')
+let nameGenre2 = objTv.get('name')
+let type2 = objTv.get('type')
+console.log(type2)
+let conteiner2 = document.querySelector('.sectionseries')
+let titulo2 = document.querySelector('.titulo2')
+let generoTv = ''
+let generoTv2 = ''
+
+if(type == 'movie'){
   fetch(`${endpoint}&with_genres=${id}&name=${nameGenre}&type=${type}`)
   .then(function(resp){
     return resp.json()
@@ -37,11 +49,31 @@ if(type){
     </article>
   `
   titulo.innerHTML = genero
-  for(let i=0; i<data.results.length; i++){
+  for(let i=0; i<5; i++){
     genero2 += `
-    <section class='pelis'>
-    <article>
-    <h5>${data.results[i].title} </h5>
+    <section class='sect'>
+    <article class='pelis'>
+    <h5 class='titulopelis'>${data.results[i].title} </h5>
+    <img class='imgpelis' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+    </article>
+    </section>
+    `
+  }
+  for(let i=5; i<11; i++){
+    genero2 += `
+    <section class='sect'>
+    <article class='pelis'>
+    <h5 class='titulopelis'>${data.results[i].title} </h5>
+    <img class='imgpelis' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+    </article>
+    </section>
+    `
+  }
+  for(let i=11; i<16; i++){
+    genero2 += `
+    <section class='sect'>
+    <article class='pelis'>
+    <h5 class='titulopelis'>${data.results[i].title} </h5>
     <img class='imgpelis' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
     </article>
     </section>
@@ -54,8 +86,8 @@ conteiner.innerHTML = genero2
 })
 } 
 
-else if (type2){
-  fetch(`${endpointTv}&with_genres=${id2}&name=${nameGenre2}&type=${type2}`)
+else{
+  fetch(`${endpointTv}&with_genres=${id2}&name=${nameGenre2}`)
 .then(function(resp){
   return resp.json()
 })
@@ -66,15 +98,38 @@ else if (type2){
     <h3> Series de ${nameGenre2} </h3>
     </article>
   `
-  conteiner2.innerHTML = generoTv
-  for(let i=0; i<data.results.length; i++){
+  titulo2.innerHTML = generoTv
+  for(let i=0; i<5; i++){
     generoTv2 += `
-    <article>
-    <h5>${data.results[i].name}</h5>
+    <section class='sect'>
+    <article class='series'>
+    <h5 class='tituloserie'>${data.results[i].name}</h5>
     <img class='imgseries' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
     </article>
+    </section>
     `
   }
+    for(let i=5; i<11; i++){
+      generoTv2 += `
+      <section class='sect'>
+      <article class='series'>
+      <h5 class='tituloserie'>${data.results[i].name}</h5>
+      <img class='imgseries' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+      </article>
+      </section>
+      `
+    }
+      for(let i=11; i<16; i++){
+        generoTv2 += `
+        <section class='sect'>
+        <article class='series'>
+        <h5 class='tituloserie'>${data.results[i].name}</h5>
+        <img class='imgseries' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+        </article>
+        </section>
+        `
+      }
+      
   conteiner2.innerHTML = generoTv2
 })
 .catch(function(error){
@@ -92,69 +147,4 @@ else if (type2){
 
 
 
-
-/*fetch(`${endpoint}&with_genres=${id}&name=${nameGenre}`)
-.then(function(resp){
-  return resp.json()
-})
-.then(function(data){
-  console.log(data)
-  genero += `
-  <article>
-    <h3> Peliculas de ${nameGenre} </h3>
-    </article>
-  `
-  titulo.innerHTML = genero
-  for(let i=0; i<data.results.length; i++){
-    genero2 += `
-    <section class='pelis'>
-    <article>
-    <h5>${data.results[i].title} </h5>
-    <img class='imgpelis' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
-    </article>
-    </section>
-    `
-  }
-conteiner.innerHTML = genero2
-})
-.catch(function(error){
-  console.log(error)
-})*/
-
-
-let endpointTv = 'https://api.themoviedb.org/3/discover/tv?api_key=0c5fb97f0c55576b638b49d73fa8d73e'
-let detalleGeneroTv = location.search
-let objTv = new URLSearchParams(detalleGeneroTv)
-let id2 = objTv.get('id')
-let nameGenre2 = objTv.get('name')
-let type2 = objTv.get('type')
-console.log(type2)
-let conteiner2 = document.querySelector('.sectionseries')
-let generoTv = ''
-let generoTv2 = ''
-
-/*fetch(`${endpointTv}&with_genres=${id2}`)
-.then(function(resp){
-  return resp.json()
-})
-.then(function(data){
-  console.log(data)
-  generoTv += `
-  <article>
-    <h3> Series de ${id2} </h3>
-    </article>
-  `
-  for(let i=0; i<data.results.length; i++){
-    generoTv+= `
-    <article>
-    <h5>${data.results[i].name}</h5>
-    <img class='imgseries' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
-    </article>
-    `
-  }
-  conteiner2.innerHTML = generoTv
-})
-.catch(function(error){
-  console.log(error)
-})*/
 
