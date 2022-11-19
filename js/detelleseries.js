@@ -18,6 +18,7 @@ let id = objDetalle2.get("id")
 let detalleseries= `https://api.themoviedb.org/3/tv/${id}`
 let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
+let contenedor_recomedations= document.querySelector(".recomendacion")
 //let button = document.querySelector('.button')
 let info =''
 
@@ -75,10 +76,22 @@ fetch(detalleseries+apiKey)
       info += `
                     <article>
                       <button class='btn'> ${text} </button>
-                    </article> 
+                    </article>
+                    <article>
+                    <button class='reco'> Recomendaciones </button>
+                    </article>
       </section>`
 contenedor.innerHTML= info
-
+contenedor_recomedations.style.display = "none"
+    let botonreco= document.querySelector(".reco")
+    botonreco.addEventListener("click", function(){
+      if (contenedor_recomedations.style.display=== "none"){
+        contenedor_recomedations.style.display= "flex"
+      }
+      else{
+        contenedor_recomedations.style.display= "none"
+      }
+    })
     let botonfavs = document.querySelector('.btn')
     
     botonfavs.addEventListener('click', function(e){
@@ -122,6 +135,37 @@ function eliminar(id, obtener){
   localStorage.setItem('favoritos2', string2)
 }
 
+
+//get recomendations
+let recomedations= `
+https://api.themoviedb.org/3/tv/${id}/recommendations`
+fetch(recomedations+apiKey)
+.then(function(response){
+  return response.json();
+})
+.then(function(data){
+  console.log(data)
+  let reco=""
+  for(let i=0; i<4; i++){
+    reco+=`
+    <article class=articlereco>
+      <h4>${data.results[i].name}</h4>
+     <a href="./detalleserie.html?id=${data.results[i].id}"> <img class=imagenreco src="https://image.tmdb.org/t/p/w500/${data.results[i].backdrop_path}" alt="${data.results[i].name}" ></a>
+     <nav class="navseries">
+     <a class="vermás" href="./detalleserie.html?id=${data.results[i].id}" > VER MÁS </a>
+     </nav>
+     </article>
+    `
+  }
+  contenedor_recomedations.innerHTML= reco
+})
+
+.catch(function(error){
+  console.log(error)
+})
+
+
+
 //watch providers
 let providers= `https://api.themoviedb.org/3/tv/${id}/watch/providers`
 fetch(providers+apiKey)
@@ -135,6 +179,3 @@ fetch(providers+apiKey)
 .catch(function(error){
   console.log(error)
 })
-
-//get recomendations
-

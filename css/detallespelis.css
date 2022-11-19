@@ -144,7 +144,7 @@ footer {
   color: white;
   padding: 12px 20px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 20px;
   border-radius: 20px;
   margin-top: 20px;
 }
@@ -154,7 +154,7 @@ footer {
   color: white;
   padding: 12px 20px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 20px;
   border-radius: 20px;
   margin-top: 20px;
   margin-left: 30px;
@@ -175,7 +175,18 @@ footer {
 .overview{
   display: block;
 }
-
+.navseries {
+  background-image: url(../img/background/TaranTado.jpg) ;
+  padding: 8px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+.vermás {
+  color: white;
+  font-family: 'Caladea', serif;
+  font-size: small;
+}
 @media(max-width:1024px){
   .header {
     width: 95%;

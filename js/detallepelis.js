@@ -151,7 +151,10 @@ fetch(recomedations+apiKey)
     <article class=articlereco>
       <h4>${data.results[i].original_title}</h4>
      <a href="./detallepelis.html?id=${data.results[i].id}"> <img class=imagenreco src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" ></a>
-    </article>
+     <nav class="navseries">
+     <a class="vermás" href="./detalleserie.html?id=${data.results[i].id}" > VER MÁS </a>
+     </nav>
+     </article>
     `
   }
   contenedor_recomedations.innerHTML= reco
