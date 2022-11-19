@@ -22,6 +22,7 @@ let contenedor = document.querySelector(".contenedor")
 let info =''
 let contenedor_recomedations= document.querySelector(".recomendacion")
 let contenedorProviders= document.querySelector(".providers")
+let contenedorTriller= document.querySelector(".triller")
 
 fetch(detallepelis+apiKey)
 .then(function(response){
@@ -30,41 +31,45 @@ fetch(detallepelis+apiKey)
 .then(function(data){
     //console.log(data)
 
-        info+=` <article class="title">
-                    <h2>${data.original_title}</h2>
-                  </article>
-                  <article class="imagen">
+        info+=`<article class="title">
+                <h2>${data.original_title}</h2>
+              </article>
+            <section class="section1">
+                <article class="imagen">
                   <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" height="500px" width="300px">
-                  </article>
-                  <section class="section1">
-                  <article class="article1">
-                    <h4> ESTRENO: </h4>
-                    <p> ${data.release_date}</p>
-                  </article>
-                  <article class="article1">
-                    <h4> DURACIÓN: </h4>
-                    <p>${data.runtime} minutos </p>
-                  </article>
-                  <article class="article1">
-                    <h4> GÉNEROS:</h4>
+                </article>
+              <section class="section2">
+                <article class="article2">
+                  <h3>Sinopsis: </h3>
+                  <p>${data.overview}</p>
+                </article> 
+                <article class="article1">
+                   <h3>Sobre ${data.original_title}: </h3>
+                </article>                 
+                <article class="article1">
+                  <h4> ESTRENO: </h4>
+                  <p> ${data.release_date}</p>
+                </article>
+                <article class="article1">
+                  <h4> DURACIÓN: </h4>
+                  <p>${data.runtime} minutos </p>
+                </article>
+                <article class="article1">
+                  <h4> GÉNEROS:</h4>
                     `
-                    for (let i=0; i<data.genres.length; i++){
-                    let genero= data.genres[i].name
-                    let idgenero= data.genres[i].id
-                    info+=(`
-                        <a class="generos" href="./generos.html?id=${idgenero}"> ${genero}</a></article> `)}
+                for (let i=0; i<data.genres.length; i++){
+                  let genero= data.genres[i].name
+                  let idgenero= data.genres[i].id
+                  info+=(`
+                        <a class="generos" href="./generos.html?id=${idgenero}"> ${genero}</a>`)}
                         
                   info+=`
+                  </article>
                   <article class="article1">
                     <h4> RATING: </h4>
                     <p> ${data.vote_average}</p>
                   </article>
-                  </section>
-                  <section class=overview>
-                  <article class="article2">
-                    <p>${data.overview}</p>
-                  </article> 
-                  </section>
+
          `
 //contenedor.innerHTML= info       
   ///BOTON FAVORITOS///
@@ -77,13 +82,16 @@ fetch(detallepelis+apiKey)
     }else{
       text = 'Agregar a favoritos'
     }
-      info += `<section class=section1>
-                    <article>
-                      <button class='btn'> ${text} </button>
-                    </article>
-                    <article>
-                    <button class='reco'> Recomendaciones </button>
-                  </article>
+      info += `
+      <section class=section1>
+        <article class="article1">
+          <button class='btn'> ${text} </button>
+        </article>
+        <article class="article1">
+          <button class='reco'> Recomendaciones </button>
+        </article>
+      </section>
+      </section>
       </section>`
       contenedor.innerHTML= info
 contenedor_recomedations.style.display = "none"
@@ -172,7 +180,7 @@ fetch(providers+apiKey)
   return response.json();
 })
 .then(function(data){
-  console.log(data.results.US.flatrate)
+  console.log(data)
   prov=""
   prov+=`
   <article class="article1">
@@ -184,6 +192,30 @@ fetch(providers+apiKey)
   </article> 
   `}
   contenedorProviders.innerHTML= prov
+})
+.catch(function(error){
+  console.log(error)
+})
+
+//triller
+let video= `https://api.themoviedb.org/3/movie/${id}/videos`
+fetch(video+apiKey)
+.then(function(response){
+  return response.json();
+})
+.then(function(data){
+  console.log(data.results[0])
+  vid=""
+  for(let i = 0; i < 1; i++){
+    vid+=`
+    <article class="article1">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+    </article>
+    `
+  }
+  
+  contenedorTriller.innerHTML= vid
 })
 .catch(function(error){
   console.log(error)

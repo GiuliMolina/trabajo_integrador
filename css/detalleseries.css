@@ -157,6 +157,16 @@ footer {
   margin-top: 20px;
   margin-left: 30px;
 }
+.videos {
+  background: #cc5333; 
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
 .imagenreco{
   height: 150px;
 }

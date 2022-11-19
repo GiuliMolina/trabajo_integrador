@@ -53,50 +53,45 @@ h2 {
 h3 {
   font-family: 'Caladea', serif;
   font-size: 22px;
+  margin: 5px;
 }
 h4 {
   font-family: 'Caladea', serif;
-  font-size: large;
-  margin: 5px
+  font-size: medium;
 }
 .article1{
   display: flex;
+  padding-left: 5px;
+  padding-right: 10px;
   align-items: center;
-  padding-top: 5px;
-  padding-left: 10px;
 }
 .article2{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  background-color: #23074d;
-  border-radius: 5px;
-  padding: 5px
+  margin-bottom: 10px;
 }
 .title{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  background-color: #23074d;
   border-radius: 5px;
 }
 .section1{
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 }
 .imagen{
   text-align: center;
   padding: 10px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 300px;
+  margin:0px
 }
-
+.section2{
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  width: 950px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
 a.favoritos {
   color: white;
   background-color: #cc5333; 
@@ -117,7 +112,8 @@ a.generos {
   font-family: 'Caladea', serif;
   font-size: medium;
   padding-left: 5px;
-  display: flex;
+  display: inline;
+  text-decoration: none;
 }
 .video {
   padding: 5px;
@@ -142,9 +138,9 @@ footer {
   background: #cc5333; 
   border: none;
   color: white;
-  padding: 12px 20px;
+  padding: 9px 10px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 20px;
   margin-top: 20px;
 }
@@ -152,12 +148,11 @@ footer {
   background: #cc5333; 
   border: none;
   color: white;
-  padding: 12px 20px;
+  padding: 9px 10px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 15px;
   border-radius: 20px;
   margin-top: 20px;
-  margin-left: 30px;
 }
 .imagenreco{
   height: 300px;
@@ -173,7 +168,8 @@ footer {
   text-align: center;
 }
 .overview{
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
 }
 .navseries {
   background-image: url(../img/background/TaranTado.jpg) ;
@@ -192,7 +188,6 @@ footer {
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   margin-top: 30px;
 }
 .imgprov{
