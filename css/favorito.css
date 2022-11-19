@@ -48,8 +48,7 @@ img.logo {
 h3 {
   font-family: 'Caladea', serif;
   font-size: x-large;
-  margin-bottom: 40px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 h5 {
   font-family: 'Caladea', serif;
@@ -58,7 +57,6 @@ h5 {
 }
 .imagenes{
   height: 300px;
-  width: "200px";
 }
 .favoritos {
   display: flex;
@@ -68,7 +66,7 @@ h5 {
 }
 .favs {
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   flex-direction: row;
   text-align: center;
 }

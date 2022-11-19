@@ -58,7 +58,9 @@ function getFavspelis(arrayFavsPeli){
       `
       <article class="favs" >
         <h5> ${data.original_title}" </h5>
+        <a href="./detallepelis.html?id=${data.id}">
         <img class=imagenes src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" >
+        </a>
   
       </article>`
   
@@ -82,8 +84,9 @@ function getFavsSeries(arrayFavsserie){
       `
       <article class="favs" >
         <h5> ${data.name}" </h5>
+        <a href="./detalleserie.html?id=${data.id}">
         <img class= imagenes src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.name}" >
-  
+        </a>
       </article>`
   
     })

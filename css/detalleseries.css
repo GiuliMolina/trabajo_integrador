@@ -47,15 +47,17 @@ img.logo {
 }
 h2 {
   font-family: 'Caladea', serif;
-font-size: 40px;
+  font-size: 40px;
+  margin: 10px;
 }
 h3 {
   font-family: 'Caladea', serif;
-font-size: 22px;
+  font-size: 22px;
 }
 h4 {
   font-family: 'Caladea', serif;
   font-size: large;
+  margin: 5px;
 }
 
 .article1{
@@ -71,6 +73,14 @@ h4 {
   background-color: #23074d;
   border-radius: 5px;
 }
+.title{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #23074d;
+  border-radius: 5px;
+}
 .section1{
   display: flex;
   flex-wrap: wrap;
@@ -78,7 +88,13 @@ h4 {
   align-items: center;
   justify-content: center;
 }
-
+.imagen{
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 a.favoritos {
   color: white;
@@ -90,6 +106,13 @@ a.favoritos {
   border-radius: 20px;
 }
 p {
+  font-family: 'Caladea', serif;
+  font-size: medium;
+  padding-left: 5px;
+  display: flex;
+}
+a.generos {
+  color: white;
   font-family: 'Caladea', serif;
   font-size: medium;
   padding-left: 5px;
@@ -121,8 +144,60 @@ footer {
   cursor: pointer;
   font-size: 20px;
   border-radius: 20px;
+  margin-top: 20px;
 }
-
+.reco{
+  background: #cc5333; 
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.imagenreco{
+  height: 150px;
+}
+.recomendacion{
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.articlereco{
+  margin-left: 30px;
+  text-align: center;
+}
+.overview{
+  display: block;
+}
+.navseries {
+  background-image: url(../img/background/TaranTado.jpg) ;
+  padding: 8px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+.vermás {
+  color: white;
+  font-family: 'Caladea', serif;
+  font-size: small;
+}
+.providers{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.imgprov{
+  height: 50px;
+  margin-left: 15px;
+  border-radius: 15px;
+}
 @media(max-width:1024px){
   .header {
     width: 95%;

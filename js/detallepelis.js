@@ -16,20 +16,19 @@ formulario.addEventListener('submit', function(event){
 let detalle =location.search
 let objDetalle = new URLSearchParams(detalle)
 let id = objDetalle.get("id")
-
 let detallepelis= `https://api.themoviedb.org/3/movie/${id}`
 let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
-//let button = document.querySelector('.button')
 let info =''
 let contenedor_recomedations= document.querySelector(".recomendacion")
+let contenedorProviders= document.querySelector(".providers")
 
 fetch(detallepelis+apiKey)
 .then(function(response){
     return response.json();
   })
 .then(function(data){
-    console.log(data)
+    //console.log(data)
 
         info+=` <article class="title">
                     <h2>${data.original_title}</h2>
@@ -60,24 +59,25 @@ fetch(detallepelis+apiKey)
                     <h4> RATING: </h4>
                     <p> ${data.vote_average}</p>
                   </article>
+                  </section>
+                  <section class=overview>
                   <article class="article2">
                     <p>${data.overview}</p>
                   </article> 
+                  </section>
          `
 //contenedor.innerHTML= info       
   ///BOTON FAVORITOS///
   
     let favoritos = obtenerfav()
     let elementoFav = favoritos.includes(data.id)
-    console.log(elementoFav)
     let text = ''
     if (elementoFav){
       text = 'Eliminar de favoritos'
     }else{
       text = 'Agregar a favoritos'
     }
-      //console.log(text)
-      info += `
+      info += `<section class=section1>
                     <article>
                       <button class='btn'> ${text} </button>
                     </article>
@@ -85,15 +85,18 @@ fetch(detallepelis+apiKey)
                     <button class='reco'> Recomendaciones </button>
                   </article>
       </section>`
-contenedor.innerHTML= info
-
+      contenedor.innerHTML= info
+contenedor_recomedations.style.display = "none"
     let botonreco= document.querySelector(".reco")
     botonreco.addEventListener("click", function(){
-      console.log(contenedor_recomedations)
-      contenedor_recomedations.style.display= "flex"
+      if (contenedor_recomedations.style.display=== "none"){
+        contenedor_recomedations.style.display= "flex"
+      }
+      else{
+        contenedor_recomedations.style.display= "none"
+      }
     })
     let botonfavs = document.querySelector('.btn')
-    
     botonfavs.addEventListener('click', function(e){
       let favoritos = obtenerfav()
       let elementoFav = favoritos.includes(data.id)
@@ -102,15 +105,14 @@ contenedor.innerHTML= info
         e.target.innerText = 'Agregar a favoritos'
       }else {
         agregar(data.id, favoritos)
-        e.target.innerText = 'Eliminar de favoritos'
-    }
-  })  
+        e.target.innerText = 'Eliminar de favoritos'}
+  })    
   
+
 })
 
 .catch(function(error){
-  console.log(error)
-})
+  console.log(error)})
 
 function obtenerfav(){
   let obtener = localStorage.getItem('favoritos')
@@ -143,14 +145,16 @@ fetch(recomedations+apiKey)
   return response.json();
 })
 .then(function(data){
-  console.log(data)
   let reco=""
-  for(let i=0; i<5; i++){
+  for(let i=0; i<4; i++){
     reco+=`
-    <article>
-      <h5>${data.results[i].original_title}</h5>
-      <img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" >
-    </article>
+    <article class=articlereco>
+      <h4>${data.results[i].original_title}</h4>
+     <a href="./detallepelis.html?id=${data.results[i].id}"> <img class=imagenreco src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" ></a>
+     <nav class="navseries">
+     <a class="vermás" href="./detalleserie.html?id=${data.results[i].id}" > VER MÁS </a>
+     </nav>
+     </article>
     `
   }
   contenedor_recomedations.innerHTML= reco
@@ -160,17 +164,6 @@ fetch(recomedations+apiKey)
   console.log(error)
 })
 
-
-/*
-section en html para recomendaciones 
-
-insertar las section en el fetch
-
-ocultar con display: none en css
-
-evento click- cambiar el estilo del display none a flex
-*/
-
 //watch providers
 
 let providers= `https://api.themoviedb.org/3/movie/${id}/watch/providers`
@@ -179,8 +172,18 @@ fetch(providers+apiKey)
   return response.json();
 })
 .then(function(data){
-  console.log(data.results)
-
+  console.log(data.results.US.flatrate)
+  prov=""
+  prov+=`
+  <article class="article1">
+  <h4> DONDE VER: </h4>
+  `
+  for(let i=0; i<data.results.US.flatrate.length; i++){
+  prov+=`
+    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" >
+  </article> 
+  `}
+  contenedorProviders.innerHTML= prov
 })
 .catch(function(error){
   console.log(error)
