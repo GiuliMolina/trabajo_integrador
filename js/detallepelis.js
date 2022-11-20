@@ -201,7 +201,7 @@ fetch(recomedations+apiKey)
 .catch(function(error){
   console.log(error)
 })
-
+let contenedorMasVideos= document.querySelector(".sectionmasvideos")
 //triller
 let video= `https://api.themoviedb.org/3/movie/${id}/videos`
 fetch(video+apiKey)
@@ -209,34 +209,35 @@ fetch(video+apiKey)
   return response.json();
 })
 .then(function(data){
-  console.log(data.results)
+  console.log(data)
   vid=""
   for(let i = 0; i < 1; i++){
     vid+=`
     <article class="articlevideo">
     <h3>Ver triller: </h3>
     <iframe class=video width="560" height="315" src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </article>
-    <button class="mastrillers"> Ver mas trillers</button>
-    <section class="sectionmasvideos">
-    `
-    for(let i = 1; i < 4; i++){
-      vid+=`
-        <iframe class=videoextra  src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </section>
-      `
-    } 
+    </article>`
+    if(data.results.length>2){
+      vid+=`<button class="mastrillers"> Ver mas trillers</button>`
+    }
+    contenedorTriller.innerHTML= vid
+    vidmas=""
+    for(let i = 1; i < 3; i++){
+      vidmas+=`
+      <iframe class=videoextra  src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      `} 
   }
-  contenedorTriller.innerHTML= vid
-  let contenedorMasVideos= document.querySelector(".sectionmasvideos")
-  let botonvideos= document.querySelector("mastrillers")
-  contenedorMasVideos.style.display = "none"
-    botonvideos.addEventListener("click", function(){
-      if (contenedorMasVideos.style.display=== "none"){
-        contenedorMasVideos.style.display= "flex"
+  contenedorMasVideos.innerHTML= vidmas
+ 
+  let botonvideos= document.querySelector(".mastrillers")
+contenedorMasVideos.style.display = "none"
+botonvideos.addEventListener("click", function(){
+    console.log("click")
+  if (contenedorMasVideos.style.display=== "none"){
+      contenedorMasVideos.style.display= "flex"
       }
-      else{
-        contenedorMasVideos.style.display= "none"
+  else{
+      contenedorMasVideos.style.display= "none"
       }
     })
   
