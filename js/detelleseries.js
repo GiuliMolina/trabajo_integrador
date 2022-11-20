@@ -18,8 +18,9 @@ let id = objDetalle2.get("id")
 let detalleseries= `https://api.themoviedb.org/3/tv/${id}`
 let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
-let contenedor_recomedations= document.querySelector(".recomendacion")
-let contenedorProviders= document.querySelector(".providers")
+let contenedor_recomedations = document.querySelector(".recomendacion")
+let contenedorProviders = document.querySelector(".providers")
+let conteinerReviewsTv = document.querySelector('.reviewstv')
 //let button = document.querySelector('.button')
 let info =''
 
@@ -40,7 +41,7 @@ fetch(detalleseries+apiKey)
                 <section class="section2">
                   <article class="article2">
                     <h3> Sinopsis:</h3>
-                    <p>${data.overview}</p>
+                    <p class='psinopsis'>${data.overview}</p>
                   </article>
                   <article class="article1">
                     <h3>Sobre ${data.name}</h3>
@@ -84,22 +85,38 @@ fetch(detalleseries+apiKey)
                       <button class='btn'> ${text} </button>
                     </article>
                     <article>
-                    <button class='reco'> Recomendaciones </button>
+                      <button class='reco'> Recomendaciones </button>
                     </article>
-      </section>
-      </section>
+                    <article>
+                      <button class='buttonReviewsTv> Get Reviews </button>
+                    </article>
       </section>`
-contenedor.innerHTML= info
-contenedor_recomedations.style.display = "none"
+    contenedor.innerHTML= info
+    
+    contenedor_recomedations.style.display = "none"
     let botonreco= document.querySelector(".reco")
+
     botonreco.addEventListener("click", function(){
-      if (contenedor_recomedations.style.display=== "none"){
-        contenedor_recomedations.style.display= "flex"
+      if (contenedor_recomedations.style.display === "none"){
+        contenedor_recomedations.style.display = "flex"
       }
       else{
         contenedor_recomedations.style.display= "none"
       }
     })
+
+    
+    conteinerReviewsTv.style.display = 'none'
+    let botonReviewsTv = document.querySelector('.buttonReviewsTv')
+
+    botonReviewsTv.addEventListener('click', function(){
+      if(conteinerReviewsTv.style.display === 'none'){
+        conteinerReviewsTv.style.display = 'flex'
+      }else{
+        conteinerReviewsTv.style.display = 'none'
+      }
+    })
+
     let botonfavs = document.querySelector('.btn')
     
     botonfavs.addEventListener('click', function(e){
@@ -158,10 +175,10 @@ fetch(recomedations+apiKey)
     reco+=`
     <article class=articlereco>
       <h4>${data.results[i].name}</h4>
-     <a href="./detalleserie.html?id=${data.results[i].id}"> <img class=imagenreco src="https://image.tmdb.org/t/p/w500/${data.results[i].backdrop_path}" alt="${data.results[i].name}" ></a>
-     <nav class="navseries">
-     <a class="vermás" href="./detalleserie.html?id=${data.results[i].id}" > VER MÁS </a>
-     </nav>
+      <a href="./detalleserie.html?id=${data.results[i].id}"> <img class=imagenreco src="https://image.tmdb.org/t/p/w500/${data.results[i].backdrop_path}" alt="${data.results[i].name}" ></a>
+       <nav class="navseries">
+      <a class="vermás" href="./detalleserie.html?id=${data.results[i].id}" > VER MÁS </a>
+      </nav>
      </article>
     `
   }
@@ -194,8 +211,31 @@ fetch(providers+apiKey)
   `}
   contenedorProviders.innerHTML= prov
 })
+.catch(function(error){
+  console.log(error)
+})
 
+// GET REVIEWS //
 
+let reviewsTv = `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=0c5fb97f0c55576b638b49d73fa8d73e`
+
+fetch(reviewsTv)
+.then(function(resp){
+  return resp.json()
+})
+.then(function(data){
+  console.log(data)
+  let rTv = ''
+  for(i=0; i<3; i++){
+    rTv += `
+    <article>
+      <p>${data.results[i].author}</p>
+      <p>${data.results[i].content}</p>
+    </article>
+    `
+  }
+  conteinerReviewsTv.innerHTML = rTv
+})
 .catch(function(error){
   console.log(error)
 })

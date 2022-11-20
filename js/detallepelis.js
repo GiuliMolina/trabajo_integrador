@@ -21,6 +21,7 @@ let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
 let info =''
 let contenedor_recomedations= document.querySelector(".recomendacion")
+let contenedorReviews = document.querySelector('.reviews')
 let contenedorTriller= document.querySelector(".triller")
 //let contenedorMasTrillers= document.querySelector(".masvideos") borrar si no uso al final
 
@@ -68,7 +69,7 @@ fetch(detallepelis+apiKey)
               <section class="section2">
                 <article class="article2">
                   <h3>Sinopsis: </h3>
-                  <p>${data.overview}</p>
+                  <p class='psinopsis'>${data.overview}</p>
                 </article> 
                 <article class="article1">
                    <h3>Sobre ${data.original_title}: </h3>
@@ -120,20 +121,37 @@ fetch(detallepelis+apiKey)
         <article class="article1">
           <button class='reco'> Recomendaciones </button>
         </article>
+        <article>
+          <button class='buttonReviews'> Get Reviews </button>
+        </article>
       </section>
       </section>
       </section>`
-      contenedor.innerHTML= info
-contenedor_recomedations.style.display = "none"
+    contenedor.innerHTML= info
+
+    contenedor_recomedations.style.display = "none"
     let botonreco= document.querySelector(".reco")
+
     botonreco.addEventListener("click", function(){
-      if (contenedor_recomedations.style.display=== "none"){
+      if (contenedor_recomedations.style.display === "none"){
         contenedor_recomedations.style.display= "flex"
       }
       else{
         contenedor_recomedations.style.display= "none"
       }
     })
+
+    contenedorReviews.style.display = 'none'
+    let botonReviews = document.querySelector('.buttonReviews')
+
+    botonReviews.addEventListener('click', function(){
+      if(contenedorReviews.style.display === 'none'){
+        contenedorReviews.style.display = 'flex'
+      }else {
+        contenedorReviews.style.display = 'none'
+      }
+    })
+
     let botonfavs = document.querySelector('.btn')
     botonfavs.addEventListener('click', function(e){
       let favoritos = obtenerfav()
@@ -245,3 +263,29 @@ botonvideos.addEventListener("click", function(){
 .catch(function(error){
   console.log(error)
 })
+
+// GET REVIEWS //
+
+let reviews = `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=0c5fb97f0c55576b638b49d73fa8d73e`
+
+fetch(reviews)
+.then(function(resp){
+  return resp.json()
+})
+.then(function(data){
+  console.log(data)
+  let r = ''
+  for(i=0; i<3; i++){
+    r += `
+    <article>
+    <p>${data.results[i].author}</p>
+    <p> ${data.results[i].content}</p>
+    </article>
+    `
+  }
+  contenedorReviews.innerHTML = r
+})
+.catch(function(error){
+  console.log(error)
+})
+

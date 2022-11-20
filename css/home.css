@@ -47,7 +47,9 @@
   padding: 14px 16px 0px 16px;
   font-size: 20px;
 }
-
+a {
+  text-decoration: none;
+}
 .section1 {
   display: flex;
   margin: 20px;
