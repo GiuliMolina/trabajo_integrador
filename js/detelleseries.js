@@ -235,7 +235,6 @@ fetch(video+apiKey)
       vid+=`<button class="mastrillers"> Ver mas trillers</button>`
     }}
 contenedorTriller.innerHTML= vid
-    /*
     vidmas=""
     for(let i = 1; i < 3; i++){
       vidmas+=`
@@ -255,7 +254,6 @@ botonvideos.addEventListener("click", function(){
       contenedorMasVideos.style.display= "none"
       }
     })
-  */
 })
 /*
 .catch(function(error){
