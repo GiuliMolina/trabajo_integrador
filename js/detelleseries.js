@@ -33,10 +33,18 @@ fetch(detalleseries+apiKey)
         info+=` <article class="title">
                     <h2>${data.name}</h2>
                   </article>
+                <section class="section1">
                   <article class="imagen">
                   <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.original_title}" height="500px" width="300px">
                   </article>
-                  <section class="section1">
+                <section class="section2">
+                  <article class="article2">
+                    <h3> Sinopsis:</h3>
+                    <p>${data.overview}</p>
+                  </article>
+                  <article class="article1">
+                    <h3>Sobre ${data.name}</h3>
+                  </article>
                   <article class="article1">
                     <h4> ESTRENO: </h4>
                     <p> ${data.first_air_date}</p>
@@ -55,12 +63,7 @@ fetch(detalleseries+apiKey)
                     <h4> RATING: </h4>
                     <p> ${data.vote_average}</p>
                   </article>
-                  </section>
-                  <section class="overview">
-                  <article class="article2">
-                    <p>${data.overview}</p>
-                  </article>
-                  </section>
+
             
          `
 //contenedor.innerHTML= info       
@@ -83,6 +86,8 @@ fetch(detalleseries+apiKey)
                     <article>
                     <button class='reco'> Recomendaciones </button>
                     </article>
+      </section>
+      </section>
       </section>`
 contenedor.innerHTML= info
 contenedor_recomedations.style.display = "none"

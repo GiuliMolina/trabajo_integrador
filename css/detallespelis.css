@@ -69,15 +69,11 @@ h4 {
 .article2{
   margin-bottom: 10px;
 }
-.articlevideo{
-  padding-left: 5px;
-  align-items: center;
-}
+
 .title{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  border-radius: 5px;
 }
 .section1{
   display: flex;
@@ -208,6 +204,10 @@ a.generos {
   width: 560px;
   padding-top: 20px;
   padding-left: 20px;
+}
+.articlevideo{
+  padding-left: 5px;
+  align-items: center;
 }
 footer {
   background-color: #23074d;
