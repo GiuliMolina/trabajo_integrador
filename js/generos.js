@@ -29,7 +29,7 @@ fetch(generos+keyApi)
     lista += `
     <section class = "generos1">
         <a class="container" href="./detallegeneros1.html?id=${data.genres[i].id}&name=${info[i].name}&type=movie">
-            <h5>${info[i].name}</h5>
+            <h5 class='titulogenero'>${info[i].name}</h5>
             <img src="./img/home/sobrenatural.jpg" alt="Sobrenatural" height="300px" width="400px">
         </a>
         
@@ -39,8 +39,20 @@ fetch(generos+keyApi)
     contenedor.innerHTML = lista
     console.log(lista)
     console.log(data)
+    
+    
+    window.addEventListener('mouseover', function(e){
+      if(e.target.classList.contains('titulogenero')){
+        e.target.style.color = 'purple'
+      }
+    })
 
-})
+    window.addEventListener('mouseout', function(e){
+      if(e.target.classList.contains('titulogenero')){
+        e.target.style.color= 'white'
+      }
+    })
+  })
 .catch(function(error){
     console.log(error)
 })
@@ -60,14 +72,41 @@ fetch(generos2)
   for (let i = 0; i<12; i++){
     lista2 += `<section class = "generos2">
     <a class="container" href="./detallegeneros1.html?id=${data.genres[i].id}&name=${info2[i].name}&type=tv">
-        <h5>${info2[i].name}</h5>
+        <h5 class='titulogenero'>${info2[i].name}</h5>
         <img src="./img/home/sobrenatural.jpg" alt="Sobrenatural" height="300px" width="400px">
     </a>
     </section>`
   }
 contenedor2.innerHTML = lista2
 
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('titulogenero')){
+    e.target.style.color = 'purple'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('titulogenero')){
+    e.target.style.color= 'white'
+  }
+})
+
 })
 .catch(function(error){
   console.log(error)
 })
+
+
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('links')){
+    e.target.style.color = 'purple'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('links')){
+    e.target.style.color= 'white'
+  }
+})
+
+    
