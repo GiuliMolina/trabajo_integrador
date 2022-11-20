@@ -21,9 +21,35 @@ let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
 let info =''
 let contenedor_recomedations= document.querySelector(".recomendacion")
-let contenedorProviders= document.querySelector(".providers")
 let contenedorTriller= document.querySelector(".triller")
 
+//watch providers
+let contenedorProviders= document.querySelector(".providers")
+let providers= `https://api.themoviedb.org/3/movie/${id}/watch/providers`
+fetch(providers+apiKey)
+.then(function(response){
+  return response.json();
+})
+.then(function(data){
+  console.log(data)
+  prov=""
+  prov+=`
+  <article class="article1">
+  <h4> DONDE VER: </h4>
+  `
+  for(let i=0; i<data.results.US.flatrate.length; i++){
+  prov+=`
+    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" >`}
+  prov+=
+    `</article> `
+  
+  
+})
+.catch(function(error){
+  console.log(error)
+})
+
+//codigo principal
 fetch(detallepelis+apiKey)
 .then(function(response){
     return response.json();
@@ -68,6 +94,9 @@ fetch(detallepelis+apiKey)
                   <article class="article1">
                     <h4> RATING: </h4>
                     <p> ${data.vote_average}</p>
+                  </article>
+                  <article class=providers>
+                    ${prov}
                   </article>
 
          `
@@ -172,31 +201,6 @@ fetch(recomedations+apiKey)
   console.log(error)
 })
 
-//watch providers
-
-let providers= `https://api.themoviedb.org/3/movie/${id}/watch/providers`
-fetch(providers+apiKey)
-.then(function(response){
-  return response.json();
-})
-.then(function(data){
-  console.log(data)
-  prov=""
-  prov+=`
-  <article class="article1">
-  <h4> DONDE VER: </h4>
-  `
-  for(let i=0; i<data.results.US.flatrate.length; i++){
-  prov+=`
-    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" >
-  </article> 
-  `}
-  contenedorProviders.innerHTML= prov
-})
-.catch(function(error){
-  console.log(error)
-})
-
 //triller
 let video= `https://api.themoviedb.org/3/movie/${id}/videos`
 fetch(video+apiKey)
@@ -208,7 +212,7 @@ fetch(video+apiKey)
   vid=""
   for(let i = 0; i < 1; i++){
     vid+=`
-    <article class="article1">
+    <article class="articlevideo">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   
     </article>
