@@ -295,3 +295,17 @@ fetch(reviewsTv)
 })
 
 */
+
+
+//CAMBIO DE COLOR EN LINKS//
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('links')){
+    e.target.style.color = 'purple'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('links')){
+    e.target.style.color= 'white'
+  }
+})
