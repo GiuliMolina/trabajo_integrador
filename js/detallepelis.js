@@ -22,6 +22,7 @@ let contenedor = document.querySelector(".contenedor")
 let info =''
 let contenedor_recomedations= document.querySelector(".recomendacion")
 let contenedorTriller= document.querySelector(".triller")
+//let contenedorMasTrillers= document.querySelector(".masvideos") borrar si no uso al final
 
 //watch providers
 let contenedorProviders= document.querySelector(".providers")
@@ -208,18 +209,37 @@ fetch(video+apiKey)
   return response.json();
 })
 .then(function(data){
-  console.log(data.results[0])
+  console.log(data.results)
   vid=""
   for(let i = 0; i < 1; i++){
     vid+=`
     <article class="articlevideo">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  
+    <h3>Ver triller: </h3>
+    <iframe class=video width="560" height="315" src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </article>
+    <button class="mastrillers"> Ver mas trillers</button>
+    <section class="sectionmasvideos">
     `
+    for(let i = 1; i < 4; i++){
+      vid+=`
+        <iframe class=videoextra  src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
+      `
+    } 
   }
-  
   contenedorTriller.innerHTML= vid
+  let contenedorMasVideos= document.querySelector(".sectionmasvideos")
+  let botonvideos= document.querySelector("mastrillers")
+  contenedorMasVideos.style.display = "none"
+    botonvideos.addEventListener("click", function(){
+      if (contenedorMasVideos.style.display=== "none"){
+        contenedorMasVideos.style.display= "flex"
+      }
+      else{
+        contenedorMasVideos.style.display= "none"
+      }
+    })
+  
 })
 .catch(function(error){
   console.log(error)
