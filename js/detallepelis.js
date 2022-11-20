@@ -57,7 +57,6 @@ fetch(detallepelis+apiKey)
     return response.json();
   })
 .then(function(data){
-    //console.log(data)
 
         info+=`<article class="title">
                 <h2>${data.original_title}</h2>
@@ -219,8 +218,9 @@ fetch(recomedations+apiKey)
 .catch(function(error){
   console.log(error)
 })
-let contenedorMasVideos= document.querySelector(".sectionmasvideos")
 //triller
+let contenedorMasVideos= document.querySelector(".sectionmasvideos")
+
 let video= `https://api.themoviedb.org/3/movie/${id}/videos`
 fetch(video+apiKey)
 .then(function(response){
@@ -237,14 +237,14 @@ fetch(video+apiKey)
     </article>`
     if(data.results.length>2){
       vid+=`<button class="mastrillers"> Ver mas trillers</button>`
-    }
+    }}
     contenedorTriller.innerHTML= vid
     vidmas=""
     for(let i = 1; i < 3; i++){
       vidmas+=`
       <iframe class=videoextra  src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       `} 
-  }
+  
   contenedorMasVideos.innerHTML= vidmas
  
   let botonvideos= document.querySelector(".mastrillers")

@@ -16,21 +16,44 @@ let objDetalle2 = new URLSearchParams(detalle2)
 let id = objDetalle2.get("id")
 
 let detalleseries= `https://api.themoviedb.org/3/tv/${id}`
+let providers= `https://api.themoviedb.org/3/tv/${id}/watch/providers`
 let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
 let contenedor_recomedations = document.querySelector(".recomendacion")
 let contenedorProviders = document.querySelector(".providers")
 let conteinerReviewsTv = document.querySelector('.reviewstv')
-//let button = document.querySelector('.button')
-let info =''
 
+
+//watch providers
+
+fetch(providers+apiKey)
+.then(function(response){
+  return response.json();
+})
+.then(function(data){
+  console.log(data.results)
+  prov=""
+  prov+=`
+  <article class="article1">
+  <h4> DONDE VER: </h4>
+  `
+  for(let i=0; i<data.results.US.flatrate.length; i++){
+  prov+=`
+    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" > 
+  `}
+  prov+=`</article>`
+  contenedorProviders.innerHTML= prov
+})
+.catch(function(error){
+  console.log(error)
+})
 fetch(detalleseries+apiKey)
 .then(function(response){
     return response.json();
   })
 .then(function(data){
     console.log(data)
-
+      let info =''
         info+=` <article class="title">
                     <h2>${data.name}</h2>
                   </article>
@@ -57,14 +80,17 @@ fetch(detalleseries+apiKey)
                     let genero= data.genres[i].name
                     let idgenero= data.genres[i].id
                     info+=(`
-                        <a class="generos" href="./generos.html?id=${idgenero}"> ${genero}</a></article> `)}
+                        <a class="generos" href="./generos.html?id=${idgenero}"> ${genero}</a> `)}
                         
                   info+=`
+                  </article>
                   <article class="article1">
                     <h4> RATING: </h4>
                     <p> ${data.vote_average}</p>
                   </article>
-
+                  <article class=providers>
+                    ${prov}
+                  </article>
             
          `
 //contenedor.innerHTML= info       
@@ -188,34 +214,62 @@ fetch(recomedations+apiKey)
 .catch(function(error){
   console.log(error)
 })
-
-
-
-//watch providers
-let providers= `https://api.themoviedb.org/3/tv/${id}/watch/providers`
-fetch(providers+apiKey)
+//triller
+let contenedorTriller= document.querySelector(".triller")
+let contenedorMasVideos= document.querySelector(".sectionmasvideos")
+let video= `https://api.themoviedb.org/3/tv/${id}/videos`
+fetch(video+apiKey)
 .then(function(response){
   return response.json();
 })
 .then(function(data){
-  console.log(data.results)
-  prov=""
-  prov+=`
-  <article class="article1">
-  <h4> DONDE VER: </h4>
-  `
-  for(let i=0; i<data.results.US.flatrate.length; i++){
-  prov+=`
-    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" >
-  </article> 
-  `}
-  contenedorProviders.innerHTML= prov
+  console.log(data)
+  vid=""
+  for(let i = 0; i < 1; i++){
+    vid+=`
+    <article class="articlevideo">
+    <h3>Ver triller: </h3>
+    <iframe class=video width="560" height="315" src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </article>`
+    if(data.results.length>2){
+      vid+=`<button class="mastrillers"> Ver mas trillers</button>`
+    }}
+contenedorTriller.innerHTML= vid
+    /*
+    vidmas=""
+    for(let i = 1; i < 3; i++){
+      vidmas+=`
+      <iframe class=videoextra  src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      `} 
+  
+  contenedorMasVideos.innerHTML= vidmas
+ 
+  let botonvideos= document.querySelector(".mastrillers")
+contenedorMasVideos.style.display = "none"
+botonvideos.addEventListener("click", function(){
+    console.log("click")
+  if (contenedorMasVideos.style.display=== "none"){
+      contenedorMasVideos.style.display= "flex"
+      }
+  else{
+      contenedorMasVideos.style.display= "none"
+      }
+    })
+  */
 })
+/*
 .catch(function(error){
   console.log(error)
 })
 
+
+*/
+
+
+
 // GET REVIEWS //
+
+/*
 
 let reviewsTv = `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=0c5fb97f0c55576b638b49d73fa8d73e`
 
@@ -239,3 +293,5 @@ fetch(reviewsTv)
 .catch(function(error){
   console.log(error)
 })
+
+*/
