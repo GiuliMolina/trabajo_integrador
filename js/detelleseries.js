@@ -16,7 +16,7 @@ let objDetalle2 = new URLSearchParams(detalle2)
 let id = objDetalle2.get("id")
 
 let detalleseries= `https://api.themoviedb.org/3/tv/${id}`
-let providersTv= `https://api.themoviedb.org/3/tv/${id}/watch/providers`
+let providers= `https://api.themoviedb.org/3/tv/${id}/watch/providers`
 let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
 let contenedor_recomedations = document.querySelector(".recomendacion")
@@ -26,29 +26,25 @@ let conteinerReviewsTv = document.querySelector('.reviewstv')
 
 //watch providers
 
-fetch(providersTv+apiKey)
+fetch(providers+apiKey)
 .then(function(response){
   return response.json();
 })
 .then(function(data){
   console.log(data.results)
-  provTv = ""
-  provTv +=`
-  <article class="article1">
+  prov=""
+  prov+=`
   <h4> DONDE VER: </h4>
   `
   for(let i=0; i<data.results.US.flatrate.length; i++){
-  provTv +=`
-    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}"> ` 
-  }
-  provTv += `</article>`
-  
-  })
+  prov+=`
+    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" > 
+  `}
+  contenedorProviders.innerHTML= prov
+})
 .catch(function(error){
   console.log(error)
 })
-
-
 fetch(detalleseries+apiKey)
 .then(function(response){
     return response.json();
@@ -66,7 +62,7 @@ fetch(detalleseries+apiKey)
                 <section class="section2">
                   <article class="article2">
                     <h3> Sinopsis:</h3>
-                    <p class='psinopsis'>${data.overview}</p>
+                    <p class='overview'>${data.overview}</p>
                   </article>
                   <article class="article1">
                     <h3>Sobre ${data.name}</h3>
@@ -91,7 +87,7 @@ fetch(detalleseries+apiKey)
                     <p> ${data.vote_average}</p>
                   </article>
                   <article class=providers>
-                    ${provTv}
+                    ${prov}
                   </article>
             
          `
@@ -116,10 +112,9 @@ fetch(detalleseries+apiKey)
                       <button class='reco'> Recomendaciones </button>
                     </article>
                     <article>
-                      <button class='buttonReviewsTv'> Get Reviews </button>
+                      <button class='buttonReviewsTv> Get Reviews </button>
                     </article>
-      </section>
-      `
+      </section>`
     contenedor.innerHTML= info
     
     contenedor_recomedations.style.display = "none"
@@ -237,8 +232,7 @@ fetch(video+apiKey)
     if(data.results.length>2){
       vid+=`<button class="mastrillers"> Ver mas trillers</button>`
     }}
-    contenedorTriller.innerHTML= vid
-
+contenedorTriller.innerHTML= vid
     vidmas=""
     for(let i = 1; i < 3; i++){
       vidmas+=`
@@ -248,28 +242,30 @@ fetch(video+apiKey)
   contenedorMasVideos.innerHTML= vidmas
  
   let botonvideos= document.querySelector(".mastrillers")
-  contenedorMasVideos.style.display = "none"
-  botonvideos.addEventListener("click", function(){
+contenedorMasVideos.style.display = "none"
+botonvideos.addEventListener("click", function(){
     console.log("click")
-    if (contenedorMasVideos.style.display=== "none"){
+  if (contenedorMasVideos.style.display=== "none"){
       contenedorMasVideos.style.display= "flex"
       }
-    else{
+  else{
       contenedorMasVideos.style.display= "none"
       }
     })
 })
+/*
 .catch(function(error){
   console.log(error)
 })
 
 
+*/
 
 
 
 // GET REVIEWS //
 
-
+/*
 
 let reviewsTv = `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=0c5fb97f0c55576b638b49d73fa8d73e`
 
@@ -294,13 +290,13 @@ fetch(reviewsTv)
   console.log(error)
 })
 
-
+*/
 
 
 //CAMBIO DE COLOR EN LINKS//
 window.addEventListener('mouseover', function(e){
   if(e.target.classList.contains('links')){
-    e.target.style.color = 'purple'
+    e.target.style.color = '#23074d'
   }
 })
 
@@ -308,4 +304,63 @@ window.addEventListener('mouseout', function(e){
   if(e.target.classList.contains('links')){
     e.target.style.color= 'white'
   }
+})
+//botones recomenddos, favoritos, reviews
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('btn')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('btn')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('reco')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('reco')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('buttonReviewsTv')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('buttonReviewsTv')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('mastrillers')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('mastrillers')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+
+//||e.target.classList.contains('reco')||e.target.classList.contains('buttonReviewsTv')
+//boton buscar 
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#cc5333'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#23074d'
+
+    }
 })

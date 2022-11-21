@@ -92,13 +92,13 @@ h4 {
 }
 .section1{
   display: flex;
-  flex-wrap: wrap;
 }
 .imagen{
   text-align: center;
   padding: 10px;
   width: 300px;
   margin: 0px;
+  height: 100%;
 }
 .section2{
   flex-wrap: wrap;
@@ -123,9 +123,6 @@ p {
   padding-left: 5px;
   display: flex;
 }
-.psinopsis {
-  font-size: larger;
-}
 a.generos {
   color: white;
   font-family: 'Caladea', serif;
@@ -148,7 +145,7 @@ footer {
   padding: 30px;
 }
 .btn {
-  background: #cc5333; 
+  background-color: #cc5333; 
   border: none;
   color: white;
   padding: 12px 30px;
@@ -158,7 +155,7 @@ footer {
   margin-top: 20px;
 }
 .reco{
-  background: #cc5333; 
+  background-color: #cc5333; 
   border: none;
   color: white;
   padding: 12px 20px;
@@ -169,7 +166,7 @@ footer {
   margin-left: 30px;
 }
 .buttonReviewsTv {
-  background: #cc5333; 
+  background-color: #cc5333; 
   border: none;
   color: white;
   padding: 12px 20px;
@@ -209,7 +206,7 @@ footer {
   font-size: small;
 }
 .providers{
-  display: block;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
@@ -267,11 +264,17 @@ footer {
   .header {
     width: 95%;
   }
-  .busquedor {
-    width: 62%;
+  .buscador {
+    width: 64%;
   }
   .buscar {
-    width: 32%;
+    width: 30%;
+  }
+  .section1{
+    flex-wrap: nowrap
+  }
+  .video{
+    width: 60%;
   }
 }
 @media(max-width:760px){
@@ -291,6 +294,7 @@ footer {
   }
   .navegacion{
     margin-left: 20%;
+    order: 2;
   }
   h2{
     font-size: 150%;
@@ -310,7 +314,15 @@ footer {
   .btn{
     font-size: 120%;
   }
-
+  .article1{
+    flex-wrap: wrap;
+  }
+  .section1{
+    flex-wrap: wrap;
+  }
+  .video{
+    width: 80%;
+  }
 }
 @media (max-width: 420px){
   .links {
@@ -348,5 +360,14 @@ footer {
    }
   .navegacion {
     margin-left: 8%;
+  }
+  .section1{
+    flex-wrap: wrap;
+  }
+  .video{
+    width: 100%;
+  }
+  .articlevideo{
+    padding-left: 0px;
   }
 } 

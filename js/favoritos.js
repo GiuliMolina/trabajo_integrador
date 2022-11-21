@@ -99,7 +99,7 @@ function getFavsSeries(arrayFavsserie){
 //CAMBIO DE COLOR EN LINKS//
 window.addEventListener('mouseover', function(e){
   if(e.target.classList.contains('links')){
-    e.target.style.color = 'purple'
+    e.target.style.color = '#23074d'
   }
 })
 
@@ -120,4 +120,15 @@ window.addEventListener('mouseout', function(e){
   if(e.target.classList.contains('imagenes')){
     e.target.style.width = '50%'
   }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#cc5333'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#23074d'
+
+    }
 })
