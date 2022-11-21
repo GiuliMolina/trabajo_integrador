@@ -142,7 +142,7 @@ else{
 
 window.addEventListener('mouseover', function(e){
   if(e.target.classList.contains('links')){
-    e.target.style.color = 'purple'
+    e.target.style.color = '#23074d'
   }
 })
 
