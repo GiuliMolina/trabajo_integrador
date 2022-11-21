@@ -87,7 +87,7 @@ conteiner.innerHTML = genero2
 } 
 
 else{
-  fetch(`${endpointTv}&with_genres=${id2}&name=${nameGenre2}`)
+  fetch(`${endpointTv}&with_genres=${id2}&name=${nameGenre2}&type=${type2}`)
 .then(function(resp){
   return resp.json()
 })
