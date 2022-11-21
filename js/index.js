@@ -30,7 +30,7 @@ fetch(populares+ keyApi)
       <section class='section1'>
         <article>
           <h5><a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"> ${data.results[i].original_title} </a></h5>
-          <a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"><img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}"></a>
+          <a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"><img class='imagehome' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}"></a>
           <p><a class = 'textopeli' href="./detallepelis.html?id=${data.results[i].id}">${data.results[i].release_date}</a></p>
           <nav class="navseries">
             <a class="vermás" href="./detallepelis.html?id=${data.results[i].id}" > VER MÁS </a> 
@@ -64,7 +64,7 @@ fetch(recomendados + keyApi)
       <section class='section2'>
         <article>
           <h5> <a class='tituloseries' href="./detalleserie.html?id=${data.results[i].id}"> ${data.results[i].name} </a></h5>
-          <a class='tituloseries' href="./detalleserie.html?id=${data.results[i].id}"><img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}"></a>
+          <a class='tituloseries' href="./detalleserie.html?id=${data.results[i].id}"><img class='imagehome' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}"></a>
           <p> <a class='textoseries' href="./detalleserie.html?id=${data.results[i].id}" >${data.results[i].first_air_date}</a> </p>
           <nav class="navseries">
             <a class="vermás" href="./detalleserie.html?id=${data.results[i].id}" > VER MÁS </a>
@@ -95,7 +95,7 @@ fetch(nuevas + keyApi)
       <section class='section3'>
         <article>
           <h5><a class="titulopeli" href="./detallepelis.html?id=${data.results[i].id}" > ${data.results[i].original_title} </a></h5>
-          <a class="titulopeli" href="./detallepelis.html?id=${data.results[i].id}" ><img src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" ></a>
+          <a class="titulopeli" href="./detallepelis.html?id=${data.results[i].id}" ><img class='imagehome' src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}" ></a>
           <p> <a class="textopeli" href="./detallepelis.html?id=${data.results[i].id}" >${data.results[i].release_date}</a></p>
           <nav class="navseries">
             <a class="vermás" href="./detallepelis.html?id=${data.results[i].id}" > VER MÁS </a>
@@ -105,6 +105,8 @@ fetch(nuevas + keyApi)
       `
     }
     contenedor3.innerHTML = info3
+
+   
 })
 .catch(function(error){
     console.log(`El error es ${error}`)
@@ -123,5 +125,15 @@ window.addEventListener('mouseout', function(e){
   }
 })
 
+//AGRANDAR IMAGEN//
 
-
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('imagehome')){
+    e.target.style.width = '115%'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('imagehome')){
+    e.target.style.width = '105%'
+  }
+})
