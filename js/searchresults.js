@@ -77,12 +77,12 @@ window.addEventListener('mouseout', function(e){
 //AGRANDAR IMAGEN//
 
 window.addEventListener('mouseover', function(e){
-  if(e.target.classList.contains('imagsearch')){
-    e.target.style.width = '110%'
+  if(e.target.classList.contains('imgsearch')){
+    e.target.style.width = '105%'
   }
 })
 window.addEventListener('mouseout', function(e){
-  if(e.target.classList.contains('imagsearch')){
-    e.target.style.width = '100%'
+  if(e.target.classList.contains('imgsearch')){
+    e.target.style.width = '95%'
   }
 })
