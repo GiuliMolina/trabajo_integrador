@@ -40,11 +40,8 @@ fetch(providers+apiKey)
   `
   for(let i=0; i<data.results.US.flatrate.length; i++){
   prov+=`
-    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" >`}
-  prov+=
-    `</article> `
-  
-  
+    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" >`
+  }  
 })
 .catch(function(error){
   console.log(error)

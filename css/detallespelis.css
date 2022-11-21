@@ -310,6 +310,9 @@ footer {
   .video{
     width: 80%;
   }
+  .providers{
+    display: flex;
+    flex-wrap: wrap;}
 }
 @media (max-width: 420px){
   .links {

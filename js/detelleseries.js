@@ -34,14 +34,12 @@ fetch(providers+apiKey)
   console.log(data.results)
   prov=""
   prov+=`
-  <article class="article1">
   <h4> DONDE VER: </h4>
   `
   for(let i=0; i<data.results.US.flatrate.length; i++){
   prov+=`
     <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" > 
   `}
-  prov+=`</article>`
   contenedorProviders.innerHTML= prov
 })
 .catch(function(error){

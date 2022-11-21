@@ -124,9 +124,6 @@ p {
   padding-left: 5px;
   display: flex;
 }
-.psinopsis {
-  font-size: larger;
-}
 a.generos {
   color: white;
   font-family: 'Caladea', serif;
@@ -210,7 +207,7 @@ footer {
   font-size: small;
 }
 .providers{
-  display: block;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
@@ -268,11 +265,17 @@ footer {
   .header {
     width: 95%;
   }
-  .busquedor {
-    width: 62%;
+  .buscador {
+    width: 64%;
   }
   .buscar {
-    width: 32%;
+    width: 30%;
+  }
+  .section1{
+    flex-wrap: nowrap
+  }
+  .video{
+    width: 60%;
   }
 }
 @media(max-width:760px){
@@ -292,6 +295,7 @@ footer {
   }
   .navegacion{
     margin-left: 20%;
+    order: 2;
   }
   h2{
     font-size: 150%;
@@ -311,7 +315,15 @@ footer {
   .btn{
     font-size: 120%;
   }
-
+  .article1{
+    flex-wrap: wrap;
+  }
+  .section1{
+    flex-wrap: wrap;
+  }
+  .video{
+    width: 80%;
+  }
 }
 @media (max-width: 420px){
   .links {
@@ -349,5 +361,14 @@ footer {
    }
   .navegacion {
     margin-left: 8%;
+  }
+  .section1{
+    flex-wrap: wrap;
+  }
+  .video{
+    width: 100%;
+  }
+  .articlevideo{
+    padding-left: 0px;
   }
 } 
