@@ -108,5 +108,15 @@ window.addEventListener('mouseout', function(e){
     e.target.style.color= 'white'
   }
 })
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#cc5333'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#23074d'
 
+    }
+})
     

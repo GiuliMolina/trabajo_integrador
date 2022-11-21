@@ -300,3 +300,62 @@ window.addEventListener('mouseout', function(e){
     e.target.style.color= 'white'
   }
 })
+
+//cambio en botones
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('btn')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('btn')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('reco')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('reco')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('buttonReviews')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('buttonReviews')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('mastrillers')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('mastrillers')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+
+//cambio en boton buscar
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#cc5333'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#23074d'
+
+    }
+})
