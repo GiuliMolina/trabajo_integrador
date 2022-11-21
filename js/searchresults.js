@@ -3,7 +3,17 @@ let QsT = new URLSearchParams(sT)
 let buscado = QsT.get('busquedor')
 //let id= QsT.get("id")
 console.log(QsT)
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#cc5333'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#23074d'
 
+    }
+})
 let UrlSearch = 'https://api.themoviedb.org/3/search/multi'
 let apiKey="?api_key=0c5fb97f0c55576b638b49d73fa8d73e"
 let query= `&query=${buscado}`
@@ -40,4 +50,25 @@ fetch(UrlSearch+apiKey+query)
   console.log('El error es' + error)
 })
 
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('links')){
+    e.target.style.color = '#23074d'
+  }
+})
 
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('links')){
+    e.target.style.color= 'white'
+  }
+})
+
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('img')){
+    e.target.style.width = '115%'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('img')){
+    e.target.style.width = '105%'
+  }
+})
