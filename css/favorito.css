@@ -68,7 +68,7 @@ h5 {
   text-align: center;
 }
 .imagenes{
-  height: 300px;
+  width: 50%;
 }
 .favoritos {
   display: flex;
@@ -87,6 +87,7 @@ footer {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   height: 80px;
+  margin-top: 50px;
 }
 .integrantes {
   text-align: center;

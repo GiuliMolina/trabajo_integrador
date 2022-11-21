@@ -85,7 +85,7 @@ function getFavsSeries(arrayFavsserie){
       <article class="favs" >
         <h5> ${data.name}" </h5>
         <a href="./detalleserie.html?id=${data.id}">
-        <img class= imagenes src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.name}" >
+        <img class= 'imagenes' src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.name}" >
         </a>
       </article>`
   
@@ -106,5 +106,18 @@ window.addEventListener('mouseover', function(e){
 window.addEventListener('mouseout', function(e){
   if(e.target.classList.contains('links')){
     e.target.style.color= 'white'
+  }
+})
+
+//AGRANDAR IMAGEN//
+
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('imagenes')){
+    e.target.style.width = '56%'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('imagenes')){
+    e.target.style.width = '50%'
   }
 })
