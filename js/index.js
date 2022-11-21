@@ -38,9 +38,10 @@ fetch(populares+ keyApi)
         </article>
       </section>
       `//ESTE VER MÁS PUEDE TENER OTRA FUNCIONALIDAD//
+
     }
     contenedor.innerHTML = info
-  
+
 })
 .catch(function(error){
     console.log(`El error es ${error}`)
@@ -121,3 +122,4 @@ window.addEventListener('mouseout', function(e){
     e.target.style.color= 'white'
   }
 })
+

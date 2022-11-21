@@ -76,7 +76,7 @@ a {
   margin-bottom: 50px;
   margin-top: 20px;
   justify-content: space-between;
-  align-items: center;
+    align-items: center;
 }
 article {
   width: 100%;
@@ -114,7 +114,7 @@ p {
   text-align: center;
 }
 .navseries {
-  background-image: url(../img/background/TaranTado.jpg) ;
+  background-color: #23074d;
   padding: 8px;
   margin: 20px;
   text-align: center;
