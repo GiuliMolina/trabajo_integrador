@@ -164,6 +164,30 @@ window.addEventListener('mouseout', function(e){
     }
 })
 
+//AGRANDAR IMAGEN//
+
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('imgseries')){
+    e.target.style.width = '230px'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('imgseries')){
+    e.target.style.width = '200px'
+  }
+})
+
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('imgpelis')){
+    e.target.style.width = '230px'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('imgpelis')){
+    e.target.style.width = '200px'
+  }
+})
+
 
 
 
