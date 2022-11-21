@@ -83,7 +83,6 @@ h4 {
 }
 .section1{
   display: flex;
-  flex-wrap: wrap;
 }
 .imagen{
   text-align: center;
