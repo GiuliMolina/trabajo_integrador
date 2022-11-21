@@ -41,28 +41,3 @@ fetch(UrlSearch)
 })
 
 
-//CAMBIO DE COLOR EN LINKS//
-window.addEventListener('mouseover', function(e){
-  if(e.target.classList.contains('links')){
-    e.target.style.color = 'purple'
-  }
-})
-
-window.addEventListener('mouseout', function(e){
-  if(e.target.classList.contains('links')){
-    e.target.style.color= 'white'
-  }
-})
-
-//AGRANDAR IMAGEN//
-
-window.addEventListener('mouseover', function(e){
-  if(e.target.classList.contains('imagehome')){
-    e.target.style.width = '115%'
-  }
-})
-window.addEventListener('mouseout', function(e){
-  if(e.target.classList.contains('imagehome')){
-    e.target.style.width = '105%'
-  }
-})
