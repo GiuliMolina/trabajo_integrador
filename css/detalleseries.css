@@ -99,6 +99,7 @@ h4 {
   padding: 10px;
   width: 300px;
   margin: 0px;
+  height: 100%;
 }
 .section2{
   flex-wrap: wrap;

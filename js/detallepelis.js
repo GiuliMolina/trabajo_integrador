@@ -36,7 +36,6 @@ fetch(providers+apiKey)
   console.log(data)
   prov=""
   prov+=`
-  <article class="article1">
   <h4> DONDE VER: </h4>
   `
   for(let i=0; i<data.results.US.flatrate.length; i++){
@@ -68,7 +67,7 @@ fetch(detallepelis+apiKey)
               <section class="section2">
                 <article class="article2">
                   <h3>Sinopsis: </h3>
-                  <p class='psinopsis'>${data.overview}</p>
+                  <p class='overview'>${data.overview}</p>
                 </article> 
                 <article class="article1">
                    <h3>Sobre ${data.original_title}: </h3>
@@ -118,7 +117,7 @@ fetch(detallepelis+apiKey)
           <button class='btn'> ${text} </button>
         </article>
         <article class="article1">
-          <button class='reco'> Recomendaciones </button>
+          <button class='reco'> Recomendado para ti </button>
         </article>
         <article>
           <button class='buttonReviews'> Get Reviews </button>

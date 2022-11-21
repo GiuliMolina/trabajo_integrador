@@ -64,7 +64,7 @@ fetch(detalleseries+apiKey)
                 <section class="section2">
                   <article class="article2">
                     <h3> Sinopsis:</h3>
-                    <p class='psinopsis'>${data.overview}</p>
+                    <p class='overview'>${data.overview}</p>
                   </article>
                   <article class="article1">
                     <h3>Sobre ${data.name}</h3>
