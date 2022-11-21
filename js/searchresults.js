@@ -35,9 +35,9 @@ fetch(UrlSearch+apiKey+query)
   for (let i = 0 ; i < 5 ; i++){
     search.innerHTML += `
         <article class ="article">
-          <h5><a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"> ${data.results[i].original_title} </a></h5>
-          <a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"><img class="img" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}"></a>
-          <p><a class = 'textopeli' href="./detallepelis.html?id=${data.results[i].id}">${data.results[i].release_date}</a></p>
+          <a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"><h5 class='titlesearch'> ${data.results[i].original_title}</h5>
+          <img class="imgsearch" src="https://image.tmdb.org/t/p/w500/${data.results[i].poster_path}" alt="${data.results[i].original_title}">
+          <p>${data.results[i].release_date}</p></a>
           <nav class="navseries">
             <a class="vermás" href="./detallepelis.html?id=${data.results[i].id}" > VER MÁS </a> 
           </nav> 
@@ -50,4 +50,39 @@ fetch(UrlSearch+apiKey+query)
   console.log('El error es' + error)
 })
 
+//CAMBIO DE COLOR EN LINKS//
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('links')){
+    e.target.style.color = '#23074d'
+  }
+})
 
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('links')){
+    e.target.style.color= 'white'
+  }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('titlesearch')){
+    e.target.style.color = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('titlesearch')){
+    e.target.style.color= 'white'
+  }
+})
+
+//AGRANDAR IMAGEN//
+
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('imagsearch')){
+    e.target.style.width = '110%'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('imagsearch')){
+    e.target.style.width = '100%'
+  }
+})

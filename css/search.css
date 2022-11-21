@@ -17,6 +17,12 @@ body{
   flex-wrap: wrap;
   margin: 20px;
 }
+a {
+  text-decoration: none;
+}
+a.titulopeli{
+  text-decoration: none;
+}
 img.logo {
   width: 100px;
   border-radius: 20px;
@@ -109,7 +115,7 @@ footer {
   font-size:medium;
   padding: 30px;
 }
-.img{
+.imgsearch{
   width: 100%;
   height: 70%;
 }
