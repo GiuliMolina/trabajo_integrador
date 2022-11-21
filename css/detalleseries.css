@@ -168,6 +168,17 @@ footer {
   margin-top: 20px;
   margin-left: 30px;
 }
+.buttonReviewsTv {
+  background: #cc5333; 
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
 .imagenreco{
   height: 150px;
 }

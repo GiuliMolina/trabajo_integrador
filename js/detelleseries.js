@@ -16,7 +16,7 @@ let objDetalle2 = new URLSearchParams(detalle2)
 let id = objDetalle2.get("id")
 
 let detalleseries= `https://api.themoviedb.org/3/tv/${id}`
-let providers= `https://api.themoviedb.org/3/tv/${id}/watch/providers`
+let providersTv= `https://api.themoviedb.org/3/tv/${id}/watch/providers`
 let apiKey = '?api_key=0c5fb97f0c55576b638b49d73fa8d73e';
 let contenedor = document.querySelector(".contenedor")
 let contenedor_recomedations = document.querySelector(".recomendacion")
@@ -26,27 +26,29 @@ let conteinerReviewsTv = document.querySelector('.reviewstv')
 
 //watch providers
 
-fetch(providers+apiKey)
+fetch(providersTv+apiKey)
 .then(function(response){
   return response.json();
 })
 .then(function(data){
   console.log(data.results)
-  prov=""
-  prov+=`
+  provTv = ""
+  provTv +=`
   <article class="article1">
   <h4> DONDE VER: </h4>
   `
   for(let i=0; i<data.results.US.flatrate.length; i++){
-  prov+=`
-    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" > 
-  `}
-  prov+=`</article>`
-  contenedorProviders.innerHTML= prov
-})
+  provTv +=`
+    <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}"> ` 
+  }
+  provTv += `</article>`
+  
+  })
 .catch(function(error){
   console.log(error)
 })
+
+
 fetch(detalleseries+apiKey)
 .then(function(response){
     return response.json();
@@ -89,7 +91,7 @@ fetch(detalleseries+apiKey)
                     <p> ${data.vote_average}</p>
                   </article>
                   <article class=providers>
-                    ${prov}
+                    ${provTv}
                   </article>
             
          `
@@ -114,9 +116,10 @@ fetch(detalleseries+apiKey)
                       <button class='reco'> Recomendaciones </button>
                     </article>
                     <article>
-                      <button class='buttonReviewsTv> Get Reviews </button>
+                      <button class='buttonReviewsTv'> Get Reviews </button>
                     </article>
-      </section>`
+      </section>
+      `
     contenedor.innerHTML= info
     
     contenedor_recomedations.style.display = "none"
@@ -234,7 +237,8 @@ fetch(video+apiKey)
     if(data.results.length>2){
       vid+=`<button class="mastrillers"> Ver mas trillers</button>`
     }}
-contenedorTriller.innerHTML= vid
+    contenedorTriller.innerHTML= vid
+
     vidmas=""
     for(let i = 1; i < 3; i++){
       vidmas+=`
@@ -244,30 +248,28 @@ contenedorTriller.innerHTML= vid
   contenedorMasVideos.innerHTML= vidmas
  
   let botonvideos= document.querySelector(".mastrillers")
-contenedorMasVideos.style.display = "none"
-botonvideos.addEventListener("click", function(){
+  contenedorMasVideos.style.display = "none"
+  botonvideos.addEventListener("click", function(){
     console.log("click")
-  if (contenedorMasVideos.style.display=== "none"){
+    if (contenedorMasVideos.style.display=== "none"){
       contenedorMasVideos.style.display= "flex"
       }
-  else{
+    else{
       contenedorMasVideos.style.display= "none"
       }
     })
 })
-/*
 .catch(function(error){
   console.log(error)
 })
 
 
-*/
 
 
 
 // GET REVIEWS //
 
-/*
+
 
 let reviewsTv = `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=0c5fb97f0c55576b638b49d73fa8d73e`
 
@@ -292,7 +294,7 @@ fetch(reviewsTv)
   console.log(error)
 })
 
-*/
+
 
 
 //CAMBIO DE COLOR EN LINKS//

@@ -124,8 +124,7 @@ fetch(detallepelis+apiKey)
           <button class='buttonReviews'> Get Reviews </button>
         </article>
       </section>
-      </section>
-      </section>`
+      `
     contenedor.innerHTML= info
 
     contenedor_recomedations.style.display = "none"
