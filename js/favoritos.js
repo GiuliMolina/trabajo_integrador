@@ -85,7 +85,7 @@ function getFavsSeries(arrayFavsserie){
       <article class="favs" >
         <h5> ${data.name}" </h5>
         <a href="./detalleserie.html?id=${data.id}">
-        <img class= imagenes src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.name}" >
+        <img class= 'imagenes' src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.name}" >
         </a>
       </article>`
   
@@ -99,7 +99,7 @@ function getFavsSeries(arrayFavsserie){
 //CAMBIO DE COLOR EN LINKS//
 window.addEventListener('mouseover', function(e){
   if(e.target.classList.contains('links')){
-    e.target.style.color = 'purple'
+    e.target.style.color = '#23074d'
   }
 })
 
@@ -107,4 +107,28 @@ window.addEventListener('mouseout', function(e){
   if(e.target.classList.contains('links')){
     e.target.style.color= 'white'
   }
+})
+
+//AGRANDAR IMAGEN//
+
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('imagenes')){
+    e.target.style.width = '56%'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('imagenes')){
+    e.target.style.width = '50%'
+  }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#cc5333'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#23074d'
+
+    }
 })

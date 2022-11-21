@@ -34,14 +34,12 @@ fetch(providers+apiKey)
   console.log(data.results)
   prov=""
   prov+=`
-  <article class="article1">
   <h4> DONDE VER: </h4>
   `
   for(let i=0; i<data.results.US.flatrate.length; i++){
   prov+=`
     <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" > 
   `}
-  prov+=`</article>`
   contenedorProviders.innerHTML= prov
 })
 .catch(function(error){
@@ -64,7 +62,7 @@ fetch(detalleseries+apiKey)
                 <section class="section2">
                   <article class="article2">
                     <h3> Sinopsis:</h3>
-                    <p class='psinopsis'>${data.overview}</p>
+                    <p class='overview'>${data.overview}</p>
                   </article>
                   <article class="article1">
                     <h3>Sobre ${data.name}</h3>
@@ -235,7 +233,6 @@ fetch(video+apiKey)
       vid+=`<button class="mastrillers"> Ver mas trillers</button>`
     }}
 contenedorTriller.innerHTML= vid
-    /*
     vidmas=""
     for(let i = 1; i < 3; i++){
       vidmas+=`
@@ -255,7 +252,6 @@ botonvideos.addEventListener("click", function(){
       contenedorMasVideos.style.display= "none"
       }
     })
-  */
 })
 /*
 .catch(function(error){
@@ -300,7 +296,7 @@ fetch(reviewsTv)
 //CAMBIO DE COLOR EN LINKS//
 window.addEventListener('mouseover', function(e){
   if(e.target.classList.contains('links')){
-    e.target.style.color = 'purple'
+    e.target.style.color = '#23074d'
   }
 })
 
@@ -308,4 +304,63 @@ window.addEventListener('mouseout', function(e){
   if(e.target.classList.contains('links')){
     e.target.style.color= 'white'
   }
+})
+//botones recomenddos, favoritos, reviews
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('btn')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('btn')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('reco')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('reco')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('buttonReviewsTv')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('buttonReviewsTv')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('mastrillers')){
+    e.target.style.backgroundColor = '#23074d'
+  }
+})
+
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('mastrillers')){
+    e.target.style.backgroundColor= '#cc5333'
+  }
+})
+
+//||e.target.classList.contains('reco')||e.target.classList.contains('buttonReviewsTv')
+//boton buscar 
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#cc5333'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('buscar')){
+    e.target.style.backgroundColor = '#23074d'
+
+    }
 })
