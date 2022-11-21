@@ -21,6 +21,7 @@ body{
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin: 20px;
 }
 img.logo {
   width: 100px;
@@ -48,6 +49,8 @@ img.logo {
   display: flex;
   font-family: 'Caladea', serif;  
   text-align: center;
+  width: 50%;
+  justify-content: space-evenly;
 }
 .links {
   color: white;
@@ -57,9 +60,7 @@ img.logo {
 a {
   text-decoration: none;
 }
-img {
-  margin: 20px;
-}
+
 .article2 {
   font-family: 'Caladea', serif;
   font-size: small;
@@ -74,6 +75,7 @@ article {
 img {
   width: 60%;
   height: 70%;
+  margin: 20px;
 }
 
 .vermás {
@@ -121,6 +123,9 @@ h1 {
 h3 {
   font-family: 'Caladea', serif;
   font-size: x-large;
+  color: white;
+  text-decoration: none;
+  margin: 20px;
   text-align: left;
 }
 h5 {

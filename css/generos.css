@@ -13,6 +13,7 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin: 20px;
 }
 img.logo {
   width: 100px;
@@ -40,6 +41,8 @@ img.logo {
   display: flex;
   font-family: 'Caladea', serif;  
   text-align: center;
+  width: 50%;
+  justify-content: space-evenly;
 }
 .links {
   color: white;
@@ -55,7 +58,7 @@ h3 {
   color: white;
   text-decoration: none;
   margin: 20px;
-  margin-top: 40px;
+  text-align: left;
 }
 h5 {
   font-family: 'Caladea', serif;

@@ -45,6 +45,8 @@
   display: flex;
   font-family: 'Caladea', serif;  
   text-align: center;
+  width: 50%;
+  justify-content: space-evenly;
 }
 .links {
   color: white;
@@ -173,16 +175,6 @@ footer {
   flex-direction: row;
   align-items: center;
   padding: 5px;
-}
-.h3carrusel {
-  font-size: 200%;
-}
-.harry{
-  padding: 0px 5px;
-  font-family: 'Caladea', serif;
-  font-size:175%;
-  text-align: center;
-  color: white;
 }
 
 
