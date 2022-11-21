@@ -40,7 +40,7 @@ fetch(providers+apiKey)
   prov+=`
     <img class="imgprov" src="https://image.tmdb.org/t/p/w500/${data.results.US.flatrate[i].logo_path}" > 
   `}
-  contenedorProviders.innerHTML= prov
+   
 })
 .catch(function(error){
   console.log(error)
@@ -86,7 +86,7 @@ fetch(detalleseries+apiKey)
                     <h4> RATING: </h4>
                     <p> ${data.vote_average}</p>
                   </article>
-                  <article class=providers>
+                  <article class='providers'>
                     ${prov}
                   </article>
             
@@ -112,7 +112,7 @@ fetch(detalleseries+apiKey)
                       <button class='reco'> Recomendaciones </button>
                     </article>
                     <article>
-                      <button class='buttonReviewsTv> Get Reviews </button>
+                      <button class='buttonReviewsTv'> Get Reviews </button>
                     </article>
       </section>`
     contenedor.innerHTML= info
@@ -130,12 +130,12 @@ fetch(detalleseries+apiKey)
     })
 
     
-    conteinerReviewsTv.style.display = 'none'
+    conteinerReviewsTv.style.display = 'none';
     let botonReviewsTv = document.querySelector('.buttonReviewsTv')
 
     botonReviewsTv.addEventListener('click', function(){
       if(conteinerReviewsTv.style.display === 'none'){
-        conteinerReviewsTv.style.display = 'flex'
+        conteinerReviewsTv.style.display = 'flex';
       }else{
         conteinerReviewsTv.style.display = 'none'
       }
@@ -213,59 +213,61 @@ fetch(recomedations+apiKey)
   console.log(error)
 })
 //triller
-let contenedorTriller= document.querySelector(".triller")
-let contenedorMasVideos= document.querySelector(".sectionmasvideos")
-let video= `https://api.themoviedb.org/3/tv/${id}/videos`
-fetch(video+apiKey)
+let contenedorTriller = document.querySelector(".triller")
+let contenedorMasVideos = document.querySelector(".sectionmasvideos")
+let videoTv = `https://api.themoviedb.org/3/tv/${id}/videos?api_key=0c5fb97f0c55576b638b49d73fa8d73e&language=en-US`
+
+fetch(`${videoTv}`)
 .then(function(response){
-  return response.json();
+  return response.json()
 })
 .then(function(data){
   console.log(data)
-  vid=""
+  vidTv = " "
   for(let i = 0; i < 1; i++){
-    vid+=`
+    vidTv +=`
     <article class="articlevideo">
-    <h3>Ver triller: </h3>
-    <iframe class=video width="560" height="315" src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h3>Ver triller: </h3>
+      <iframe class='video' width="560" height="315" src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </article>`
     if(data.results.length>2){
-      vid+=`<button class="mastrillers"> Ver mas trillers</button>`
+      vidTv +=`<button class="mastrillers"> Ver mas trillers</button>`
     }}
-contenedorTriller.innerHTML= vid
-    vidmas=""
+  contenedorTriller.innerHTML= vidTv
+
+    vidmasTv = " "
     for(let i = 1; i < 3; i++){
-      vidmas+=`
-      <iframe class=videoextra  src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      vidmasTv +=`
+      <iframe class='videoextra'  src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       `} 
   
-  contenedorMasVideos.innerHTML= vidmas
+  contenedorMasVideos.innerHTML= vidmasTv
  
-  let botonvideos= document.querySelector(".mastrillers")
-contenedorMasVideos.style.display = "none"
-botonvideos.addEventListener("click", function(){
+  let botonvideos = document.querySelector(".mastrillers")
+  contenedorMasVideos.style.display = "none"
+  botonvideos.addEventListener("click", function(){
     console.log("click")
-  if (contenedorMasVideos.style.display=== "none"){
-      contenedorMasVideos.style.display= "flex"
+  if (contenedorMasVideos.style.display === "none"){
+      contenedorMasVideos.style.display = "flex"
       }
   else{
       contenedorMasVideos.style.display= "none"
       }
     })
 })
-/*
+
 .catch(function(error){
   console.log(error)
 })
 
 
-*/
+
 
 
 
 // GET REVIEWS //
 
-/*
+
 
 let reviewsTv = `https://api.themoviedb.org/3/tv/${id}/reviews?api_key=0c5fb97f0c55576b638b49d73fa8d73e`
 
@@ -290,7 +292,7 @@ fetch(reviewsTv)
   console.log(error)
 })
 
-*/
+
 
 
 //CAMBIO DE COLOR EN LINKS//
