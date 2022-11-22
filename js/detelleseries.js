@@ -353,7 +353,6 @@ window.addEventListener('mouseout', function(e){
   }
 })
 
-//||e.target.classList.contains('reco')||e.target.classList.contains('buttonReviewsTv')
 //boton buscar 
 window.addEventListener('mouseover', function(e){
   if(e.target.classList.contains('buscar')){

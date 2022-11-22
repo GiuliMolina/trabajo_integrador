@@ -1,3 +1,4 @@
+window.addEventListener('load', function(){
 let formulario = document.querySelector('.form')
 let buscador = document.querySelector('.buscador')
 
@@ -23,7 +24,6 @@ let info =''
 let contenedor_recomedations= document.querySelector(".recomendacion")
 let contenedorReviews = document.querySelector('.reviews')
 let contenedorTriller= document.querySelector(".triller")
-//let contenedorMasTrillers= document.querySelector(".masvideos") borrar si no uso al final
 
 //watch providers
 let contenedorProviders= document.querySelector(".providers")
@@ -33,7 +33,6 @@ fetch(providers+apiKey)
   return response.json();
 })
 .then(function(data){
-  console.log(obtener)
   prov=""
   prov+=`
   <h4> DONDE VER: </h4>
@@ -354,4 +353,6 @@ window.addEventListener('mouseout', function(e){
     e.target.style.backgroundColor = '#23074d'
 
     }
+})
+
 })
