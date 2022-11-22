@@ -8,12 +8,7 @@ body{
   margin: 20px; 
   margin-bottom: 0;
 }
-.imgseries {
-  width: 200px;
-}
-.imgpelis {
-  width: 200px;
-}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -72,8 +67,13 @@ article {
   width: 100%;
   text-align: center;
 }
-img {
-  width: 60%;
+.imgpelis {
+  width: 200px;
+  height: 70%;
+  margin: 20px;
+}
+.imgseries {
+  width: 200px;
   height: 70%;
   margin: 20px;
 }

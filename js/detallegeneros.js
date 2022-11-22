@@ -87,7 +87,7 @@ conteiner.innerHTML = genero2
 } 
 
 else{
-  fetch(`${endpointTv}&with_genres=${id2}&name=${nameGenre2}`)
+  fetch(`${endpointTv}&with_genres=${id2}&name=${nameGenre2}&type=${type2}`)
 .then(function(resp){
   return resp.json()
 })
@@ -162,6 +162,30 @@ window.addEventListener('mouseout', function(e){
     e.target.style.backgroundColor = '#23074d'
 
     }
+})
+
+//AGRANDAR IMAGEN//
+
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('imgseries')){
+    e.target.style.width = '230px'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('imgseries')){
+    e.target.style.width = '200px'
+  }
+})
+
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('imgpelis')){
+    e.target.style.width = '230px'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('imgpelis')){
+    e.target.style.width = '200px'
+  }
 })
 
 
