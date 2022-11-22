@@ -111,6 +111,10 @@ footer {
   background-color: #23074d;
   text-align: center;
 }
+.imggen{
+  width:95%;
+
+}
 @media (max-width: 1024px) {
   .header {
     width: 95%;
