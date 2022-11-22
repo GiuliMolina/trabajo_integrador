@@ -152,6 +152,7 @@ footer {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   height: 80px;
+  display: flex;
 }
 .integrantes {
   text-align: center;
@@ -175,6 +176,10 @@ footer {
   flex-direction: row;
   align-items: center;
   padding: 5px;
+}
+img.logotheapi {
+  margin-top: 1%;
+  text-align: right;
 }
 
 

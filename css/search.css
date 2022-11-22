@@ -108,6 +108,7 @@ footer {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   height: 80px; 
+  display: flex;
 }
 .integrantes {
   text-align: center;
@@ -133,6 +134,11 @@ article{
     cursor: pointer;
     text-decoration: underline;
 }
+img.logotheapi {
+  margin-top: 1%;
+  text-align: right;
+}
+
 
 @media (max-width: 1024px){
   .buscar{

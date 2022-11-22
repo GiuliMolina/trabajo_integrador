@@ -71,6 +71,7 @@ footer {
   border-top-right-radius: 30px;
   height: 80px;
   margin-top: 250px;
+  display: flex;
 }
 .integrantes {
   text-align: center;
@@ -111,6 +112,12 @@ footer {
   background-color: #23074d;
   text-align: center;
 }
+img.logotheapi {
+  margin-top: 1%;
+  text-align: right;
+}
+
+
 @media (max-width: 1024px) {
   .header {
     width: 95%;
