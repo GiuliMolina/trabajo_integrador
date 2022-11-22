@@ -33,7 +33,7 @@ fetch(providers+apiKey)
   return response.json();
 })
 .then(function(data){
-  console.log(data)
+  console.log(obtener)
   prov=""
   prov+=`
   <h4> DONDE VER: </h4>
@@ -217,7 +217,6 @@ fetch(recomedations+apiKey)
 let contenedorMasVideos= document.querySelector(".sectionmasvideos")
 
 let video= `https://api.themoviedb.org/3/movie/${id}/videos`
-
 fetch(video+apiKey)
 .then(function(response){
   return response.json();
@@ -229,24 +228,23 @@ fetch(video+apiKey)
     vid+=`
     <article class="articlevideo">
     <h3>Ver triller: </h3>
-    <iframe class='video' width="560" height="315" src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe class=video width="560" height="315" src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </article>`
     if(data.results.length>2){
       vid+=`<button class="mastrillers"> Ver mas trillers</button>`
     }}
     contenedorTriller.innerHTML= vid
-    
     vidmas=""
     for(let i = 1; i < 3; i++){
       vidmas+=`
-      <iframe class='videoextra'  src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class=videoextra  src="https://www.youtube.com/embed/${data.results[i].key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       `} 
   
   contenedorMasVideos.innerHTML= vidmas
  
   let botonvideos= document.querySelector(".mastrillers")
-  contenedorMasVideos.style.display = "none"
-  botonvideos.addEventListener("click", function(){
+contenedorMasVideos.style.display = "none"
+botonvideos.addEventListener("click", function(){
     console.log("click")
   if (contenedorMasVideos.style.display=== "none"){
       contenedorMasVideos.style.display= "flex"
