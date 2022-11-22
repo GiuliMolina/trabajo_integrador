@@ -77,7 +77,7 @@ h5 {
   align-items: center;
 }
 .favs {
-  width: 100%;
+  width: 50%;
   padding: 10px;
   flex-direction: row;
   text-align: center;
@@ -121,6 +121,9 @@ footer {
   .favoritos {
     flex-wrap: wrap;
   }
+  .favs{
+    width: 40%
+  }
 }
 @media (max-width:760px){
   .header {
@@ -140,6 +143,9 @@ footer {
   .navegacion {
     margin-left: 20%;
   }
+  .favs{
+    width: 50%
+  }
 }
 @media (max-width:420px){
   .links {
@@ -152,6 +158,9 @@ footer {
   h3 {
     font-size: medium;
     margin-bottom: 3%;
+  }
+  .favs{
+    width: 90%;
   }
   .favoritos {
     justify-content: center;

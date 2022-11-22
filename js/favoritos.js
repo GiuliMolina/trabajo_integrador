@@ -18,7 +18,7 @@ let favs2= getStorage2()
 let info= ""
 console.log(favs)
 console.log(favs2)
-if (favs.length==0){
+if (favs.length==0 && favs2.length==0){
     container.innerHTML= `
     <li>
       <h3>No tienes favoritos</h3>
@@ -31,6 +31,7 @@ else{
 
 function getStorage(){
   let storage= localStorage.getItem("favoritos")
+  console.log(storage)
   if (storage != null && storage!== undefined){
     return JSON.parse(storage)
   }
