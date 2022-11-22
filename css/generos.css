@@ -112,11 +112,16 @@ footer {
   background-color: #23074d;
   text-align: center;
 }
+
 img.logotheapi {
   margin-top: 1%;
   text-align: right;
 }
 
+.imggen{
+  width:95%;
+
+}
 
 @media (max-width: 1024px) {
   .header {

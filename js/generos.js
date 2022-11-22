@@ -73,7 +73,7 @@ fetch(generos2)
     lista2 += `<section class = "generos2">
     <a class="container" href="./detallegeneros1.html?id=${data.genres[i].id}&name=${info2[i].name}&type=tv">
         <h5 class='titulogenero'>${info2[i].name}</h5>
-        <img src="./img/home/sobrenatural.jpg" alt="Sobrenatural" height="300px" width="400px">
+        <img class = "imggen" src="./img/home/sobrenatural.jpg" alt="Sobrenatural" height="300px" width="400px">
     </a>
     </section>`
   }
@@ -119,4 +119,14 @@ window.addEventListener('mouseout', function(e){
 
     }
 })
-    
+  
+window.addEventListener('mouseover', function(e){
+  if(e.target.classList.contains('imggen')){
+    e.target.style.width = '105%'
+  }
+})
+window.addEventListener('mouseout', function(e){
+  if(e.target.classList.contains('imggen')){
+    e.target.style.width = '95%'
+  }
+})
