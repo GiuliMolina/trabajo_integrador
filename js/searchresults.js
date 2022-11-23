@@ -26,13 +26,13 @@ fetch(UrlSearch+apiKey+query)
   let result = document.querySelector('.resultados1')
   let search = document.querySelector('.resultados')
 
-  if (data.lenght == 0){
-    result.innerHTML = `No se han encontrados resultados de: ${buscado}`
+  if (data.length == 0){
+    result.innerText = `No se han encontrados resultados de: ${buscado}`
   }else{
-    result.innerHTML = `Resultado de busqueda de: ${buscado}`
+    result.innerText = `Resultado de busqueda de: ${buscado}`
   }
 
-  for (let i = 0 ; i < 5 ; i++){
+  for (let i = 0 ; i < 8 ; i++){
     search.innerHTML += `
         <article class ="article">
           <a class= 'titulopeli' href="./detallepelis.html?id=${data.results[i].id}"><h5 class='titlesearch'> ${data.results[i].original_title}</h5>

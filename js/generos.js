@@ -23,7 +23,7 @@ fetch(generos+keyApi)
 })
 .then(function(data){
   console.log(data)
-    let info = data.genres;
+    let info = data.genres; 
     let lista = ``
     for (let i = 0; i<12; i++){
     lista += `
