@@ -37,8 +37,7 @@ fetch(populares+ keyApi)
           </nav> 
         </article>
       </section>
-      `//ESTE VER MÁS PUEDE TENER OTRA FUNCIONALIDAD//
-
+      `
     }
     contenedor.innerHTML = info
 

@@ -15,6 +15,7 @@ formulario.addEventListener('submit', function(event){
 })
 
 let detalle =location.search
+console.log(detalle)
 let objDetalle = new URLSearchParams(detalle)
 let id = objDetalle.get("id")
 let detallepelis= `https://api.themoviedb.org/3/movie/${id}`
